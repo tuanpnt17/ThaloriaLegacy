@@ -1,0 +1,1313 @@
+fileFormatVersion: 2
+guid: 11d938b1a92740f46ad31d55bc107532
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1159187255621917456
+    second: enemy ice_0
+  - first:
+      213: -980569194799812063
+    second: enemy ice_1
+  - first:
+      213: 6248128174688648427
+    second: enemy ice_2
+  - first:
+      213: -6616721456908044216
+    second: enemy ice_3
+  - first:
+      213: 1766317948328318971
+    second: enemy ice_4
+  - first:
+      213: 4819903569780334676
+    second: enemy ice_5
+  - first:
+      213: -1223242379423631934
+    second: enemy ice_6
+  - first:
+      213: 8014834587976408490
+    second: enemy ice_7
+  - first:
+      213: -5619398317300935047
+    second: enemy ice_8
+  - first:
+      213: 9121463477537553887
+    second: enemy ice_9
+  - first:
+      213: 614989219418106812
+    second: enemy ice_10
+  - first:
+      213: -4269381386383673648
+    second: enemy ice_11
+  - first:
+      213: 5001354649827764680
+    second: enemy ice_12
+  - first:
+      213: -4741630325724305661
+    second: enemy ice_13
+  - first:
+      213: 2970676797182383504
+    second: enemy ice_14
+  - first:
+      213: -5984454179773172003
+    second: enemy ice_15
+  - first:
+      213: -1088151314334309166
+    second: enemy ice_16
+  - first:
+      213: -3555472132193190246
+    second: enemy ice_17
+  - first:
+      213: -4386216696886307554
+    second: enemy ice_18
+  - first:
+      213: 572396898454628923
+    second: enemy ice_19
+  - first:
+      213: 4729677492187552639
+    second: enemy ice_20
+  - first:
+      213: -3896471252107945473
+    second: enemy ice_21
+  - first:
+      213: -2984261055690086070
+    second: enemy ice_22
+  - first:
+      213: 2256403760777148135
+    second: enemy ice_23
+  - first:
+      213: 7455247375091964978
+    second: enemy ice_24
+  - first:
+      213: -1930262124848150259
+    second: enemy ice_25
+  - first:
+      213: -5873904176012703805
+    second: enemy ice_26
+  - first:
+      213: -3651401185312112023
+    second: enemy ice_27
+  - first:
+      213: -6127564365606258537
+    second: enemy ice_28
+  - first:
+      213: -741514128701084173
+    second: enemy ice_29
+  - first:
+      213: 8710761464621395446
+    second: enemy ice_30
+  - first:
+      213: -225214031220212234
+    second: enemy ice_31
+  - first:
+      213: 3313123961479595416
+    second: enemy ice_32
+  - first:
+      213: -2281392378422931016
+    second: enemy ice_33
+  - first:
+      213: 6154320205228569654
+    second: enemy ice_34
+  - first:
+      213: -5748643671668308301
+    second: enemy ice_35
+  - first:
+      213: 6166595095336142670
+    second: enemy ice_36
+  - first:
+      213: 7020895070587936683
+    second: enemy ice_37
+  - first:
+      213: 4557596089088069324
+    second: enemy ice_38
+  - first:
+      213: 4016727743089042639
+    second: enemy ice_39
+  - first:
+      213: 6179135311249673981
+    second: enemy ice_40
+  - first:
+      213: 1083103278853397487
+    second: enemy ice_41
+  - first:
+      213: -8035087580697461767
+    second: enemy ice_42
+  - first:
+      213: 2465261054863142106
+    second: enemy ice_43
+  - first:
+      213: -4697266490978862300
+    second: enemy ice_44
+  - first:
+      213: 1672698362730545422
+    second: enemy ice_45
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: enemy ice_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 337
+        width: 48
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01b1187daa2461010800000000000000
+      internalID: 1159187255621917456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 337
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 122344a33815462f0800000000000000
+      internalID: -980569194799812063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 337
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bec3d6b887fc5b650800000000000000
+      internalID: 6248128174688648427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_3
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 338
+        width: 32
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8487a4f44eeac24a0800000000000000
+      internalID: -6616721456908044216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_4
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 338
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf7918ec0d8338810800000000000000
+      internalID: 1766317948328318971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_5
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 339
+        width: 57
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 450e46082ccb3e240800000000000000
+      internalID: 4819903569780334676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_6
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 339
+        width: 50
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c53044798b260fe0800000000000000
+      internalID: -1223242379423631934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_7
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 337
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aad19d5e7996a3f60800000000000000
+      internalID: 8014834587976408490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_8
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 262
+        width: 50
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97699d5d003e302b0800000000000000
+      internalID: -5619398317300935047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_9
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 265
+        width: 50
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdd335a84b2f59e70800000000000000
+      internalID: 9121463477537553887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_10
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 267
+        width: 49
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbb6c1ccf61e88800800000000000000
+      internalID: 614989219418106812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_11
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 292
+        width: 8
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d6bfedcf3c10c4c0800000000000000
+      internalID: -4269381386383673648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_12
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 266
+        width: 22
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c96bb24e81686540800000000000000
+      internalID: 5001354649827764680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_13
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 262
+        width: 48
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 307abfa4758523eb0800000000000000
+      internalID: -4741630325724305661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_14
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 262
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0951d86cec6f93920800000000000000
+      internalID: 2970676797182383504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_15
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 262
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd6b40861a2f2fca0800000000000000
+      internalID: -5984454179773172003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_16
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 183
+        width: 48
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d4aa37152c16e0f0800000000000000
+      internalID: -1088151314334309166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_17
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 183
+        width: 11
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9ef2d7feec68aec0800000000000000
+      internalID: -3555472132193190246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_18
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 183
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e15543247270123c0800000000000000
+      internalID: -4386216696886307554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_19
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 184
+        width: 62
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3a6cea42ff81f700800000000000000
+      internalID: 572396898454628923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_20
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 183
+        width: 63
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7bdff7ce9033a140800000000000000
+      internalID: 4729677492187552639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_21
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 112
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff995946a04fce9c0800000000000000
+      internalID: -3896471252107945473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_22
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 112
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a496f829166c596d0800000000000000
+      internalID: -2984261055690086070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_23
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 112
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e63af6f34b505f10800000000000000
+      internalID: 2256403760777148135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_24
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 112
+        width: 35
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c1501fcfb567760800000000000000
+      internalID: 7455247375091964978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_25
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 112
+        width: 35
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d09090d03d45635e0800000000000000
+      internalID: -1930262124848150259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_26
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 112
+        width: 34
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c74410f543bb7ea0800000000000000
+      internalID: -5873904176012703805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_27
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 42
+        width: 53
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9620809c7fd935dc0800000000000000
+      internalID: -3651401185312112023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_28
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 49
+        width: 53
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79872b9bca486faa0800000000000000
+      internalID: -6127564365606258537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_29
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 42
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fda6d224dc95b5f0800000000000000
+      internalID: -741514128701084173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_30
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 61
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fd6be58667d2e870800000000000000
+      internalID: 8710761464621395446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_31
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 53
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fd7fa62801efdcf0800000000000000
+      internalID: -225214031220212234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_32
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 39
+        width: 33
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89583d470b49afd20800000000000000
+      internalID: 3313123961479595416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_33
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 39
+        width: 21
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b151da18bdd650e0800000000000000
+      internalID: -2281392378422931016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_34
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 39
+        width: 45
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63478a2ae99886550800000000000000
+      internalID: 6154320205228569654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_35
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 39
+        width: 29
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b6c9e9c907b830b0800000000000000
+      internalID: -5748643671668308301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_36
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 39
+        width: 12
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e474d233195249550800000000000000
+      internalID: 6166595095336142670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_37
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 42
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baf5faf4eda3f6160800000000000000
+      internalID: 7020895070587936683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_38
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 39
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccecdcfee75df3f30800000000000000
+      internalID: 4557596089088069324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_39
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 46
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc4674ec9984eb730800000000000000
+      internalID: 4016727743089042639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_40
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 39
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfe0c1eb3d2b0c550800000000000000
+      internalID: 6179135311249673981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_41
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 39
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feb1e1f81b4f70f00800000000000000
+      internalID: 1083103278853397487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_42
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 39
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fbff55ca62ad7090800000000000000
+      internalID: -8035087580697461767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_43
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 38
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adce8bd2edd563220800000000000000
+      internalID: 2465261054863142106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_44
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 39
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42bfbdd7305ffceb0800000000000000
+      internalID: -4697266490978862300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy ice_45
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 39
+        width: 55
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e018eee6c4e963710800000000000000
+      internalID: 1672698362730545422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      enemy ice_0: 1159187255621917456
+      enemy ice_1: -980569194799812063
+      enemy ice_10: 614989219418106812
+      enemy ice_11: -4269381386383673648
+      enemy ice_12: 5001354649827764680
+      enemy ice_13: -4741630325724305661
+      enemy ice_14: 2970676797182383504
+      enemy ice_15: -5984454179773172003
+      enemy ice_16: -1088151314334309166
+      enemy ice_17: -3555472132193190246
+      enemy ice_18: -4386216696886307554
+      enemy ice_19: 572396898454628923
+      enemy ice_2: 6248128174688648427
+      enemy ice_20: 4729677492187552639
+      enemy ice_21: -3896471252107945473
+      enemy ice_22: -2984261055690086070
+      enemy ice_23: 2256403760777148135
+      enemy ice_24: 7455247375091964978
+      enemy ice_25: -1930262124848150259
+      enemy ice_26: -5873904176012703805
+      enemy ice_27: -3651401185312112023
+      enemy ice_28: -6127564365606258537
+      enemy ice_29: -741514128701084173
+      enemy ice_3: -6616721456908044216
+      enemy ice_30: 8710761464621395446
+      enemy ice_31: -225214031220212234
+      enemy ice_32: 3313123961479595416
+      enemy ice_33: -2281392378422931016
+      enemy ice_34: 6154320205228569654
+      enemy ice_35: -5748643671668308301
+      enemy ice_36: 6166595095336142670
+      enemy ice_37: 7020895070587936683
+      enemy ice_38: 4557596089088069324
+      enemy ice_39: 4016727743089042639
+      enemy ice_4: 1766317948328318971
+      enemy ice_40: 6179135311249673981
+      enemy ice_41: 1083103278853397487
+      enemy ice_42: -8035087580697461767
+      enemy ice_43: 2465261054863142106
+      enemy ice_44: -4697266490978862300
+      enemy ice_45: 1672698362730545422
+      enemy ice_5: 4819903569780334676
+      enemy ice_6: -1223242379423631934
+      enemy ice_7: 8014834587976408490
+      enemy ice_8: -5619398317300935047
+      enemy ice_9: 9121463477537553887
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
