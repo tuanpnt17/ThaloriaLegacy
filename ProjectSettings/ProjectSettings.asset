@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: afa103783b0f1c742a9ebc9a9a88a0ea
+  productGUID: 8583a883a2ca640459b8122c937b20a9
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: ThaloriaLegacy
+  productName: Group8_SaveTheWorld_PRU212
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -609,14 +609,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: ThaloriaLegacy
+  metroPackageName: Group8_SaveTheWorld_PRU212
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: ThaloriaLegacy
+  metroApplicationDescription: Group8_SaveTheWorld_PRU212
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -687,11 +687,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 63f3f1c0-e207-4ef2-8c09-8fbcd92836da
+  cloudProjectId: f81d74ad-ca91-47b5-accf-c6f311bb05c3
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: ThaloriaLegacy
-  organizationId: tuanpnt17
+  projectName: Group8_SaveTheWorld_PRU212
+  organizationId: khanhphhe170859
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

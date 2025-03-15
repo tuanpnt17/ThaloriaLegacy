@@ -2,18 +2,24 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - PlayerBullet
+  - Enemy
+  - Energy
+  - Explosion
+  - EnemyBullet
+  - Usb
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - MaxMap
   - Water
   - UI
-  - 
-  - 
-  - 
+  - River
+  - Bridge
+  - Rock
   - 
   - 
   - 
@@ -38,6 +44,71 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Group
+    uniqueID: 1229508609
+    locked: 0
+  - name: MaxMap
+    uniqueID: 2619784035
+    locked: 0
+  - name: River
+    uniqueID: 1740406405
+    locked: 0
+  - name: Soil
+    uniqueID: 410832087
+    locked: 0
+  - name: Bridge
+    uniqueID: 1401834963
+    locked: 0
+  - name: Fence
+    uniqueID: 1089483003
+    locked: 0
+  - name: Tree
+    uniqueID: 522756735
+    locked: 0
+  - name: Grass
+    uniqueID: 360936877
+    locked: 0
+  - name: Rock
+    uniqueID: 2099367517
+    locked: 0
+  - name: Home
+    uniqueID: 3793805831
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Player
+    uniqueID: 1427086383
+    locked: 0
+  - name: PlayerBullet
+    uniqueID: 2108412069
+    locked: 0
+  - name: Gun
+    uniqueID: 3007091371
+    locked: 0
+  - name: Enemy
+    uniqueID: 1665872675
+    locked: 0
+  - name: Blood
+    uniqueID: 731901491
+    locked: 0
+  - name: HpBar
+    uniqueID: 3140825313
+    locked: 0
+  - name: Energy
+    uniqueID: 3384882639
+    locked: 0
+  - name: Explosion
+    uniqueID: 1348944239
+    locked: 0
+  - name: GameUI
+    uniqueID: 1928293137
+    locked: 0
+  - name: EnemyBullet
+    uniqueID: 1355188849
+    locked: 0
+  - name: GunEnemy
+    uniqueID: 3671969155
+    locked: 0
+  m_RenderingLayers:
+  - Default
