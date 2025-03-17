@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: edf45e4335975a3449190b03dd0fcd1c
+guid: bf0cc57314eb0d240bc2dc90a4e58e93
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4891698198452830581
-    second: Screenshot 2025-03-14 133034_0
+      213: -4798500707249557292
+    second: Orc rider-Death_0
+  - first:
+      213: 4440660150491647533
+    second: Orc rider-Death_1
+  - first:
+      213: 2567984541362652948
+    second: Orc rider-Death_2
+  - first:
+      213: -8247396052803133754
+    second: Orc rider-Death_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Screenshot 2025-03-14 133034_0
+      name: Orc rider-Death_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 581
-        height: 403
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 571033b189dc2e340800000000000000
-      internalID: 4891698198452830581
+      spriteID: 4d0fde1c70d486db0800000000000000
+      internalID: -4798500707249557292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc rider-Death_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2e894611e460ad30800000000000000
+      internalID: 4440660150491647533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc rider-Death_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4178d98a55053a320800000000000000
+      internalID: 2567984541362652948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Orc rider-Death_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ced5be8cfc5b8d80800000000000000
+      internalID: -8247396052803133754
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6f0c1496281e78748bff97e4bb3152ab
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Screenshot 2025-03-14 133034_0: 4891698198452830581
+      Orc rider-Death_0: -4798500707249557292
+      Orc rider-Death_1: 4440660150491647533
+      Orc rider-Death_2: 2567984541362652948
+      Orc rider-Death_3: -8247396052803133754
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

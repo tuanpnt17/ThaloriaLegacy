@@ -3,8 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerCollision : MonoBehaviour
 {
-    [SerializeField] private GameManager gameManager;
-    [SerializeField] private AudioManager audioManager;
+    [SerializeField]
+    private GameManager gameManager;
+
+    [SerializeField]
+    private AudioManager audioManager;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,13 +16,13 @@ public class PlayerCollision : MonoBehaviour
             Player player = GetComponent<Player>();
             player.TakeDamage(10f);
         }
-        else if (collision.CompareTag("Usb"))
+        else if (collision.CompareTag("Usb")) // collect USB -> next level
         {
             Debug.Log("Win Game");
             Destroy(collision.gameObject);
             LoadNextScene();
         }
-        else if (collision.CompareTag("Energy"))
+        else if (collision.CompareTag("Energy")) // collect energy -> enough will call boss
         {
             if (gameManager != null)
             {
@@ -34,6 +37,7 @@ public class PlayerCollision : MonoBehaviour
             audioManager.PlayEnergySound();
         }
     }
+
     private void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;

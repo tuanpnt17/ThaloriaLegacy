@@ -3,13 +3,22 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] protected float enemyMoveSpeed = 1f;
+    [SerializeField]
+    protected float enemyMoveSpeed = 1f;
     protected Player player;
-    [SerializeField] protected float maxHp = 50f;
+
+    [SerializeField]
+    protected float maxHp = 50f;
     protected float currentHp;
-    [SerializeField] private Image hpBar;
-    [SerializeField] protected float enterDamage = 10f;
-    [SerializeField] protected float stayDamage = 1f;
+
+    [SerializeField]
+    private Image hpBar;
+
+    [SerializeField]
+    protected float enterDamage = 10f;
+
+    [SerializeField]
+    protected float stayDamage = 1f;
 
     private Rigidbody2D rb;
 
@@ -45,11 +54,20 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    protected void StopMoving()
+    {
+        rb.linearVelocity = Vector2.zero;
+    }
+
     protected virtual void FlipEnemy()
     {
         if (player != null)
         {
-            transform.localScale = new Vector3(player.transform.position.x < transform.position.x ? -1 : 1, 1, 1);
+            transform.localScale = new Vector3(
+                player.transform.position.x < transform.position.x ? -1 : 1,
+                1,
+                1
+            );
         }
     }
 
@@ -82,10 +100,10 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Player player = collision.gameObject.GetComponent<Player>();
-            if (player != null)
+            Player playerScript = collision.gameObject.GetComponent<Player>();
+            if (playerScript != null)
             {
-                player.TakeDamage(enterDamage); // Player mất máu
+                playerScript.TakeDamage(enterDamage); // Player mất máu
             }
         }
     }
@@ -94,10 +112,10 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Player player = collision.gameObject.GetComponent<Player>();
-            if (player != null)
+            Player playerScript = collision.gameObject.GetComponent<Player>();
+            if (playerScript != null)
             {
-                player.TakeDamage(stayDamage * Time.deltaTime); // Player mất máu liên tục
+                playerScript.TakeDamage(stayDamage * Time.deltaTime); // Player mất máu liên tục
             }
         }
     }
