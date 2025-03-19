@@ -4,14 +4,25 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     protected int currentEnergy;
-    [SerializeField] protected int energyThreshold = 3;
-    [SerializeField] protected GameObject boss;
-    [SerializeField] protected GameObject enemySpawner;
-    protected bool bossCalled = false;
-    [SerializeField] protected Image energyBar;
-    [SerializeField] GameObject gameUI;
 
-    [SerializeField] protected AudioManager audioManager;
+    [SerializeField]
+    protected int energyThreshold = 3;
+
+    [SerializeField]
+    protected GameObject boss;
+
+    [SerializeField]
+    protected GameObject enemySpawner;
+    protected bool bossCalled = false;
+
+    [SerializeField]
+    protected Image energyBar;
+
+    [SerializeField]
+    GameObject gameUI;
+
+    [SerializeField]
+    protected AudioManager audioManager;
 
     protected virtual void Start()
     {
@@ -26,7 +37,8 @@ public class GameManager : MonoBehaviour
 
     public void AddEnergy()
     {
-        if (bossCalled) return;
+        if (bossCalled)
+            return;
         currentEnergy += 1;
         UpdateEnergyBar();
         if (currentEnergy == energyThreshold)

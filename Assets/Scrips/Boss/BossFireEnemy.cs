@@ -2,18 +2,30 @@
 
 public class BossFireEnemy : Enemy
 {
-    [SerializeField] private GameObject bulletPrefabs;
-    [SerializeField] private Transform firePoint;
-    [SerializeField] private float speedNormalBullet = 20f;
-    [SerializeField] private float speedCircureBullet = 10f;
-    [SerializeField] private float hpValue = 100f;
-    [SerializeField] private float skillCooldown = 2f;
+    [SerializeField]
+    private GameObject bulletPrefabs;
+
+    [SerializeField]
+    private Transform firePoint;
+
+    [SerializeField]
+    private float speedNormalBullet = 20f;
+
+    [SerializeField]
+    private float speedCircureBullet = 10f;
+
+    [SerializeField]
+    private float hpValue = 100f;
+
+    [SerializeField]
+    private float skillCooldown = 2f;
     private float nextSkillTime = 0f;
-    [SerializeField] private GameObject usbPrefabs;
+
+    [SerializeField]
+    private GameObject usbPrefabs;
 
     protected bool isBattleStarted = false;
     protected DialogueManager dialogueManager;
-
 
     protected override void Start()
     {
@@ -33,7 +45,9 @@ public class BossFireEnemy : Enemy
     {
         Debug.Log("BossEnemy.Update() called"); // Kiểm tra xem Update() có được gọi không
         Debug.Log("isBattleStarted: " + isBattleStarted); // Kiểm tra giá trị của isBattleStarted
-        Debug.Log("dialogueManager.dialoguePanel.activeSelf: " + dialogueManager.dialoguePanel.activeSelf); // Kiểm tra trạng thái của dialoguePanel
+        Debug.Log(
+            "dialogueManager.dialoguePanel.activeSelf: " + dialogueManager.dialoguePanel.activeSelf
+        ); // Kiểm tra trạng thái của dialoguePanel
 
         base.Update();
 
@@ -57,25 +71,21 @@ public class BossFireEnemy : Enemy
     protected virtual void StartBattleDialogue()
     {
         isBattleStarted = false;
-        string[] dialogues = {
-        "Boss: Ta sẽ tiêu diệt ngươi!",
-        "Player: Hãy thử xem nào!",
-    };
-        dialogueManager.StartDialogue(dialogues, () =>
-        {
-            isBattleStarted = true;
-            Debug.Log("dialogueManager.dialoguePanel.SetActive(false) được gọi");
-            dialogueManager.dialoguePanel.SetActive(false); // Ẩn dialoguePanel sau khi kết thúc hội thoại
-        });
+        string[] dialogues = { "Boss: Ta sẽ tiêu diệt ngươi!", "Player: Hãy thử xem nào!" };
+        dialogueManager.StartDialogue(
+            dialogues,
+            () =>
+            {
+                isBattleStarted = true;
+                Debug.Log("dialogueManager.dialoguePanel.SetActive(false) được gọi");
+                dialogueManager.dialoguePanel.SetActive(false); // Ẩn dialoguePanel sau khi kết thúc hội thoại
+            }
+        );
     }
-
 
     protected virtual void StartDeathDialogue()
     {
-        string[] dialogues = {
-            "Boss: Ta không thể thua...!",
-            "Player: Mọi chuyện đã kết thúc!"
-        };
+        string[] dialogues = { "Boss: Ta không thể thua...!", "Player: Mọi chuyện đã kết thúc!" };
         dialogueManager.StartDialogue(dialogues, OnDeathDialogueEnd);
     }
 
@@ -126,42 +136,60 @@ public class BossFireEnemy : Enemy
         for (int i = 0; i < bulletCount; i++)
         {
             float angle = i * angleStep;
-            Vector3 bulletDirection = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle), 0);
+            Vector3 bulletDirection = new Vector3(
+                Mathf.Cos(Mathf.Deg2Rad * angle),
+                Mathf.Sin(Mathf.Deg2Rad * angle),
+                0
+            );
             GameObject bullet = Instantiate(bulletPrefabs, transform.position, Quaternion.identity);
             EnemyBullet enemyBullet = bullet.AddComponent<EnemyBullet>();
             enemyBullet.SetMovementDirection(bulletDirection * speedCircureBullet);
         }
     }
+
     private void Heal()
     {
-        currentHp = Mathf.Min(currentHp + hpValue, maxHp);
-        UpdateHpBar();
+        //currentHp = Mathf.Min(currentHp + hpValue, maxHp);
+        //UpdateHpBar();
     }
 
-    private void Tele()
+    private void Flamethrower()
     {
         if (player != null)
         {
-            transform.position = player.transform.position;
+            Vector3 directionToPlayer = (player.transform.position - firePoint.position).normalized;
+            float spreadAngle = 30f; // Cone width
+            int bulletCount = 5;
+            float angleStep = spreadAngle / (bulletCount - 1);
+
+            for (int i = 0; i < bulletCount; i++)
+            {
+                float angle = -spreadAngle / 2 + i * angleStep;
+                Vector3 bulletDir = Quaternion.Euler(0, 0, angle) * directionToPlayer;
+                GameObject bullet = Instantiate(
+                    bulletPrefabs,
+                    firePoint.position,
+                    Quaternion.identity
+                );
+                EnemyBullet enemyBullet = bullet.AddComponent<EnemyBullet>();
+                enemyBullet.SetMovementDirection(bulletDir * speedCircureBullet);
+            }
         }
     }
 
     private void UseSkillRandom()
     {
-        int randomSkill = Random.Range(0, 5);
+        int randomSkill = Random.Range(0, 3);
         switch (randomSkill)
         {
             case 0:
                 NormalShootBullet();
                 break;
             case 1:
-                CircureBullet();
+                Flamethrower();
                 break;
             case 2:
                 Heal();
-                break;
-            case 3:
-                Tele();
                 break;
         }
     }

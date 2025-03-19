@@ -10,6 +10,9 @@ TagManager:
   - Explosion
   - EnemyBullet
   - Usb
+  - Shield
+  - HPBonus
+  - MPBonus
   layers:
   - Default
   - TransparentFX

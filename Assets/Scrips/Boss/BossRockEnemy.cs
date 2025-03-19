@@ -2,14 +2,27 @@
 
 public class BossRockEnemy : Enemy
 {
-    [SerializeField] private GameObject bulletPrefabs;
-    [SerializeField] private Transform firePoint;
-    [SerializeField] private float speedNormalBullet = 20f;
-    [SerializeField] private float speedCircureBullet = 10f;
-    [SerializeField] private float hpValue = 100f;
-    [SerializeField] private float skillCooldown = 2f;
+    [SerializeField]
+    private GameObject bulletPrefabs;
+
+    [SerializeField]
+    private Transform firePoint;
+
+    [SerializeField]
+    private float speedNormalBullet = 20f;
+
+    [SerializeField]
+    private float speedCircureBullet = 10f;
+
+    [SerializeField]
+    private float hpValue = 100f;
+
+    [SerializeField]
+    private float skillCooldown = 2f;
     private float nextSkillTime = 0f;
-    [SerializeField] private GameObject usbPrefabs;
+
+    [SerializeField]
+    private GameObject usbPrefabs;
 
     protected bool isBattleStarted = false;
     protected DialogueManager dialogueManager;
@@ -32,7 +45,9 @@ public class BossRockEnemy : Enemy
     {
         Debug.Log("BossEnemy.Update() called"); // Kiểm tra xem Update() có được gọi không
         Debug.Log("isBattleStarted: " + isBattleStarted); // Kiểm tra giá trị của isBattleStarted
-        Debug.Log("dialogueManager.dialoguePanel.activeSelf: " + dialogueManager.dialoguePanel.activeSelf); // Kiểm tra trạng thái của dialoguePanel
+        Debug.Log(
+            "dialogueManager.dialoguePanel.activeSelf: " + dialogueManager.dialoguePanel.activeSelf
+        ); // Kiểm tra trạng thái của dialoguePanel
 
         base.Update();
 
@@ -48,7 +63,6 @@ public class BossRockEnemy : Enemy
         }
     }
 
-
     protected override void Die()
     {
         StartDeathDialogue();
@@ -57,25 +71,21 @@ public class BossRockEnemy : Enemy
     protected virtual void StartBattleDialogue()
     {
         isBattleStarted = false;
-        string[] dialogues = {
-        "Boss: Ta sẽ tiêu diệt ngươi!",
-        "Player: Hãy thử xem nào!",
-    };
-        dialogueManager.StartDialogue(dialogues, () =>
-        {
-            isBattleStarted = true;
-            Debug.Log("dialogueManager.dialoguePanel.SetActive(false) được gọi");
-            dialogueManager.dialoguePanel.SetActive(false); // Ẩn dialoguePanel sau khi kết thúc hội thoại
-        });
+        string[] dialogues = { "Boss: Ta sẽ tiêu diệt ngươi!", "Player: Hãy thử xem nào!" };
+        dialogueManager.StartDialogue(
+            dialogues,
+            () =>
+            {
+                isBattleStarted = true;
+                Debug.Log("dialogueManager.dialoguePanel.SetActive(false) được gọi");
+                dialogueManager.dialoguePanel.SetActive(false); // Ẩn dialoguePanel sau khi kết thúc hội thoại
+            }
+        );
     }
-
 
     protected virtual void StartDeathDialogue()
     {
-        string[] dialogues = {
-            "Boss: Ta không thể thua...!",
-            "Player: Mọi chuyện đã kết thúc!"
-        };
+        string[] dialogues = { "Boss: Ta không thể thua...!", "Player: Mọi chuyện đã kết thúc!" };
         dialogueManager.StartDialogue(dialogues, OnDeathDialogueEnd);
     }
 
@@ -104,7 +114,11 @@ public class BossRockEnemy : Enemy
         for (int i = 0; i < bulletCount; i++)
         {
             float angle = i * angleStep;
-            Vector3 bulletDirection = new Vector3(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle), 0);
+            Vector3 bulletDirection = new Vector3(
+                Mathf.Cos(Mathf.Deg2Rad * angle),
+                Mathf.Sin(Mathf.Deg2Rad * angle),
+                0
+            );
             GameObject bullet = Instantiate(bulletPrefabs, transform.position, Quaternion.identity);
             EnemyBullet enemyBullet = bullet.AddComponent<EnemyBullet>();
             enemyBullet.SetMovementDirection(bulletDirection * speedCircureBullet);
@@ -117,11 +131,16 @@ public class BossRockEnemy : Enemy
         UpdateHpBar();
     }
 
-    private void Tele()
+    private void RockSmash()
     {
         if (player != null)
         {
-            transform.position = player.transform.position;
+            Vector3 dropPosition = player.transform.position + Vector3.up * 10f; // Start above player
+            GameObject boulder = Instantiate(bulletPrefabs, dropPosition, Quaternion.identity);
+            EnemyBullet enemyBullet = boulder.AddComponent<EnemyBullet>();
+            enemyBullet.SetMovementDirection(Vector3.down * speedCircureBullet); // Falls downward
+            boulder.transform.localScale = Vector3.one * 2f; // Larger size
+            //boulder.GetComponent<SpriteRenderer>().color = Color.gray; // Visual cue
         }
     }
 
@@ -136,7 +155,7 @@ public class BossRockEnemy : Enemy
                 break;
             case 1:
                 Debug.Log("Boss đang sử dụng skill: Bắn đạn hình tròn");
-                CircureBullet();
+                RockSmash();
                 break;
             case 2:
                 Debug.Log("Boss đang sử dụng skill: Hồi máu");
@@ -144,7 +163,6 @@ public class BossRockEnemy : Enemy
                 break;
         }
     }
-
 
     protected virtual void UseSkill()
     {

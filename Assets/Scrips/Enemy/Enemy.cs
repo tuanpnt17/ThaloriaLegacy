@@ -20,7 +20,12 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     protected float stayDamage = 1f;
 
+    [SerializeField]
+    protected int killScore = 10;
+
     private Rigidbody2D rb;
+    private EnemySpawner spawnerInstance;
+    private float lastTime;
 
     protected virtual void Start()
     {
@@ -82,6 +87,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void SetSpawner(EnemySpawner spawner)
+    {
+        if (spawnerInstance == null)
+            spawnerInstance = spawner;
+    }
+
     protected virtual void Die()
     {
         Destroy(gameObject);
@@ -115,8 +126,20 @@ public class Enemy : MonoBehaviour
             Player playerScript = collision.gameObject.GetComponent<Player>();
             if (playerScript != null)
             {
+                if (Time.time - lastTime < 2f)
+                {
+                    return;
+                }
                 playerScript.TakeDamage(stayDamage * Time.deltaTime); // Player mất máu liên tục
+                lastTime = Time.time;
             }
         }
+    }
+
+    private void OnDestroy()
+    {
+        ScoreManager.Instance.UpdateKillScore(transform.position, killScore);
+        if (spawnerInstance != null)
+            spawnerInstance.EnemyDie(transform.position);
     }
 }

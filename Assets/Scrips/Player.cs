@@ -3,14 +3,36 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField]
+    private float moveSpeed = 5f;
+
+    [SerializeField]
+    private float maxHp = 200f;
+
+    [SerializeField]
+    private float maxMp = 100f; // other mp config is in PlayerActions.cs
+
+    [SerializeField]
+    private Image hpBar;
+
+    [SerializeField]
+    private Image mpBar;
+
+    [SerializeField]
+    private GameManagerUI gameManager;
+
+    public bool allowFlip = true;
+
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
-    [SerializeField] private float maxHp = 100f;
     private float currentHp;
-    [SerializeField] private Image hpBar;
-    [SerializeField] private GameManagerUI gameManager;
+    private float currentMp;
+    private bool isDead = false;
+    private float mpRecoveryRate = 5f;
+    private float mpRecoveryDuration = 2f;
+    private float nextMpRecoveryTime;
+    private bool blockTakeDamage = false;
 
     private void Awake()
     {
@@ -19,43 +41,56 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
 
         if (rb == null)
-            Debug.LogError("Rigidbody2D không tìm thấy trên Player!");
+            Debug.LogError("Rigidbody2D is not found in Player!");
         if (spriteRenderer == null)
-            Debug.LogError("SpriteRenderer không tìm thấy trên Player!");
+            Debug.LogError("SpriteRenderer is not found in Player!");
         if (animator == null)
-            Debug.LogError("Animator không tìm thấy trên Player!");
+            Debug.LogError("Animator is not found in Player!");
     }
 
-    void Start()
+    private void Start()
     {
         currentHp = maxHp;
+        currentMp = maxMp;
         UpdateHpBar();
+        UpdateMpBar();
     }
 
-    void Update()
+    private void Update()
     {
+        if (isDead)
+            return;
         MovePlayer();
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             gameManager.PauseGameMenu();
         }
+
+        RecoverMpOverTime();
     }
 
-    void MovePlayer()
+    private void MovePlayer()
     {
-        Vector2 playerInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        Vector2 playerInput = new Vector2(
+            Input.GetAxisRaw("Horizontal"),
+            Input.GetAxisRaw("Vertical")
+        );
         rb.linearVelocity = playerInput.normalized * moveSpeed; // Sửa lỗi linearVelocity
 
-        if (playerInput.x < 0)
-            spriteRenderer.flipX = true;
-        else if (playerInput.x > 0)
-            spriteRenderer.flipX = false;
+        if (allowFlip && playerInput.x < 0)
+            //spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1, 1, 1);
+        else if (allowFlip && playerInput.x > 0)
+            //spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(1, 1, 1);
 
         animator.SetBool("isRun", playerInput != Vector2.zero);
     }
 
     public void TakeDamage(float damage)
     {
+        if (blockTakeDamage)
+            return;
         currentHp -= damage;
         currentHp = Mathf.Max(currentHp, 0);
         UpdateHpBar();
@@ -70,9 +105,46 @@ public class Player : MonoBehaviour
         UpdateHpBar();
     }
 
-    protected virtual void Die()
+    public void Destroy()
     {
         Destroy(gameObject);
+        Invoke("LoadGameOver", 1f);
+    }
+
+    public void ChangeMp(float mp)
+    {
+        currentMp += mp;
+        currentMp = Mathf.Clamp(currentMp, 0, maxMp);
+        UpdateMpBar();
+    }
+
+    public float GetMp()
+    {
+        return currentMp;
+    }
+
+    public void SetBlockDamage(bool isBlock)
+    {
+        blockTakeDamage = isBlock;
+    }
+
+    protected virtual void Die()
+    {
+        //Destroy(gameObject);
+        isDead = true;
+        rb.linearVelocity = Vector2.zero;
+        GetComponent<Collider2D>().enabled = false;
+        animator.SetTrigger("Die");
+    }
+
+    // For checking collision
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("Collision with: " + collision.gameObject.name);
+    }
+
+    private void LoadGameOver()
+    {
         gameManager.GameOverMenu();
     }
 
@@ -82,9 +154,18 @@ public class Player : MonoBehaviour
             hpBar.fillAmount = currentHp / maxHp;
     }
 
-    // **Thêm Debug để kiểm tra va chạm**
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void UpdateMpBar()
     {
-        Debug.Log("Va chạm với: " + collision.gameObject.name);
+        if (mpBar != null)
+            mpBar.fillAmount = currentMp / maxMp;
+    }
+
+    private void RecoverMpOverTime()
+    {
+        if (Time.time > nextMpRecoveryTime)
+        {
+            nextMpRecoveryTime = Time.time + mpRecoveryDuration;
+            ChangeMp(mpRecoveryRate);
+        }
     }
 }

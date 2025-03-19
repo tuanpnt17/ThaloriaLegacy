@@ -80,16 +80,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemies:
-  - {fileID: 6558157695255903114, guid: f975b017037d5074fb473dbd853797b5, type: 3}
   - {fileID: 5737616550174882317, guid: 64fa33c91f103fa4f96a5ab38b315de8, type: 3}
-  - {fileID: 5796835143656738081, guid: 59b49ee0898c4554a91600936d42e7bd, type: 3}
-  - {fileID: 1800995876873524739, guid: c97d0f4e710190c46b3996985df7d475, type: 3}
   spawnPoints:
   - {fileID: 3017280890720114165}
   - {fileID: 1168191686848274984}
   - {fileID: 2722828281221807574}
   - {fileID: 3386415944592907544}
   timeBetweenSpawns: 2
+  powerups:
+  - {fileID: 6085545352612120272, guid: b4928941b3912014983e004c4c21aaa9, type: 3}
+  - {fileID: 643750070559409700, guid: c7d2176accbf6dc44a472c15885eecd4, type: 3}
+  - {fileID: 4660932549674822319, guid: 5087083e9dfadf4408e6dc410f1b6ece, type: 3}
+  defaultDropBuckets: 030000000400000005000000
 --- !u!1 &944041170113888306
 GameObject:
   m_ObjectHideFlags: 0
