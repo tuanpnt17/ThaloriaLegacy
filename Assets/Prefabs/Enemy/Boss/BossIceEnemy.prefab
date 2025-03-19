@@ -178,11 +178,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df6507de2bedb04195c528e09eac3d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMoveSpeed: 0
+  enemyMoveSpeed: 3
   maxHp: 100
   hpBar: {fileID: 4640787880936951918}
   enterDamage: 10
   stayDamage: 1
+  killScore: 10
   bulletPrefabs: {fileID: 1851035402210328455, guid: 0c1d33096f077c3499643f55337a0fea, type: 3}
   firePoint: {fileID: 7785694337600052303}
   speedNormalBullet: 20

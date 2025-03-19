@@ -52385,18 +52385,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8590728481534388064, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1509946986}
+    - targetCorrespondingSourceObject: {fileID: 8590728481534388064, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1509946987}
   m_SourcePrefab: {fileID: 100100000, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
---- !u!114 &1509946984 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1765919555882086701, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
-  m_PrefabInstance: {fileID: 1509946983}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1509946985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804ad840790944a449ba45583c72f182, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1509946985 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8590728481534388064, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
@@ -52420,6 +52412,25 @@ MonoBehaviour:
   introduct: {fileID: 259960049}
   mapMenu: {fileID: 1803333925}
   aboutUs: {fileID: 407622521}
+  leaderBoard: {fileID: 1610104919}
+  audioManager: {fileID: 1890538001}
+--- !u!114 &1509946987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509946985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804ad840790944a449ba45583c72f182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyThreshold: 3
+  boss: {fileID: 1196923193}
+  enemySpawner: {fileID: 1300996268}
+  energyBar: {fileID: 1803333930}
+  gameUI: {fileID: 1803333924}
   audioManager: {fileID: 1890538001}
 --- !u!1001 &1592020834
 PrefabInstance:
@@ -52478,6 +52489,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 343249439a5170a45943fa34af67a5ba, type: 3}
+--- !u!1 &1610104919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6324821575868298959, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+  m_PrefabInstance: {fileID: 1803333923}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1661433003
 GameObject:
   m_ObjectHideFlags: 0
@@ -52845,7 +52861,7 @@ PrefabInstance:
     - target: {fileID: 1309643536502023880, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 1509946984}
+      objectReference: {fileID: 1509946986}
     - target: {fileID: 2080478170927700759, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -52878,6 +52894,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 368975627}
+    - target: {fileID: 5657477149893929957, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7773411838957143666, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -53162,7 +53182,7 @@ PrefabInstance:
     - target: {fileID: 2228040635517338236, guid: c72e61e5107641f43be919f710b50974, type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 1509946984}
+      objectReference: {fileID: 1509946987}
     - target: {fileID: 2228040635517338236, guid: c72e61e5107641f43be919f710b50974, type: 3}
       propertyPath: audioManager
       value: 

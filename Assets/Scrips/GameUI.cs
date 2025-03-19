@@ -3,21 +3,31 @@ using UnityEngine.SceneManagement;
 
 public class GameUI : MonoBehaviour
 {
-    [SerializeField] private GameManagerUI gameManager;
-    [SerializeField] private GameObject mainMenu;
-    [SerializeField] private GameObject mapMenu;
+    [SerializeField]
+    private GameManagerUI gameManager;
+
+    [SerializeField]
+    private GameObject mainMenu;
+
+    [SerializeField]
+    private GameObject mapMenu;
+
     public void StartGame()
     {
+        gameManager.StartGame();
         SceneManager.LoadScene(1);
     }
+
     public void QuitGame()
     {
         Application.Quit();
     }
+
     public void ContinueGame()
     {
         gameManager.ResumeGame();
     }
+
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
@@ -31,8 +41,5 @@ public class GameUI : MonoBehaviour
         mapMenu.SetActive(true);
     }
 
-    public void HelpMenu()
-    {
-
-    }
+    public void HelpMenu() { }
 }

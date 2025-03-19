@@ -3981,6 +3981,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8590728481534388064, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1923006545}
+    - targetCorrespondingSourceObject: {fileID: 8590728481534388064, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1923006546}
   m_SourcePrefab: {fileID: 100100000, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
 --- !u!1 &633624895 stripped
 GameObject:
@@ -4706,7 +4709,7 @@ PrefabInstance:
     - target: {fileID: 2228040635517338236, guid: c72e61e5107641f43be919f710b50974, type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 1923006544}
+      objectReference: {fileID: 1923006546}
     - target: {fileID: 2228040635517338236, guid: c72e61e5107641f43be919f710b50974, type: 3}
       propertyPath: audioManager
       value: 
@@ -4837,6 +4840,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0168a4cea1d8ab4399aab531dc322dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1224684719 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6324821575868298959, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+  m_PrefabInstance: {fileID: 1570889529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1510046136
 GameObject:
   m_ObjectHideFlags: 0
@@ -5108,6 +5116,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1510046138}
+    - target: {fileID: 5657477149893929957, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6782808068189609773, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5219,6 +5231,10 @@ PrefabInstance:
     - target: {fileID: 8164230865261560426, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8640782699053728952, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -110961,6 +110977,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CinemachineCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 5269339834277769374, guid: e2fcadffcb596414fb7b3ca5c247b6eb, type: 3}
+      propertyPath: TargetOffset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8721486054779739234, guid: e2fcadffcb596414fb7b3ca5c247b6eb, type: 3}
+      propertyPath: Lens.OrthographicSize
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8721486054779739234, guid: e2fcadffcb596414fb7b3ca5c247b6eb, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
@@ -110970,17 +110994,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2fcadffcb596414fb7b3ca5c247b6eb, type: 3}
---- !u!114 &1923006544 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1765919555882086701, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
-  m_PrefabInstance: {fileID: 633624894}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 633624895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804ad840790944a449ba45583c72f182, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1923006545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110999,6 +111012,25 @@ MonoBehaviour:
   introduct: {fileID: 27294526}
   mapMenu: {fileID: 1570889531}
   aboutUs: {fileID: 1570889530}
+  leaderBoard: {fileID: 1224684719}
+  audioManager: {fileID: 953682084}
+--- !u!114 &1923006546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633624895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804ad840790944a449ba45583c72f182, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyThreshold: 3
+  boss: {fileID: 111783132}
+  enemySpawner: {fileID: 1597107318}
+  energyBar: {fileID: 1570889535}
+  gameUI: {fileID: 1570889536}
   audioManager: {fileID: 953682084}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
