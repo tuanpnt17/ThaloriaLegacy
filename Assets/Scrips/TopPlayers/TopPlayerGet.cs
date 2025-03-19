@@ -29,6 +29,8 @@ public class TopPlayersGet : MonoBehaviour
             return;
         }
 
+        Debug.Log(jsonStringResponse);
+
         UITopPlayers.instance.ShowTopPlayers(jsonStringResponse);
     }
 }

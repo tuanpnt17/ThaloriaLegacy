@@ -43,9 +43,9 @@ namespace Assets.Scrips.TopPlayers
             this.playerScores.Sort((p1, p2) => p1.score.CompareTo(p2.score));
             this.playerScores.Reverse();
 
-            while (this.playerScores.Count > 7)
+            while (this.playerScores.Count > 5)
             {
-                this.playerScores.RemoveAt(7);
+                this.playerScores.RemoveAt(5);
             }
 
             string json = JsonConvert.SerializeObject(this.playerScores);

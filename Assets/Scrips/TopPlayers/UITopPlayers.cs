@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 namespace Assets.Scrips.TopPlayers
@@ -7,7 +6,7 @@ namespace Assets.Scrips.TopPlayers
     public class UITopPlayers : MonoBehaviour
     {
         public static UITopPlayers instance;
-        public List<TextMeshProUGUI> textPlayerScores = new List<TextMeshProUGUI>();
+        public List<UIPlayer> uIPlayers = new List<UIPlayer>();
 
         private void Awake()
         {
@@ -16,14 +15,16 @@ namespace Assets.Scrips.TopPlayers
             UITopPlayers.instance = this;
 
             this.LoadTexts();
+
+            TopPlayersGet.instance.Get();
         }
 
         protected virtual void LoadTexts()
         {
             foreach (Transform child in transform)
             {
-                TextMeshProUGUI textMeshPro = child.GetComponent<TextMeshProUGUI>();
-                this.textPlayerScores.Add(textMeshPro);
+                UIPlayer uiPlayer = child.GetComponent<UIPlayer>();
+                this.uIPlayers.Add(uiPlayer);
             }
         }
 
@@ -33,14 +34,16 @@ namespace Assets.Scrips.TopPlayers
             TopPlayers.instance.playerScores = playerScoresRes.record;
 
             int i = 0;
-            TextMeshProUGUI textMeshPro;
+            UIPlayer uIPlayer;
             foreach (PlayerScore playerScore in TopPlayers.instance.playerScores.playerScores)
             {
-                textMeshPro = this.textPlayerScores[i];
+                uIPlayer = this.uIPlayers[i];
 
-                string text = playerScore.name + " - " + playerScore.score;
-                textMeshPro.text = text;
+                uIPlayer.playerName.text = playerScore.name;
+                uIPlayer.playerScore.text = playerScore.score.ToString();
                 i++;
+                if (i == 5)
+                    break;
             }
         }
     }
