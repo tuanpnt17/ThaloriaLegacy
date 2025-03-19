@@ -6,7 +6,7 @@ namespace Assets.Scrips.TopPlayers
     public class PlayerScore
     {
         public string name;
-        public string password;
+        public string pass;
         public int score;
 
         static int SortByScore(PlayerScore p1, PlayerScore p2)
