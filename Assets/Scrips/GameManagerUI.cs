@@ -3,13 +3,30 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerUI : MonoBehaviour
 {
-    [SerializeField] protected GameObject mainMenu;
-    [SerializeField] protected GameObject gameOverMenu;
-    [SerializeField] protected GameObject pauseMenu;
-    [SerializeField] protected GameObject introduct;
-    [SerializeField] protected GameObject mapMenu;
-    [SerializeField] protected GameObject aboutUs;
-    [SerializeField] protected AudioManager audioManager;
+    [SerializeField]
+    protected GameObject mainMenu;
+
+    [SerializeField]
+    protected GameObject gameOverMenu;
+
+    [SerializeField]
+    protected GameObject pauseMenu;
+
+    [SerializeField]
+    protected GameObject introduct;
+
+    [SerializeField]
+    protected GameObject mapMenu;
+
+    [SerializeField]
+    protected GameObject aboutUs;
+
+    [SerializeField]
+    protected GameObject leaderBoard;
+
+    [SerializeField]
+    protected AudioManager audioManager;
+
     private void Start()
     {
         if (SceneManager.GetActiveScene().buildIndex == 0)
@@ -28,6 +45,7 @@ public class GameManagerUI : MonoBehaviour
         gameOverMenu.SetActive(false);
         pauseMenu.SetActive(false);
         mapMenu.SetActive(false);
+        leaderBoard.SetActive(false);
         aboutUs.SetActive(false);
         Time.timeScale = 1f;
     }
@@ -38,9 +56,11 @@ public class GameManagerUI : MonoBehaviour
         gameOverMenu.SetActive(false);
         pauseMenu.SetActive(true);
         mapMenu.SetActive(false);
+        leaderBoard.SetActive(false);
         aboutUs.SetActive(false);
         Time.timeScale = 0f;
     }
+
     public void ResumeGame()
     {
         mainMenu.SetActive(false);
@@ -48,8 +68,10 @@ public class GameManagerUI : MonoBehaviour
         pauseMenu.SetActive(false);
         mapMenu.SetActive(false);
         aboutUs.SetActive(false);
+        leaderBoard.SetActive(false);
         Time.timeScale = 1f;
     }
+
     public void GameOverMenu()
     {
         mainMenu.SetActive(false);
@@ -57,10 +79,10 @@ public class GameManagerUI : MonoBehaviour
         pauseMenu.SetActive(false);
         mapMenu.SetActive(false);
         aboutUs.SetActive(false);
+        leaderBoard.SetActive(false);
         Time.timeScale = 0f;
     }
 
-    
     public void Introduct()
     {
         mainMenu.SetActive(false);
@@ -69,8 +91,22 @@ public class GameManagerUI : MonoBehaviour
         pauseMenu.SetActive(false);
         mapMenu.SetActive(false);
         aboutUs.SetActive(false);
+        leaderBoard.SetActive(false);
         Time.timeScale = 0f;
     }
+
+    public void LeaderBoard()
+    {
+        mainMenu.SetActive(false);
+        gameOverMenu.SetActive(false);
+        introduct.SetActive(false);
+        pauseMenu.SetActive(false);
+        mapMenu.SetActive(false);
+        aboutUs.SetActive(false);
+        leaderBoard.SetActive(true);
+        Time.timeScale = 0f;
+    }
+
     public void AboutUs()
     {
         mainMenu.SetActive(false);
@@ -79,8 +115,10 @@ public class GameManagerUI : MonoBehaviour
         pauseMenu.SetActive(false);
         mapMenu.SetActive(false);
         aboutUs.SetActive(true);
+        leaderBoard.SetActive(false);
         Time.timeScale = 0f;
     }
+
     public void MapMenu()
     {
         mainMenu.SetActive(false);
@@ -89,6 +127,7 @@ public class GameManagerUI : MonoBehaviour
         pauseMenu.SetActive(false);
         mapMenu.SetActive(true);
         aboutUs.SetActive(false);
+        leaderBoard.SetActive(false);
         Time.timeScale = 0f;
     }
 
@@ -99,6 +138,7 @@ public class GameManagerUI : MonoBehaviour
         pauseMenu.SetActive(false);
         mapMenu.SetActive(false);
         aboutUs.SetActive(false);
+        leaderBoard.SetActive(false);
         Time.timeScale = 1f;
         audioManager.PlayDefaultAudio();
     }

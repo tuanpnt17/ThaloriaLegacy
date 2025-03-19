@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4848568266001346010}
-  - component: {fileID: 1765919555882086701}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -32,26 +31,3 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1765919555882086701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8590728481534388064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 804ad840790944a449ba45583c72f182, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  energyThreshold: 1
-  boss: {fileID: 0}
-  enemySpaner: {fileID: 0}
-  energyBar: {fileID: 0}
-  gameUI: {fileID: 0}
-  mainMenu: {fileID: 0}
-  gameOverMenu: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  mapMenu: {fileID: 0}
-  helpMenu: {fileID: 0}
-  audioManager: {fileID: 0}
