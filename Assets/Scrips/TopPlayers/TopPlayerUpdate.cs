@@ -37,7 +37,7 @@ namespace Assets.Scrips.TopPlayers
                 return;
             }
 
-            UTTopPlayers.instance.ShowTopPlayers(jsonStringResponse);
+            UITopPlayers.instance.ShowTopPlayers(jsonStringResponse);
             this.UpdateTopPlayers();
         }
 
@@ -64,7 +64,7 @@ namespace Assets.Scrips.TopPlayers
                 return;
             }
 
-            UTTopPlayers.instance.ShowTopPlayers(jsonStringResponse);
+            UITopPlayers.instance.ShowTopPlayers(jsonStringResponse);
         }
 
         protected virtual PlayerScore CurrentPlayer()

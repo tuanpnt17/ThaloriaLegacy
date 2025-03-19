@@ -10,7 +10,7 @@ namespace Assets.Scrips.TopPlayers
         private void Awake()
         {
             if (TopPlayers.instance != null)
-                Debug.LogError("UTTopPlayers Error");
+                Debug.LogError("UITopPlayers Error");
             TopPlayers.instance = this;
         }
     }
