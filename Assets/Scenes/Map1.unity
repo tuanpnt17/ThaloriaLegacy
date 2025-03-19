@@ -2875,6 +2875,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AboutUs
       objectReference: {fileID: 0}
+    - target: {fileID: 6324821575868298959, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7350504476798578919, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -23749,6 +23753,7 @@ MonoBehaviour:
   introduct: {fileID: 231798855}
   mapMenu: {fileID: 231798850}
   aboutUs: {fileID: 231798854}
+  leaderBoard: {fileID: 0}
   audioManager: {fileID: 568219432}
 --- !u!1 &1433288398
 GameObject:

@@ -45,6 +45,7 @@ public class GameManagerUI : MonoBehaviour
         gameOverMenu.SetActive(false);
         pauseMenu.SetActive(false);
         mapMenu.SetActive(false);
+        leaderBoard.SetActive(false);
         aboutUs.SetActive(false);
         Time.timeScale = 1f;
     }
@@ -55,6 +56,7 @@ public class GameManagerUI : MonoBehaviour
         gameOverMenu.SetActive(false);
         pauseMenu.SetActive(true);
         mapMenu.SetActive(false);
+        leaderBoard.SetActive(false);
         aboutUs.SetActive(false);
         Time.timeScale = 0f;
     }
@@ -66,6 +68,7 @@ public class GameManagerUI : MonoBehaviour
         pauseMenu.SetActive(false);
         mapMenu.SetActive(false);
         aboutUs.SetActive(false);
+        leaderBoard.SetActive(false);
         Time.timeScale = 1f;
     }
 
@@ -76,6 +79,7 @@ public class GameManagerUI : MonoBehaviour
         pauseMenu.SetActive(false);
         mapMenu.SetActive(false);
         aboutUs.SetActive(false);
+        leaderBoard.SetActive(false);
         Time.timeScale = 0f;
     }
 
@@ -87,6 +91,7 @@ public class GameManagerUI : MonoBehaviour
         pauseMenu.SetActive(false);
         mapMenu.SetActive(false);
         aboutUs.SetActive(false);
+        leaderBoard.SetActive(false);
         Time.timeScale = 0f;
     }
 
@@ -110,6 +115,7 @@ public class GameManagerUI : MonoBehaviour
         pauseMenu.SetActive(false);
         mapMenu.SetActive(false);
         aboutUs.SetActive(true);
+        leaderBoard.SetActive(false);
         Time.timeScale = 0f;
     }
 
@@ -121,6 +127,7 @@ public class GameManagerUI : MonoBehaviour
         pauseMenu.SetActive(false);
         mapMenu.SetActive(true);
         aboutUs.SetActive(false);
+        leaderBoard.SetActive(false);
         Time.timeScale = 0f;
     }
 
@@ -131,6 +138,7 @@ public class GameManagerUI : MonoBehaviour
         pauseMenu.SetActive(false);
         mapMenu.SetActive(false);
         aboutUs.SetActive(false);
+        leaderBoard.SetActive(false);
         Time.timeScale = 1f;
         audioManager.PlayDefaultAudio();
     }
