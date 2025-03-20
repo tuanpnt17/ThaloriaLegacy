@@ -27,9 +27,12 @@ public class BossRockEnemy : Enemy
     protected bool isBattleStarted = false;
     protected DialogueManager dialogueManager;
 
+    private AudioManager audioManager;
     protected override void Start()
     {
         base.Start();
+        audioManager = FindAnyObjectByType<AudioManager>();
+
         dialogueManager = Object.FindFirstObjectByType<DialogueManager>();
         if (dialogueManager != null)
         {
@@ -71,11 +74,12 @@ public class BossRockEnemy : Enemy
     protected virtual void StartBattleDialogue()
     {
         isBattleStarted = false;
-        string[] dialogues = { "Boss: Ta sẽ tiêu diệt ngươi!", "Player: Hãy thử xem nào!" };
+        string[] dialogues = { "Boss: You don't wanna wake the stones up.", "Player: The rocks might wake up and... do absolutely nothing!" };
         dialogueManager.StartDialogue(
             dialogues,
             () =>
             {
+                audioManager.PlayGolemBossAudio();
                 isBattleStarted = true;
                 Debug.Log("dialogueManager.dialoguePanel.SetActive(false) được gọi");
                 dialogueManager.dialoguePanel.SetActive(false); // Ẩn dialoguePanel sau khi kết thúc hội thoại

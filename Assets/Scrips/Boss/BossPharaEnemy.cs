@@ -27,9 +27,12 @@ public class BossPharaEnemy : Enemy
     protected bool isBattleStarted = false;
     protected DialogueManager dialogueManager;
 
+    private AudioManager audioManager;
+
     protected override void Start()
     {
         base.Start();
+        audioManager = FindAnyObjectByType<AudioManager>();
         dialogueManager = Object.FindFirstObjectByType<DialogueManager>();
         if (dialogueManager != null)
         {
@@ -71,11 +74,12 @@ public class BossPharaEnemy : Enemy
     protected virtual void StartBattleDialogue()
     {
         isBattleStarted = false;
-        string[] dialogues = { "Boss: Ta sẽ tiêu diệt ngươi!", "Player: Hãy thử xem nào!" };
+        string[] dialogues = { "Boss: You dare disturb my eternal slumber? Kneel before your king.", "Player: you’ve been sleeping for centuries - time to go to sleep again." };
         dialogueManager.StartDialogue(
             dialogues,
             () =>
             {
+                audioManager.PlayPharaohBossAudio();
                 isBattleStarted = true;
                 Debug.Log("dialogueManager.dialoguePanel.SetActive(false) được gọi");
                 dialogueManager.dialoguePanel.SetActive(false); // Ẩn dialoguePanel sau khi kết thúc hội thoại
@@ -137,10 +141,12 @@ public class BossPharaEnemy : Enemy
         switch (randomSkill)
         {
             case 0:
-                Debug.Log("Boss đang sử dụng skill: Bắn đạn thường");
+				audioManager.PlayPharaohBossAttackSound();
+				Debug.Log("Boss đang sử dụng skill: Bắn đạn thường");
                 NormalShootBullet();
                 break;
             case 1:
+                audioManager.PlayPharaohBossAttackSound();
                 Debug.Log("Boss đang sử dụng skill: Bắn đạn hình tròn");
                 CircureBullet();
                 break;

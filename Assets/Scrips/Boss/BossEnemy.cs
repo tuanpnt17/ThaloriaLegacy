@@ -14,10 +14,11 @@ public class BossEnemy : Enemy
 
     protected bool isBattleStarted = false;
     protected DialogueManager dialogueManager;
-
+    private AudioManager audioManager;
     protected override void Start()
     {
         base.Start();
+        audioManager = FindAnyObjectByType<AudioManager>();
         dialogueManager = Object.FindFirstObjectByType<DialogueManager>();
         if (dialogueManager != null)
         {
@@ -52,6 +53,7 @@ public class BossEnemy : Enemy
 
     protected override void Die()
     {
+        audioManager.StopBossAudio();
         StartDeathDialogue();
     }
 
@@ -59,12 +61,13 @@ public class BossEnemy : Enemy
     {
         isBattleStarted = false;
         string[] dialogues = {
-        "Boss: Ta sẽ tiêu diệt ngươi!",
-        "Player: Hãy thử xem nào!",
+		"Final Protocol Terminal: On behalf of Lord Drakthor!",
+        "Player: Get on me!",
     };
         dialogueManager.StartDialogue(dialogues, () =>
-        {
-            isBattleStarted = true;
+		{
+			audioManager.PlayRoboticBossAudio();
+			isBattleStarted = true;
             Debug.Log("dialogueManager.dialoguePanel.SetActive(false) được gọi");
             dialogueManager.dialoguePanel.SetActive(false); // Ẩn dialoguePanel sau khi kết thúc hội thoại
         });

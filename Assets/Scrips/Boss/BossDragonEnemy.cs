@@ -34,7 +34,6 @@ public class BossDragonEnemy : Enemy
     {
         base.Start();
         audioManager = FindAnyObjectByType<AudioManager>();
-        audioManager.PlayDragonBossAudio();
         dialogueManager = Object.FindFirstObjectByType<DialogueManager>();
         if (dialogueManager != null)
         {
@@ -77,12 +76,13 @@ public class BossDragonEnemy : Enemy
     protected virtual void StartBattleDialogue()
     {
         isBattleStarted = false;
-        string[] dialogues = { "Boss: Ta sẽ tiêu diệt ngươi!", "Player: Hãy thử xem nào!" };
+        string[] dialogues = { "Boss: Mortal, your bones will turn to ash like all who defy me.", "Player: I’ve faced kings and gods, Drakthor. Today is the day the world gets the peace it deserves!" };
         dialogueManager.StartDialogue(
             dialogues,
             () =>
             {
-                isBattleStarted = true;
+				audioManager.PlayDragonBossAudio();
+				isBattleStarted = true;
                 Debug.Log("dialogueManager.dialoguePanel.SetActive(false) được gọi");
                 dialogueManager.dialoguePanel.SetActive(false); // Ẩn dialoguePanel sau khi kết thúc hội thoại
             }
@@ -148,12 +148,12 @@ public class BossDragonEnemy : Enemy
         switch (randomSkill)
         {
             case 0:
-                audioManager.PlayDragonBossAttackAudio();
+                audioManager.PlayDragonBossAttackSound();
                 Debug.Log("Boss đang sử dụng skill: Bắn đạn thường");
                 NormalShootBullet();
                 break;
             case 1:
-				audioManager.PlayDragonBossAttackAudio();
+				audioManager.PlayDragonBossAttackSound();
 				Debug.Log("Boss đang sử dụng skill: Bắn đạn hình tròn");
                 CircureBullet();
                 break;

@@ -859,6 +859,13 @@ MonoBehaviour:
   enemyExplosionClip: {fileID: 8300000, guid: d86e4f88588268b4497979dcc38fae32, type: 3}
   dragonBossClip: {fileID: 8300000, guid: 6fc9662e5ee770a488b1b80fd3bdc226, type: 3}
   dragonBossAttackClip: {fileID: 8300000, guid: 6aa286a732f4b354087cca184dd095a2, type: 3}
+  roboticBossClip: {fileID: 8300000, guid: 8665964b74fb8ab49aa7bd94efd87d75, type: 3}
+  golemBossClip: {fileID: 8300000, guid: b6065c76d5fc8ff4e920ba0cf3d960c8, type: 3}
+  pharaohBossClip: {fileID: 8300000, guid: 8716b047d3fbb7d4cb75d09efb570490, type: 3}
+  pharaohBossAttackClip: {fileID: 8300000, guid: 002da948c52c3df4982985814f2fb7d0, type: 3}
+  frostBossClip: {fileID: 8300000, guid: 8665964b74fb8ab49aa7bd94efd87d75, type: 3}
+  frostBossAttackClip: {fileID: 8300000, guid: a954345396351334f9ce980c3e8aed68, type: 3}
+  isRunning: 0
 --- !u!1 &7675427333464860168
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,7 +911,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0

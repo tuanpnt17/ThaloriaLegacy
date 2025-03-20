@@ -27,9 +27,11 @@ public class BossIceEnemy : Enemy
     protected bool isBattleStarted = false;
     protected DialogueManager dialogueManager;
 
+    private AudioManager audioManager;
     protected override void Start()
     {
         base.Start();
+        audioManager = FindAnyObjectByType<AudioManager>();
         dialogueManager = Object.FindFirstObjectByType<DialogueManager>();
         if (dialogueManager != null)
         {
@@ -71,11 +73,12 @@ public class BossIceEnemy : Enemy
     protected virtual void StartBattleDialogue()
     {
         isBattleStarted = false;
-        string[] dialogues = { "Boss: Ta sẽ tiêu diệt ngươi!", "Player: Hãy thử xem nào!" };
+        string[] dialogues = { "Boss: Ah, another fool come to challenge me—prepare to be the newest ice sculpture in my collection!", "Player: Cool story, Frosty. Too bad I brought a flamethrower." };
         dialogueManager.StartDialogue(
             dialogues,
             () =>
             {
+                audioManager.PlayFrostBossAudio();
                 isBattleStarted = true;
                 Debug.Log("dialogueManager.dialoguePanel.SetActive(false) được gọi");
                 dialogueManager.dialoguePanel.SetActive(false); // Ẩn dialoguePanel sau khi kết thúc hội thoại

@@ -36,9 +36,15 @@ public class AudioManager : MonoBehaviour
 	[SerializeField] private AudioClip enemyExplosionClip;
 	[SerializeField] private AudioClip dragonBossClip;
 	[SerializeField] private AudioClip dragonBossAttackClip;
+	[SerializeField] private AudioClip roboticBossClip;
+	[SerializeField] private AudioClip golemBossClip;
+	[SerializeField] private AudioClip pharaohBossClip;
+	[SerializeField] private AudioClip pharaohBossAttackClip;
+	[SerializeField] private AudioClip frostBossClip;
+	[SerializeField] private AudioClip frostBossAttackClip;
 
 
-	private bool isRunning = false;  // Track running state
+	public bool isRunning = false;  // Track running state
 
 	public void PlayShootSound()
 	{
@@ -144,9 +150,43 @@ public class AudioManager : MonoBehaviour
 		bossAudioSource.clip = dragonBossClip;
 		bossAudioSource.Play();
 	}
-	public void PlayDragonBossAttackAudio()
+
+	public void PlayDragonBossAttackSound()
 	{
-		enemyAudioSource.PlayOneShot(dragonBossClip);
+		enemyAudioSource.PlayOneShot(dragonBossAttackClip);
+	}
+
+	public void PlayRoboticBossAudio()
+	{
+		bossAudioSource.clip = roboticBossClip;
+		bossAudioSource.Play();
+	}
+	public void PlayGolemBossAudio()
+	{
+		bossAudioSource.clip = golemBossClip;
+		bossAudioSource.Play();
+	}
+
+	public void PlayPharaohBossAudio()
+	{
+		bossAudioSource.clip = pharaohBossClip;
+		bossAudioSource.Play();
+	}
+
+	public void PlayPharaohBossAttackSound()
+	{
+		enemyAudioSource.PlayOneShot(pharaohBossAttackClip);
+	}
+
+	public void PlayFrostBossAudio()
+	{
+		bossAudioSource.clip = frostBossClip;
+		bossAudioSource.Play();
+	}
+
+	public void PlayFrostBossAttackSound()
+	{
+		enemyAudioSource.PlayOneShot(frostBossAttackClip);
 	}
 
 	public void PlayMainMenuAudio()
