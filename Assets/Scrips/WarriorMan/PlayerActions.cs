@@ -20,6 +20,9 @@ public class PlayerActions : MonoBehaviour
     private Transform firePos;
 
     [SerializeField]
+    private Transform fireMagicPos;
+
+    [SerializeField]
     private GameObject slashEffect;
 
     private Vector3 mousePosition;

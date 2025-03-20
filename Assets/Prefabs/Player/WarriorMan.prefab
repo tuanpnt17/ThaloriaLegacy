@@ -31,6 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2394364446312360661}
+  - {fileID: 5821835215023559294}
   m_Father: {fileID: 3798280489006177610}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4426673881279977541
@@ -163,6 +164,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1246369185003892670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5821835215023559294}
+  m_Layer: 0
+  m_Name: FireMagicPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5821835215023559294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246369185003892670}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.09, y: 0.043, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6601548295134156664}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2019558036080444696
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +583,7 @@ MonoBehaviour:
   cursorRadius: 1.5
   magicPrefab: {fileID: 8820710786584714608, guid: 21716eabdc26e224a9974b536114ce6c, type: 3}
   firePos: {fileID: 2394364446312360661}
+  fireMagicPos: {fileID: 5821835215023559294}
   slashEffect: {fileID: 5419147090467619654, guid: fd2c6aae49bbe1046a7a5093fb2efde9, type: 3}
 --- !u!114 &5614191286804479551
 MonoBehaviour:
