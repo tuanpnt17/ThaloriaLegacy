@@ -144,6 +144,7 @@ public class Player : MonoBehaviour
             enemySpawner.SetActive(false);
         //animator.SetTrigger("Die");
         Debug.Log("Player is dead!");
+
         gameManager.GameOverMenu();
     }
 
