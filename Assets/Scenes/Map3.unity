@@ -52298,6 +52298,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 896078412187649832, guid: e85c8b7d2cf61f1439cf0d1394cc44da, type: 3}
   m_PrefabInstance: {fileID: 1300996267}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1485871746 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7857867433820679806, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+  m_PrefabInstance: {fileID: 1803333923}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1485871747 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4491293421242265954, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+  m_PrefabInstance: {fileID: 1803333923}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1509946983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52437,6 +52459,9 @@ MonoBehaviour:
   mapMenu: {fileID: 1803333925}
   aboutUs: {fileID: 802724839}
   leaderBoard: {fileID: 1610104919}
+  audioManager: {fileID: 1890538001}
+  playerName: {fileID: 1485871747}
+  playerScore: {fileID: 1485871746}
 --- !u!114 &1509946987
 MonoBehaviour:
   m_ObjectHideFlags: 0

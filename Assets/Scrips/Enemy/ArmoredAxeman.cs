@@ -1,4 +1,3 @@
-using UnityEditor;
 using UnityEngine;
 
 public class ArmoredAxeman : Enemy
@@ -37,6 +36,8 @@ public class ArmoredAxeman : Enemy
         {
             FlipEnemy();
         }
+        else
+            return;
 
         if (
             Mathf.Abs(player1.position.x - transform.position.x) <= attackRange

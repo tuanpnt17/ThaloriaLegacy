@@ -22,6 +22,7 @@ public class Wizard : Enemy
     private bool isDead = false;
 
     private AudioManager audioManager;
+
     protected override void Start()
     {
         base.Start();
@@ -39,6 +40,8 @@ public class Wizard : Enemy
         {
             FlipEnemy();
         }
+        else
+            return;
 
         if (Vector2.Distance(transform.position, player1.position) < attackRange)
         {

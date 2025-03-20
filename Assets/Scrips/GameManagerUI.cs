@@ -1,4 +1,5 @@
 ﻿using Assets.Scrips.TopPlayers;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,6 +26,12 @@ public class GameManagerUI : MonoBehaviour
     [SerializeField]
     protected GameObject leaderBoard;
 
+    [SerializeField]
+    protected AudioManager audioManager;
+
+    public TextMeshProUGUI playerName;
+    public TextMeshProUGUI playerScore;
+
     private void Start()
     {
         if (SceneManager.GetActiveScene().buildIndex == 3)
@@ -35,6 +42,15 @@ public class GameManagerUI : MonoBehaviour
         {
             mainMenu.SetActive(false);
         }
+
+        var currentPlayer = TopPlayersUpdate.instance.currentPlayer;
+        playerName.text = currentPlayer.name;
+        playerScore.text = ScoreManager.Instance.GetCurrentScore().ToString();
+    }
+
+    private void Update()
+    {
+        playerScore.text = ScoreManager.Instance.GetCurrentScore().ToString();
     }
 
     public void MainMenu()

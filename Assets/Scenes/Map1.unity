@@ -119,6 +119,28 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &57923090 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7857867433820679806, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+  m_PrefabInstance: {fileID: 231798848}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &57923091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4491293421242265954, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+  m_PrefabInstance: {fileID: 231798848}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &201004454
 GameObject:
   m_ObjectHideFlags: 0
@@ -19397,18 +19419,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1428279581593962443, guid: b9824e127f21b244da03ae8b00d882e7, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -183
-      objectReference: {fileID: 0}
-    - target: {fileID: 1428279581593962443, guid: b9824e127f21b244da03ae8b00d882e7, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 2397911595768825535, guid: b9824e127f21b244da03ae8b00d882e7, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4126323728289737873, guid: b9824e127f21b244da03ae8b00d882e7, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -23788,6 +23798,9 @@ MonoBehaviour:
   mapMenu: {fileID: 231798850}
   aboutUs: {fileID: 549395639}
   leaderBoard: {fileID: 1468715033}
+  audioManager: {fileID: 568219432}
+  playerName: {fileID: 57923091}
+  playerScore: {fileID: 57923090}
 --- !u!114 &1315191023
 MonoBehaviour:
   m_ObjectHideFlags: 0
