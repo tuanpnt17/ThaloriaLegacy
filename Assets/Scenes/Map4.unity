@@ -3776,6 +3776,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossIceEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5779885337414828696, guid: 633e42ad7a224424b91eefe271cb7daa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8053635390115918461, guid: 633e42ad7a224424b91eefe271cb7daa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.74

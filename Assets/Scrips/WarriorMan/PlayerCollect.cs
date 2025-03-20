@@ -5,8 +5,11 @@ public class PlayerCollect : MonoBehaviour
     [SerializeField]
     private GameObject blockPrefabs;
 
-    //[SerializeField]
-    //private GameObject hpPrefabs;
+    [SerializeField]
+    private GameObject hpPrefabs;
+
+    [SerializeField]
+    private GameObject mpPrefabs;
 
     [SerializeField]
     private float blockPeriod = 10f;
@@ -39,11 +42,17 @@ public class PlayerCollect : MonoBehaviour
         else if (collision.CompareTag("HPBonus"))
         {
             Destroy(collision.gameObject);
+            GameObject hp = Instantiate(hpPrefabs, transform.position, Quaternion.identity);
+            hp.transform.SetParent(transform);
+            Destroy(hp, 1f);
             playerScript.Heal(hpBonusAmount);
         }
         else if (collision.CompareTag("MPBonus"))
         {
             Destroy(collision.gameObject);
+            GameObject mp = Instantiate(mpPrefabs, transform.position, Quaternion.identity);
+            mp.transform.SetParent(transform);
+            Destroy(mp, 1f);
             playerScript.ChangeMp(mpBonusAmount);
         }
     }

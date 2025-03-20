@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float moveSpeed = 5f;
+    public float moveSpeed = 5f;
 
     [SerializeField]
     private float maxHp = 200f;
@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private Image mpBar;
+
+    [SerializeField]
+    private Transform barParent;
 
     [SerializeField]
     private GameManagerUI gameManager;

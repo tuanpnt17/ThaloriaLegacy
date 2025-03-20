@@ -1,9 +1,13 @@
-﻿using UnityEngine;
+﻿//using System.Diagnostics;
+using UnityEngine;
 
 public class BossIceEnemy : Enemy
 {
     [SerializeField]
     private GameObject bulletPrefabs;
+
+    [SerializeField]
+    private GameObject slowIcePrefabs;
 
     [SerializeField]
     private Transform firePoint;
@@ -37,23 +41,23 @@ public class BossIceEnemy : Enemy
         }
         else
         {
-            Debug.LogError("Không tìm thấy DialogueManager trong scene.");
+            Debug.LogError("Could not found DialogueManager in scene.");
         }
     }
 
     protected override void Update()
     {
-        Debug.Log("BossEnemy.Update() called"); // Kiểm tra xem Update() có được gọi không
-        Debug.Log("isBattleStarted: " + isBattleStarted); // Kiểm tra giá trị của isBattleStarted
+        Debug.Log("BossEnemy.Update() called");
+        Debug.Log("isBattleStarted: " + isBattleStarted);
         Debug.Log(
             "dialogueManager.dialoguePanel.activeSelf: " + dialogueManager.dialoguePanel.activeSelf
-        ); // Kiểm tra trạng thái của dialoguePanel
+        );
 
         base.Update();
 
         if (!isBattleStarted || dialogueManager.dialoguePanel.activeSelf)
         {
-            Debug.Log("Boss không di chuyển vì điều kiện chưa được đáp ứng.");
+            Debug.Log("Boss does not move because the condition has not been met.");
             return;
         }
 
@@ -71,21 +75,20 @@ public class BossIceEnemy : Enemy
     protected virtual void StartBattleDialogue()
     {
         isBattleStarted = false;
-        string[] dialogues = { "Boss: Ta sẽ tiêu diệt ngươi!", "Player: Hãy thử xem nào!" };
+        string[] dialogues = { "Boss: I will destroy you!", "Player: Let's see you try!" };
         dialogueManager.StartDialogue(
             dialogues,
             () =>
             {
                 isBattleStarted = true;
-                Debug.Log("dialogueManager.dialoguePanel.SetActive(false) được gọi");
-                dialogueManager.dialoguePanel.SetActive(false); // Ẩn dialoguePanel sau khi kết thúc hội thoại
+                dialogueManager.dialoguePanel.SetActive(false);
             }
         );
     }
 
     protected virtual void StartDeathDialogue()
     {
-        string[] dialogues = { "Boss: Ta không thể thua...!", "Player: Mọi chuyện đã kết thúc!" };
+        string[] dialogues = { "Boss: I... I can't lose...!", "Player: It's all over!" };
         dialogueManager.StartDialogue(dialogues, OnDeathDialogueEnd);
     }
 
@@ -125,28 +128,70 @@ public class BossIceEnemy : Enemy
         }
     }
 
+    private void IceShower()
+    {
+        if (player != null)
+        {
+            int icicleCount = 5; // Number of icicles to drop
+            float spreadWidth = 8f; // Horizontal spread area around the player
+            float dropHeight = 10f; // Starting height above the player
+
+            for (int i = 0; i < icicleCount; i++)
+            {
+                // Randomize horizontal position within spreadWidth centered on player
+                float xOffset = Random.Range(-spreadWidth / 2f, spreadWidth / 2f);
+                Vector3 dropPosition =
+                    player.transform.position + new Vector3(xOffset, dropHeight, 0);
+
+                // Spawn icicle
+                GameObject icicle = Instantiate(bulletPrefabs, dropPosition, Quaternion.identity);
+                EnemyBullet enemyBullet = icicle.AddComponent<EnemyBullet>();
+                enemyBullet.SetMovementDirection(Vector3.down * speedCircureBullet); // Falls downward
+
+                // Visual customization
+                icicle.transform.localScale = Vector3.one * 1.5f; // Slightly larger than normal bullets
+                icicle.GetComponent<SpriteRenderer>().color = Color.cyan; // Icy visual cue
+            }
+        }
+    }
+
     private void Heal()
     {
         currentHp = Mathf.Min(currentHp + hpValue, maxHp);
         UpdateHpBar();
     }
 
+    private void IceTrap()
+    {
+        if (player != null)
+        {
+            Vector3 trapPosition = player.transform.position;
+            GameObject trap = Instantiate(slowIcePrefabs, trapPosition, Quaternion.identity);
+            trap.AddComponent<Trap>(); // Custom script for slow effect
+            Destroy(trap, 5f); // Lasts 5 seconds
+        }
+    }
+
     protected virtual void UseSkillRandom()
     {
-        int randomSkill = Random.Range(0, 3);
+        int randomSkill = Random.Range(0, 4);
         switch (randomSkill)
         {
             case 0:
-                Debug.Log("Boss đang sử dụng skill: Bắn đạn thường");
+                Debug.Log("Boss is using skill: Normal Shoot");
                 NormalShootBullet();
                 break;
             case 1:
-                Debug.Log("Boss đang sử dụng skill: Bắn đạn hình tròn");
-                CircureBullet();
+                Debug.Log("Boss is using skill: IceShower");
+                IceShower();
                 break;
             case 2:
-                Debug.Log("Boss đang sử dụng skill: Hồi máu");
+                Debug.Log("Boss is using skill: Healing");
                 Heal();
+                break;
+            case 3:
+                Debug.Log("Boss is using skill: IceTrap");
+                IceTrap();
                 break;
         }
     }

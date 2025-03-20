@@ -16,6 +16,7 @@ public class EliteOrc : Enemy
     private float nextFireTime;
     private bool isDead = false;
     private bool isAttacking = false;
+    private float lastStayDmgTime;
 
     protected override void Start()
     {
@@ -69,9 +70,10 @@ public class EliteOrc : Enemy
     {
         if (collision.CompareTag("Player"))
         {
-            if (player != null)
+            if (player != null && Time.time - lastStayDmgTime > damageInterval)
             {
                 player.TakeDamage(stayDamage);
+                lastStayDmgTime = Time.time;
             }
         }
     }

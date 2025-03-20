@@ -15,7 +15,7 @@ public class Archery : MonoBehaviour
     private Animator animator;
     private bool isShooting = false;
 
-    void Start()
+    void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         animator = GetComponent<Animator>();
