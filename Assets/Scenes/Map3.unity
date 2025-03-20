@@ -52224,6 +52224,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 5306043812153371303, guid: e85c8b7d2cf61f1439cf0d1394cc44da, type: 3}
+      propertyPath: timeBetweenSpawns
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306043812153371303, guid: e85c8b7d2cf61f1439cf0d1394cc44da, type: 3}
+      propertyPath: enemies.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306043812153371303, guid: e85c8b7d2cf61f1439cf0d1394cc44da, type: 3}
+      propertyPath: 'enemies.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5737616550174882317, guid: 64fa33c91f103fa4f96a5ab38b315de8, type: 3}
+    - target: {fileID: 5306043812153371303, guid: e85c8b7d2cf61f1439cf0d1394cc44da, type: 3}
+      propertyPath: 'enemies.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4795924912010834748, guid: e7a66a6de4e9a5c4987968c5b53dc7fd, type: 3}
+    - target: {fileID: 5306043812153371303, guid: e85c8b7d2cf61f1439cf0d1394cc44da, type: 3}
+      propertyPath: 'enemies.Array.data[2]'
+      value: 
+      objectReference: {fileID: 943298450673174601, guid: 26a7147183d090740ab0db181085be13, type: 3}
+    - target: {fileID: 5306043812153371303, guid: e85c8b7d2cf61f1439cf0d1394cc44da, type: 3}
+      propertyPath: 'enemies.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5737616550174882317, guid: 64fa33c91f103fa4f96a5ab38b315de8, type: 3}
     - target: {fileID: 8650861255263366146, guid: e85c8b7d2cf61f1439cf0d1394cc44da, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -52413,7 +52437,6 @@ MonoBehaviour:
   mapMenu: {fileID: 1803333925}
   aboutUs: {fileID: 407622521}
   leaderBoard: {fileID: 1610104919}
-  audioManager: {fileID: 1890538001}
 --- !u!114 &1509946987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53179,6 +53202,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 629578276363307489, guid: c72e61e5107641f43be919f710b50974, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1890538001}
     - target: {fileID: 2228040635517338236, guid: c72e61e5107641f43be919f710b50974, type: 3}
       propertyPath: gameManager
       value: 
@@ -53239,6 +53266,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1509946986}
+    - target: {fileID: 9051785245689080264, guid: c72e61e5107641f43be919f710b50974, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 1890538001}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

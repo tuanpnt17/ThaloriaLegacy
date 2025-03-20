@@ -190,7 +190,7 @@ MonoBehaviour:
   speedCircureBullet: 10
   hpValue: 100
   skillCooldown: 2
-  usbPrefabs: {fileID: 937046371771716959, guid: 51ed855fe748e21428fa04781156e9e8, type: 3}
+  usbPrefabs: {fileID: 4552747486544051787, guid: 7652d7066a3993a41b600ac33f445f60, type: 3}
 --- !u!95 &6082920678744892091
 Animator:
   serializedVersion: 7

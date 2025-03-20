@@ -24,9 +24,6 @@ public class GameManagerUI : MonoBehaviour
     [SerializeField]
     protected GameObject leaderBoard;
 
-    [SerializeField]
-    protected AudioManager audioManager;
-
     private void Start()
     {
         if (SceneManager.GetActiveScene().buildIndex == 0)
@@ -140,6 +137,5 @@ public class GameManagerUI : MonoBehaviour
         aboutUs.SetActive(false);
         leaderBoard.SetActive(false);
         Time.timeScale = 1f;
-        audioManager.PlayDefaultAudio();
     }
 }

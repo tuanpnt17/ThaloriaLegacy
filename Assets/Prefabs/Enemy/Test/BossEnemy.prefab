@@ -62,7 +62,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.62, y: 6.67, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2255287391663578247}
@@ -236,6 +236,7 @@ MonoBehaviour:
   hpBar: {fileID: 4458275813918898204}
   enterDamage: 10
   stayDamage: 1
+  killScore: 10
   bulletPrefabs: {fileID: 5671634746354381783, guid: 64d8a294b360694449ff6b6e54670225, type: 3}
   firePoint: {fileID: 4817181891632006758}
   speedNormalBullet: 20
@@ -243,7 +244,7 @@ MonoBehaviour:
   hpValue: 100
   miniEnemies: {fileID: 762535728295142407, guid: 31d850bd26ffad247bceb05047cadc27, type: 3}
   skillCooldown: 2
-  usbPrefabs: {fileID: 937046371771716959, guid: 51ed855fe748e21428fa04781156e9e8, type: 3}
+  usbPrefabs: {fileID: 2620888377173619312, guid: 08010a458121e1f4eaa3ebc99f029aa4, type: 3}
 --- !u!1001 &5440698451294734814
 PrefabInstance:
   m_ObjectHideFlags: 0

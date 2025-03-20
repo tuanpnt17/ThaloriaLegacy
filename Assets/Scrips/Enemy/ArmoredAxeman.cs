@@ -2,94 +2,99 @@ using UnityEngine;
 
 public class ArmoredAxeman : Enemy
 {
-    [SerializeField]
-    private float attackRange = 1.3f;
+	[SerializeField]
+	private float attackRange = 1.3f;
 
-    [SerializeField]
-    private float attackHeightTolerance = 0.5f;
+	[SerializeField]
+	private float attackHeightTolerance = 0.5f;
 
-    [SerializeField]
-    private float attackRate = 1f;
+	[SerializeField]
+	private float attackRate = 1f;
 
-    private Animator animator;
-    private Transform player1;
-    private float nextFireTime;
-    private bool isDead = false;
-    private bool isAttacking = false;
+	private Animator animator;
+	private Transform player1;
+	private float nextFireTime;
+	private bool isDead = false;
+	private bool isAttacking = false;
 
-    protected override void Start()
-    {
-        base.Start();
-        animator = GetComponent<Animator>();
-        player1 = GameObject.FindGameObjectWithTag("Player")?.transform;
-    }
+	private AudioManager audioManager;
 
-    protected override void Update()
-    {
-        if (isAttacking || isDead)
-            return;
-        if (player != null)
-        {
-            FlipEnemy();
-        }
+	protected override void Start()
+	{
+		base.Start();
+		animator = GetComponent<Animator>();
+		audioManager = FindAnyObjectByType<AudioManager>();
+		player1 = GameObject.FindGameObjectWithTag("Player")?.transform;
+	}
 
-        if (
-            Mathf.Abs(player1.position.x - transform.position.x) <= attackRange
-            && Mathf.Abs(player1.position.y - transform.position.y) <= attackHeightTolerance
-        )
-        {
-            if (Time.time < nextFireTime)
-                return;
+	protected override void Update()
+	{
+		if (isAttacking || isDead)
+			return;
+		if (player != null)
+		{
+			FlipEnemy();
+		}
 
-            StopMoving();
-            animator.SetBool("IsWalking", false);
-            animator.Play("Attack");
-            isAttacking = true;
-            nextFireTime = Time.time + 1f / attackRate;
-        }
-        else
-        {
-            animator.SetBool("IsWalking", true);
-            MoveToPlayer();
-        }
-    }
+		if (
+			Mathf.Abs(player1.position.x - transform.position.x) <= attackRange
+			&& Mathf.Abs(player1.position.y - transform.position.y) <= attackHeightTolerance
+		)
+		{
+			if (Time.time < nextFireTime)
+				return;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            if (player != null)
-            {
-                player.TakeDamage(enterDamage);
-            }
-        }
-    }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            if (player != null)
-            {
-                player.TakeDamage(stayDamage);
-            }
-        }
-    }
+			audioManager.PlayEnemySlashSound();
+			StopMoving();
+			animator.SetBool("IsWalking", false);
+			animator.Play("Attack");
+			isAttacking = true;
+			nextFireTime = Time.time + 1f / attackRate;
+		}
+		else
+		{
+			animator.SetBool("IsWalking", true);
+			MoveToPlayer();
+		}
+	}
 
-    protected override void Die()
-    {
-        isDead = true;
-        StopMoving();
-        animator.Play("Death");
-    }
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.CompareTag("Player"))
+		{
+			if (player != null)
+			{
+				player.TakeDamage(enterDamage);
+			}
+		}
+	}
 
-    public void Destroy()
-    {
-        Destroy(gameObject);
-    }
+	private void OnTriggerStay2D(Collider2D collision)
+	{
+		if (collision.CompareTag("Player"))
+		{
+			if (player != null)
+			{
+				player.TakeDamage(stayDamage);
+			}
+		}
+	}
 
-    public void DoneAttack()
-    {
-        isAttacking = false;
-    }
+	protected override void Die()
+	{
+		isDead = true;
+		StopMoving();
+		animator.Play("Death");
+	}
+
+	public void Destroy()
+	{
+		Destroy(gameObject);
+	}
+
+	public void DoneAttack()
+	{
+		isAttacking = false;
+	}
 }

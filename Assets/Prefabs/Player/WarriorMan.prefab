@@ -403,6 +403,7 @@ MonoBehaviour:
   hpBar: {fileID: 8208878036064903137}
   mpBar: {fileID: 6857989408362648675}
   gameManager: {fileID: 0}
+  audioManager: {fileID: 3992132297746380526, guid: e868c4eeac9060646a9188c157ab3585, type: 3}
   allowFlip: 1
 --- !u!114 &2228040635517338236
 MonoBehaviour:

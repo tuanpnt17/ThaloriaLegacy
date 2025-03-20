@@ -15,8 +15,10 @@ public class Archery : MonoBehaviour
     private Animator animator;
     private bool isShooting = false;
 
-    void Start()
+    private AudioManager audioManager;
+    void Awake()
     {
+        audioManager = FindAnyObjectByType<AudioManager>();
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         animator = GetComponent<Animator>();
     }
@@ -36,6 +38,7 @@ public class Archery : MonoBehaviour
         if (arrowPrefab == null || firePoint == null)
             return;
 
+        audioManager.PlayEnemyArcherSound();
         animator.Play("Shoot");
         Invoke("LaunchArrow", 1f);
         isShooting = true;

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Video;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
@@ -22,7 +23,9 @@ public class PlayerActions : MonoBehaviour
     [SerializeField]
     private GameObject slashEffect;
 
-    private Vector3 mousePosition;
+	private AudioManager audioManager;
+
+	private Vector3 mousePosition;
     private int numberOfMeleeAtk = 3;
 
     private int currentAttackCounter = 1;
@@ -31,6 +34,7 @@ public class PlayerActions : MonoBehaviour
 
     void Start()
     {
+        audioManager = FindAnyObjectByType<AudioManager>();
         animator = GetComponent<Animator>();
         playerScript = GetComponent<Player>();
     }
@@ -40,10 +44,12 @@ public class PlayerActions : MonoBehaviour
         UpdateCursorPositionAndRotation();
         if (Input.GetMouseButtonDown(0))
         {
+            audioManager.PlaySwordSound();
             MeleeAttack(mousePosition);
         }
         if (Input.GetMouseButtonDown(1))
         {
+            audioManager.PlayPowerBallSound();
             RangeAttack(mousePosition);
         }
     }

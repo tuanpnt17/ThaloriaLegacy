@@ -17,9 +17,11 @@ public class EliteOrc : Enemy
     private bool isDead = false;
     private bool isAttacking = false;
 
+    private AudioManager audioManager;
     protected override void Start()
     {
         base.Start();
+        audioManager = FindAnyObjectByType<AudioManager>();
         animator = GetComponent<Animator>();
         player1 = GameObject.FindGameObjectWithTag("Player")?.transform;
     }
@@ -41,6 +43,7 @@ public class EliteOrc : Enemy
             if (Time.time < nextFireTime)
                 return;
 
+            audioManager.PlayEnemyAxeSound();
             StopMoving();
             animator.SetBool("IsWalking", false);
             animator.Play("Attack");

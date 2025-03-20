@@ -184,7 +184,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 7.0874453, y: 4.4428573}
+    oldSize: {x: 4.9612117, y: 3.1100001}
     newSize: {x: 4.941207, y: 3.1000001}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -236,6 +236,7 @@ MonoBehaviour:
   hpBar: {fileID: 8865962279935671372}
   enterDamage: 10
   stayDamage: 1
+  killScore: 10
   bulletPrefabs: {fileID: 4720121087887858207, guid: f7c6d0cc9be82f24c81f5deb964a2371, type: 3}
   firePoint: {fileID: 1024569882384575098}
   speedNormalBullet: 20
@@ -243,7 +244,7 @@ MonoBehaviour:
   hpValue: 100
   miniEnemies: {fileID: 9131478844317214399, guid: cc40f39f8fc891147a6f95a62838635a, type: 3}
   skillCooldown: 2
-  usbPrefabs: {fileID: 937046371771716959, guid: 51ed855fe748e21428fa04781156e9e8, type: 3}
+  usbPrefabs: {fileID: 3750028805851884335, guid: a58235510ab003c47aff1adfb2bdb8c9, type: 3}
 --- !u!1001 &960953273751883150
 PrefabInstance:
   m_ObjectHideFlags: 0

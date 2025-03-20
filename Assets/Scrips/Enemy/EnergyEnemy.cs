@@ -4,11 +4,20 @@ public class EnergyEnemy : Enemy
 {
     [SerializeField] private GameObject energyObject;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private AudioManager audioManager;
+
+	public void Awake()
+	{
+		audioManager = FindAnyObjectByType<AudioManager>();
+        audioManager.PlayEnemySound();
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            if (player != null)
+			audioManager.PlayEnemySound();
+			if (player != null)
             {
                 player.TakeDamage(enterDamage);
             }

@@ -29,10 +29,12 @@ public class BossDragonEnemy : Enemy
 
     protected bool isBattleStarted = false;
     protected DialogueManager dialogueManager;
-
+    private AudioManager audioManager;
     protected override void Start()
     {
         base.Start();
+        audioManager = FindAnyObjectByType<AudioManager>();
+        audioManager.PlayDragonBossAudio();
         dialogueManager = Object.FindFirstObjectByType<DialogueManager>();
         if (dialogueManager != null)
         {
@@ -68,6 +70,7 @@ public class BossDragonEnemy : Enemy
 
     protected override void Die()
     {
+        audioManager.StopBossAudio();
         StartDeathDialogue();
     }
 
@@ -145,11 +148,13 @@ public class BossDragonEnemy : Enemy
         switch (randomSkill)
         {
             case 0:
+                audioManager.PlayDragonBossAttackAudio();
                 Debug.Log("Boss đang sử dụng skill: Bắn đạn thường");
                 NormalShootBullet();
                 break;
             case 1:
-                Debug.Log("Boss đang sử dụng skill: Bắn đạn hình tròn");
+				audioManager.PlayDragonBossAttackAudio();
+				Debug.Log("Boss đang sử dụng skill: Bắn đạn hình tròn");
                 CircureBullet();
                 break;
             case 2:

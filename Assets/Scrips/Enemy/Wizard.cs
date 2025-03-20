@@ -21,9 +21,11 @@ public class Wizard : Enemy
     private bool isShooting = false;
     private bool isDead = false;
 
+    private AudioManager audioManager;
     protected override void Start()
     {
         base.Start();
+        audioManager = FindAnyObjectByType<AudioManager>();
         animator = GetComponent<Animator>();
         enemyTransform = transform; // Assign enemyTransform
         player1 = GameObject.FindGameObjectWithTag("Player")?.transform;
@@ -45,6 +47,7 @@ public class Wizard : Enemy
             if (magicPrefab == null || firePoint == null)
                 return;
 
+            audioManager.PlayEnemyWizardSound();
             StopMoving();
             animator.Play("Attack");
             Invoke("ShootMagic", 1f);

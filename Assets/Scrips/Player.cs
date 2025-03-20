@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameManagerUI gameManager;
 
+	private AudioManager audioManager;
+
     public bool allowFlip = true;
 
     private Rigidbody2D rb;
@@ -36,6 +38,7 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
+        audioManager = FindAnyObjectByType<AudioManager>();
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -83,11 +86,21 @@ public class Player : MonoBehaviour
         else if (allowFlip && playerInput.x > 0)
             //spriteRenderer.flipX = false;
             transform.localScale = new Vector3(1, 1, 1);
+		bool isMoving = playerInput != Vector2.zero;
+		animator.SetBool("isRun", isMoving);
 
-        animator.SetBool("isRun", playerInput != Vector2.zero);
-    }
+		if (isMoving)
+		{
+			audioManager.PlayRunningAudio();
+		}
+		else
+		{
+			audioManager.StopRunningAudio();
+		}
 
-    public void TakeDamage(float damage)
+	}
+
+	public void TakeDamage(float damage)
     {
         if (blockTakeDamage)
             return;
@@ -131,6 +144,8 @@ public class Player : MonoBehaviour
     protected virtual void Die()
     {
         //Destroy(gameObject);
+        audioManager.PlayGameOverSound();
+        audioManager.PlayPlayerDeathSound();
         isDead = true;
         rb.linearVelocity = Vector2.zero;
         GetComponent<Collider2D>().enabled = false;

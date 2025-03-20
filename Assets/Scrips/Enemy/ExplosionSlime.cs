@@ -8,9 +8,11 @@ public class ExplosionSlime : Enemy
     private Animator animator;
     private bool isDead = false;
 
+    private AudioManager audioManager;
     protected override void Start()
     {
         base.Start();
+        audioManager = FindAnyObjectByType<AudioManager>();
         animator = GetComponent<Animator>();
     }
 
@@ -30,8 +32,9 @@ public class ExplosionSlime : Enemy
     }
 
     protected override void Die()
-    {
-        isDead = true;
+	{
+		audioManager.PlayEnemyExplosionSound();
+		isDead = true;
         StopMoving();
         animator.Play("Death");
     }

@@ -653,6 +653,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1676819097191278995, guid: e868c4eeac9060646a9188c157ab3585, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: a240d0de4778e284eb04a88394805306, type: 3}
+    - target: {fileID: 1676819097191278995, guid: e868c4eeac9060646a9188c157ab3585, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a240d0de4778e284eb04a88394805306, type: 3}
     - target: {fileID: 1691791820959071011, guid: e868c4eeac9060646a9188c157ab3585, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -705,55 +713,14 @@ PrefabInstance:
     - {fileID: 7788862842246519786, guid: e868c4eeac9060646a9188c157ab3585, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7522073400851828483, guid: e868c4eeac9060646a9188c157ab3585, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1796143337}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e868c4eeac9060646a9188c157ab3585, type: 3}
---- !u!1 &1796143333 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7522073400851828483, guid: e868c4eeac9060646a9188c157ab3585, type: 3}
-  m_PrefabInstance: {fileID: 1796143332}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1796143334 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 7448637908876667295, guid: e868c4eeac9060646a9188c157ab3585, type: 3}
-  m_PrefabInstance: {fileID: 1796143332}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1796143335 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1676819097191278995, guid: e868c4eeac9060646a9188c157ab3585, type: 3}
-  m_PrefabInstance: {fileID: 1796143332}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1796143336 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 6865175874170224810, guid: e868c4eeac9060646a9188c157ab3585, type: 3}
-  m_PrefabInstance: {fileID: 1796143332}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1796143337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1796143333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51b6f834eaa655a4199f5c2863ecb569, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectAudioSource: {fileID: 1796143336}
-  defaultAudioSource: {fileID: 1796143335}
-  bossAudioSource: {fileID: 1796143334}
-  shootClip: {fileID: 8300000, guid: 1374bf7df37aeef468d29b6820350410, type: 3}
-  reLoadClip: {fileID: 8300000, guid: 518de7e4009081a4b9cafb103b9bd819, type: 3}
-  enegyClip: {fileID: 8300000, guid: fcd2db8c7f8c54d4bbaac2b07444cf4d, type: 3}
 --- !u!114 &1796143340 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3992132297746380526, guid: e868c4eeac9060646a9188c157ab3585, type: 3}
   m_PrefabInstance: {fileID: 1796143332}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1796143333}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51b6f834eaa655a4199f5c2863ecb569, type: 3}
@@ -909,7 +876,6 @@ MonoBehaviour:
   mapMenu: {fileID: 2435237470824005011}
   aboutUs: {fileID: 902044203}
   leaderBoard: {fileID: 1695334377}
-  audioManager: {fileID: 1796143340}
 --- !u!1001 &2078850173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1116,7 +1082,7 @@ PrefabInstance:
     - target: {fileID: 6288185827899643733, guid: b931044414cb66c43bc00c8600230479, type: 3}
       propertyPath: audioManager
       value: 
-      objectReference: {fileID: 1796143337}
+      objectReference: {fileID: 0}
     - target: {fileID: 9079633108384694974, guid: b931044414cb66c43bc00c8600230479, type: 3}
       propertyPath: maxHp
       value: 1000
@@ -1385,7 +1351,7 @@ PrefabInstance:
     - target: {fileID: 1765919555882086701, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
       propertyPath: audioManager
       value: 
-      objectReference: {fileID: 1796143337}
+      objectReference: {fileID: 0}
     - target: {fileID: 1765919555882086701, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
       propertyPath: enemySpawner
       value: 

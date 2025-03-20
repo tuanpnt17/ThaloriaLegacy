@@ -27,9 +27,12 @@ public class Enemy : MonoBehaviour
     private EnemySpawner spawnerInstance;
     private float lastTime;
 
-    protected virtual void Start()
-    {
-        player = FindAnyObjectByType<Player>();
+	private AudioManager audioManager;
+
+	protected virtual void Start()
+	{
+		audioManager = FindAnyObjectByType<AudioManager>();
+		player = FindAnyObjectByType<Player>();
         if (player == null)
         {
             Debug.LogError("Không tìm thấy Player trong scene.");
@@ -95,6 +98,7 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Die()
     {
+        audioManager.PlayEnemyDeathSound();
         Destroy(gameObject);
     }
 
@@ -130,7 +134,7 @@ public class Enemy : MonoBehaviour
                 {
                     return;
                 }
-                playerScript.TakeDamage(stayDamage * Time.deltaTime); // Player mất máu liên tục
+				playerScript.TakeDamage(stayDamage * Time.deltaTime); // Player mất máu liên tục
                 lastTime = Time.time;
             }
         }
@@ -138,7 +142,7 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        ScoreManager.Instance.UpdateKillScore(transform.position, killScore);
+        //ScoreManager.Instance.UpdateKillScore(transform.position, killScore);
         if (spawnerInstance != null)
             spawnerInstance.EnemyDie(transform.position);
     }

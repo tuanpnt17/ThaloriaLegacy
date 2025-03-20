@@ -3382,6 +3382,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 5306043812153371303, guid: e85c8b7d2cf61f1439cf0d1394cc44da, type: 3}
+      propertyPath: timeBetweenSpawns
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306043812153371303, guid: e85c8b7d2cf61f1439cf0d1394cc44da, type: 3}
+      propertyPath: enemies.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5306043812153371303, guid: e85c8b7d2cf61f1439cf0d1394cc44da, type: 3}
+      propertyPath: 'enemies.Array.data[0]'
+      value: 
+      objectReference: {fileID: 5737616550174882317, guid: 64fa33c91f103fa4f96a5ab38b315de8, type: 3}
+    - target: {fileID: 5306043812153371303, guid: e85c8b7d2cf61f1439cf0d1394cc44da, type: 3}
+      propertyPath: 'enemies.Array.data[1]'
+      value: 
+      objectReference: {fileID: 3825018754112184913, guid: 5df7096aafffd414ab77ea5271397273, type: 3}
+    - target: {fileID: 5306043812153371303, guid: e85c8b7d2cf61f1439cf0d1394cc44da, type: 3}
+      propertyPath: 'enemies.Array.data[2]'
+      value: 
+      objectReference: {fileID: 3825018754112184913, guid: 5df7096aafffd414ab77ea5271397273, type: 3}
     - target: {fileID: 8650861255263366146, guid: e85c8b7d2cf61f1439cf0d1394cc44da, type: 3}
       propertyPath: m_LocalPosition.x
       value: -17.55
@@ -64093,6 +64113,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2246269875512185191, guid: e868c4eeac9060646a9188c157ab3585, type: 3}
+      propertyPath: Priority
+      value: 174
+      objectReference: {fileID: 0}
     - target: {fileID: 7522073400851828483, guid: e868c4eeac9060646a9188c157ab3585, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -64241,7 +64265,6 @@ MonoBehaviour:
   mapMenu: {fileID: 2110525880}
   aboutUs: {fileID: 1225062487}
   leaderBoard: {fileID: 437952385}
-  audioManager: {fileID: 1426884812}
 --- !u!114 &1760587430
 MonoBehaviour:
   m_ObjectHideFlags: 0

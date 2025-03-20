@@ -205,13 +205,14 @@ MonoBehaviour:
   hpBar: {fileID: 6209608189667036298}
   enterDamage: 10
   stayDamage: 1
+  killScore: 10
   bulletPrefabs: {fileID: 6504528524721687172, guid: 20ca07caa91bec1438858b9f78c11472, type: 3}
   firePoint: {fileID: 8700809153269372468}
   speedNormalBullet: 20
   speedCircureBullet: 10
   hpValue: 100
   skillCooldown: 2
-  usbPrefabs: {fileID: 937046371771716959, guid: 51ed855fe748e21428fa04781156e9e8, type: 3}
+  usbPrefabs: {fileID: 4032613304902366758, guid: 2fdbaf05640df4845ab69ff7f65039c1, type: 3}
 --- !u!1 &1128999582383871068
 GameObject:
   m_ObjectHideFlags: 0
