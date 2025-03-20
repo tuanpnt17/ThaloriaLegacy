@@ -64234,7 +64234,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 2110525883}
   introduct: {fileID: 212585049}
   mapMenu: {fileID: 2110525880}
-  aboutUs: {fileID: 0}
+  aboutUs: {fileID: 2110525879}
   leaderBoard: {fileID: 437952385}
   audioManager: {fileID: 1426884812}
 --- !u!114 &1760587430

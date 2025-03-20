@@ -46,7 +46,21 @@ public class GameUI : MonoBehaviour
 
     public void MainMenu()
     {
+        GameObject[] enemies2 = GameObject.FindGameObjectsWithTag("FloatingParent");
+
+        foreach (GameObject enemy in enemies2)
+        {
+            Debug.Log("Found enemy: " + enemy.name);
+            Destroy(enemy);
+        }
         SceneManager.LoadScene("MenuScene");
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("FloatingParent");
+
+        foreach (GameObject enemy in enemies)
+        {
+            Debug.Log("Found enemy: " + enemy.name);
+            Destroy(enemy);
+        }
         mainMenu.SetActive(true);
         mapMenu.SetActive(false);
     }
