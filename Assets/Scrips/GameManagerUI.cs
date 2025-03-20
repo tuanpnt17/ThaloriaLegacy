@@ -113,6 +113,7 @@ public class GameManagerUI : MonoBehaviour
         aboutUs.SetActive(false);
         leaderBoard.SetActive(true);
         Time.timeScale = 0f;
+        TopPlayersGet.instance.GetTopPlayers();
     }
 
     public void AboutUs()

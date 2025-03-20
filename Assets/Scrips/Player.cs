@@ -133,13 +133,14 @@ public class Player : MonoBehaviour
 
     protected virtual void Die()
     {
-        //Destroy(gameObject);
+        Destroy(gameObject);
         isDead = true;
         rb.linearVelocity = Vector2.zero;
         GetComponent<Collider2D>().enabled = false;
         if (enemySpawner != null)
             enemySpawner.SetActive(false);
-        animator.SetTrigger("Die");
+        //animator.SetTrigger("Die");
+        Debug.Log("Player is dead!");
         gameManager.GameOverMenu();
     }
 

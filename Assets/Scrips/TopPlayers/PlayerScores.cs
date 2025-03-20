@@ -39,6 +39,7 @@ namespace Assets.Scrips.TopPlayers
                 return;
             }
 
+            exist.lastScoreInGame = newPlayerScore.lastScoreInGame;
             //if (exist.score > newPlayerScore.score)
             //    return;
 

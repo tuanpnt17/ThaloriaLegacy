@@ -36,7 +36,6 @@ namespace Assets.Scrips.TopPlayers
             }
 
             TopPlayers.instance.SetTopPlayers(jsonStringResponse);
-            Debug.Log("Get top players:: " + jsonStringResponse);
             this.UpdateTopPlayers();
         }
 
