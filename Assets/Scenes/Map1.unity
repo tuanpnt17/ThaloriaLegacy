@@ -3007,6 +3007,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameUI, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 8640782699053728952, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1294111092068624274, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
@@ -3036,11 +3040,6 @@ GameObject:
 --- !u!1 &231798853 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2079328400059501087, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
-  m_PrefabInstance: {fileID: 231798848}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &231798854 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6782808068189609773, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
   m_PrefabInstance: {fileID: 231798848}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &231798855 stripped
@@ -19237,6 +19236,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!1 &549395639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7685027312678196550, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+  m_PrefabInstance: {fileID: 231798848}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &568219432 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3992132297746380526, guid: e868c4eeac9060646a9188c157ab3585, type: 3}
@@ -19420,6 +19424,14 @@ PrefabInstance:
     - target: {fileID: 4483497255876967053, guid: b9824e127f21b244da03ae8b00d882e7, type: 3}
       propertyPath: m_RenderMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483497255876967053, guid: b9824e127f21b244da03ae8b00d882e7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483497255876967053, guid: b9824e127f21b244da03ae8b00d882e7, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1928293137
       objectReference: {fileID: 0}
     - target: {fileID: 7085621471905273606, guid: b9824e127f21b244da03ae8b00d882e7, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -23774,7 +23786,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 231798852}
   introduct: {fileID: 231798855}
   mapMenu: {fileID: 231798850}
-  aboutUs: {fileID: 231798854}
+  aboutUs: {fileID: 549395639}
   leaderBoard: {fileID: 1468715033}
 --- !u!114 &1315191023
 MonoBehaviour:

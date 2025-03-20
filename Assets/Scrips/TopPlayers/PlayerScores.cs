@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using Newtonsoft.Json;
@@ -11,62 +12,69 @@ namespace Assets.Scrips.TopPlayers
     public class PlayerScores
     {
         [SerializeField]
-        public List<PlayerScore> playerScores = new List<PlayerScore>();
-        public string oldMd5 = "old";
-        public string newMd5 = "new";
+        public List<PlayerScore> PlayerScoresList = new List<PlayerScore>();
+        public string OldMd5 = "old";
+        public string NewMd5 = "new";
+
+        //public virtual void NewPlayerScore(string name, string pass, int score)
+        //{
+        //    var newPlayer = new PlayerScore
+        //    {
+        //        name = name,
+        //        pass = pass,
+        //        score = score,
+        //    };
+        //    this.AddPlayer(newPlayer);
+        //}
 
         public virtual void AddPlayer(PlayerScore newPlayerScore)
         {
-            PlayerScore exist = null;
-            foreach (PlayerScore playerScore in this.playerScores)
-            {
-                if (playerScore.name != newPlayerScore.name)
-                    continue;
-                exist = playerScore;
-                break;
-            }
+            var exist = this.PlayerScoresList.FirstOrDefault(playerScore =>
+                playerScore.name == newPlayerScore.name
+            );
 
             if (exist == null)
             {
-                this.playerScores.Add(newPlayerScore);
+                this.PlayerScoresList.Add(newPlayerScore);
                 return;
             }
 
-            if (exist.score > newPlayerScore.score)
-                return;
+            exist.lastScoreInGame = newPlayerScore.lastScoreInGame;
+            //if (exist.score > newPlayerScore.score)
+            //    return;
 
             exist.score = newPlayerScore.score;
         }
 
-        public virtual void TopUpdate()
+        public virtual void UpdatePlayers()
         {
-            this.playerScores.Sort((p1, p2) => p1.score.CompareTo(p2.score));
-            this.playerScores.Reverse();
+            this.PlayerScoresList.Sort((p1, p2) => p1.score.CompareTo(p2.score));
+            this.PlayerScoresList.Reverse();
 
-            while (this.playerScores.Count > 5)
-            {
-                this.playerScores.RemoveAt(5);
-            }
+            //while (this.PlayerScoresList.Count > 5)
+            //{
+            //    this.PlayerScoresList.RemoveAt(5);
+            //}
 
-            string json = JsonConvert.SerializeObject(this.playerScores);
-            //Debug.Log(json);
-            this.newMd5 = this.MD5Hash(json);
+            var json = JsonConvert.SerializeObject(this.PlayerScoresList);
+            Debug.Log("Player Score list before update::" + json);
+            this.NewMd5 = this.Md5Hash(json);
         }
 
         public virtual bool HasUpdate()
         {
-            return this.oldMd5 != this.newMd5;
+            return this.OldMd5 != this.NewMd5;
         }
 
-        protected string MD5Hash(string input)
+        protected string Md5Hash(string input)
         {
-            StringBuilder hash = new StringBuilder();
-            MD5CryptoServiceProvider md5provider = new MD5CryptoServiceProvider();
-            byte[] bytes = md5provider.ComputeHash(new UTF8Encoding().GetBytes(input));
+            var hash = new StringBuilder();
+            using var md5Provider = new MD5CryptoServiceProvider();
+            var bytes = md5Provider.ComputeHash(new UTF8Encoding().GetBytes(input));
 
-            for (int i = 0; i < bytes.Length; i++)
+            foreach (var t in bytes)
             {
-                hash.Append(bytes[i].ToString("x2"));
+                hash.Append(t.ToString("x2"));
             }
             return hash.ToString();
         }

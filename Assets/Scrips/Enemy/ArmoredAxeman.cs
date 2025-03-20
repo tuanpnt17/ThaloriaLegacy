@@ -1,100 +1,102 @@
+using UnityEditor;
 using UnityEngine;
 
 public class ArmoredAxeman : Enemy
 {
-	[SerializeField]
-	private float attackRange = 1.3f;
+    [SerializeField]
+    private float attackRange = 1.3f;
 
-	[SerializeField]
-	private float attackHeightTolerance = 0.5f;
+    [SerializeField]
+    private float attackHeightTolerance = 0.5f;
 
-	[SerializeField]
-	private float attackRate = 1f;
+    [SerializeField]
+    private float attackRate = 1f;
 
-	private Animator animator;
-	private Transform player1;
-	private float nextFireTime;
-	private bool isDead = false;
-	private bool isAttacking = false;
+    private Animator animator;
+    private Transform player1;
+    private float nextFireTime;
+    private bool isDead = false;
+    private bool isAttacking = false;
+    private float lastStayDmgTime;
 
-	private AudioManager audioManager;
+    private AudioManager audioManager;
 
-	protected override void Start()
-	{
-		base.Start();
-		animator = GetComponent<Animator>();
-		audioManager = FindAnyObjectByType<AudioManager>();
-		player1 = GameObject.FindGameObjectWithTag("Player")?.transform;
-	}
+    protected override void Start()
+    {
+        base.Start();
+        animator = GetComponent<Animator>();
+        audioManager = FindAnyObjectByType<AudioManager>();
+        player1 = GameObject.FindGameObjectWithTag("Player")?.transform;
+    }
 
-	protected override void Update()
-	{
-		if (isAttacking || isDead)
-			return;
-		if (player != null)
-		{
-			FlipEnemy();
-		}
+    protected override void Update()
+    {
+        if (isAttacking || isDead)
+            return;
+        if (player != null)
+        {
+            FlipEnemy();
+        }
 
-		if (
-			Mathf.Abs(player1.position.x - transform.position.x) <= attackRange
-			&& Mathf.Abs(player1.position.y - transform.position.y) <= attackHeightTolerance
-		)
-		{
-			if (Time.time < nextFireTime)
-				return;
+        if (
+            Mathf.Abs(player1.position.x - transform.position.x) <= attackRange
+            && Mathf.Abs(player1.position.y - transform.position.y) <= attackHeightTolerance
+        )
+        {
+            if (Time.time < nextFireTime)
+                return;
 
+            audioManager.PlayEnemySlashSound();
+            StopMoving();
+            animator.SetBool("IsWalking", false);
+            animator.Play("Attack");
+            isAttacking = true;
+            nextFireTime = Time.time + 1f / attackRate;
+        }
+        else
+        {
+            animator.SetBool("IsWalking", true);
+            MoveToPlayer();
+        }
+    }
 
-			audioManager.PlayEnemySlashSound();
-			StopMoving();
-			animator.SetBool("IsWalking", false);
-			animator.Play("Attack");
-			isAttacking = true;
-			nextFireTime = Time.time + 1f / attackRate;
-		}
-		else
-		{
-			animator.SetBool("IsWalking", true);
-			MoveToPlayer();
-		}
-	}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (player != null)
+            {
+                player.TakeDamage(enterDamage);
+            }
+        }
+    }
 
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if (collision.CompareTag("Player"))
-		{
-			if (player != null)
-			{
-				player.TakeDamage(enterDamage);
-			}
-		}
-	}
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (player != null && Time.time - lastStayDmgTime > damageInterval)
+            {
+                player.TakeDamage(stayDamage);
+                lastStayDmgTime = Time.time;
+            }
+        }
+    }
 
-	private void OnTriggerStay2D(Collider2D collision)
-	{
-		if (collision.CompareTag("Player"))
-		{
-			if (player != null)
-			{
-				player.TakeDamage(stayDamage);
-			}
-		}
-	}
+    protected override void Die()
+    {
+        isDead = true;
+        StopMoving();
+        animator.Play("Death");
+    }
 
-	protected override void Die()
-	{
-		isDead = true;
-		StopMoving();
-		animator.Play("Death");
-	}
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
 
-	public void Destroy()
-	{
-		Destroy(gameObject);
-	}
-
-	public void DoneAttack()
-	{
-		isAttacking = false;
-	}
+    public void DoneAttack()
+    {
+        isAttacking = false;
+    }
 }

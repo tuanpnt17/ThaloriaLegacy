@@ -6,6 +6,9 @@ public class BossDragonEnemy : Enemy
     private GameObject bulletPrefabs;
 
     [SerializeField]
+    private GameObject healPrefabs;
+
+    [SerializeField]
     private Transform firePoint;
 
     [SerializeField]
@@ -27,9 +30,18 @@ public class BossDragonEnemy : Enemy
     [SerializeField]
     private GameObject usbPrefabs;
 
+    [SerializeField]
+    float breathDuration = 3f; // How long the dragon breathes (adjustable)
+
+    [SerializeField]
+    float fireRate = 0.5f; // Time between each bullet (adjustable)
+
     protected bool isBattleStarted = false;
     protected DialogueManager dialogueManager;
+    private bool isBreathing = false;
+
     private AudioManager audioManager;
+
     protected override void Start()
     {
         base.Start();
@@ -41,27 +53,27 @@ public class BossDragonEnemy : Enemy
         }
         else
         {
-            Debug.LogError("Không tìm thấy DialogueManager trong scene.");
+            Debug.LogError("Could not found DialogueManager in scene.");
         }
     }
 
     protected override void Update()
     {
-        Debug.Log("BossEnemy.Update() called"); // Kiểm tra xem Update() có được gọi không
-        Debug.Log("isBattleStarted: " + isBattleStarted); // Kiểm tra giá trị của isBattleStarted
+        Debug.Log("BossEnemy.Update() called");
+        Debug.Log("isBattleStarted: " + isBattleStarted);
         Debug.Log(
             "dialogueManager.dialoguePanel.activeSelf: " + dialogueManager.dialoguePanel.activeSelf
-        ); // Kiểm tra trạng thái của dialoguePanel
+        );
 
         base.Update();
 
         if (!isBattleStarted || dialogueManager.dialoguePanel.activeSelf)
         {
-            Debug.Log("Boss không di chuyển vì điều kiện chưa được đáp ứng.");
+            Debug.Log("Boss does not move because the condition has not been met.");
             return;
         }
 
-        if (Time.time >= nextSkillTime)
+        if (Time.time >= nextSkillTime && !isBreathing)
         {
             UseSkill();
         }
@@ -76,13 +88,17 @@ public class BossDragonEnemy : Enemy
     protected virtual void StartBattleDialogue()
     {
         isBattleStarted = false;
-        string[] dialogues = { "Boss: Mortal, your bones will turn to ash like all who defy me.", "Player: I’ve faced kings and gods, Drakthor. Today is the day the world gets the peace it deserves!" };
+        string[] dialogues =
+        {
+            "Boss: Mortal, your bones will turn to ash like all who defy me.",
+            "Player: I’ve faced kings and gods, Drakthor. Today is the day the world gets the peace it deserves!",
+        };
         dialogueManager.StartDialogue(
             dialogues,
             () =>
             {
-				audioManager.PlayDragonBossAudio();
-				isBattleStarted = true;
+                audioManager.PlayDragonBossAudio();
+                isBattleStarted = true;
                 Debug.Log("dialogueManager.dialoguePanel.SetActive(false) được gọi");
                 dialogueManager.dialoguePanel.SetActive(false); // Ẩn dialoguePanel sau khi kết thúc hội thoại
             }
@@ -91,14 +107,19 @@ public class BossDragonEnemy : Enemy
 
     protected virtual void StartDeathDialogue()
     {
-        string[] dialogues = { "Boss: Ta không thể thua...!", "Player: Mọi chuyện đã kết thúc!" };
+        string[] dialogues = { "Boss: I... I can't lose...!", "Player: It's all over!" };
         dialogueManager.StartDialogue(dialogues, OnDeathDialogueEnd);
     }
 
     private void OnDeathDialogueEnd()
     {
         Instantiate(usbPrefabs, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
     }
 
     private void NormalShootBullet()
@@ -139,12 +160,51 @@ public class BossDragonEnemy : Enemy
     private void Heal()
     {
         currentHp = Mathf.Min(currentHp + hpValue, maxHp);
+        GameObject heal = Instantiate(healPrefabs, transform.position, Quaternion.identity);
+        heal.transform.SetParent(transform);
+        heal.transform.localScale = new Vector3(2, 2, 1);
+        Destroy(heal, 1f);
         UpdateHpBar();
+    }
+
+    private void DragonBreath()
+    {
+        StartCoroutine(DragonBreathCoroutine());
+    }
+
+    private System.Collections.IEnumerator DragonBreathCoroutine()
+    {
+        float elapsed = 0f;
+        isBreathing = true;
+        while (elapsed < breathDuration)
+        {
+            if (player != null) // Ensure player exists
+            {
+                // Calculate direction toward the player at this moment
+                Vector3 directionToPlayer = (
+                    player.transform.position - firePoint.position
+                ).normalized;
+
+                // Spawn bullet and set its direction
+                GameObject bullet = Instantiate(
+                    bulletPrefabs,
+                    firePoint.position,
+                    Quaternion.identity
+                );
+                EnemyBullet enemyBullet = bullet.AddComponent<EnemyBullet>();
+                enemyBullet.SetMovementDirection(directionToPlayer * speedCircureBullet);
+                //bullet.GetComponent<SpriteRenderer>().color = Color.green; // Visual cue for dragon breath
+            }
+
+            elapsed += fireRate; // Increment elapsed time by fire rate
+            yield return new WaitForSeconds(fireRate); // Wait before firing next bullet
+        }
+        isBreathing = false;
     }
 
     protected virtual void UseSkillRandom()
     {
-        int randomSkill = Random.Range(0, 4);
+        int randomSkill = Random.Range(0, 5);
         switch (randomSkill)
         {
             case 0:
@@ -153,17 +213,21 @@ public class BossDragonEnemy : Enemy
                 NormalShootBullet();
                 break;
             case 1:
-				audioManager.PlayDragonBossAttackSound();
-				Debug.Log("Boss đang sử dụng skill: Bắn đạn hình tròn");
+                audioManager.PlayDragonBossAttackSound();
+                Debug.Log("Boss đang sử dụng skill: Bắn đạn hình tròn");
                 CircureBullet();
                 break;
             case 2:
-                Debug.Log("Boss đang sử dụng skill: Hồi máu");
+                Debug.Log("Boss is using skill: Healing");
                 Heal();
                 break;
             case 3:
-                Debug.Log("Boss đang sử dụng skill: Tạo quái nhỏ");
+                Debug.Log("Boss is using skill: Summoning Minions");
                 CreateMiniEnemy();
+                break;
+            case 4:
+                Debug.Log("Boss is using skill: Dragon Breath");
+                DragonBreath();
                 break;
         }
     }

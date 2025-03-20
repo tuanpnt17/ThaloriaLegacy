@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,34 +30,34 @@ public class GameManager : MonoBehaviour
         currentEnergy = 0;
         UpdateEnergyBar();
         boss.SetActive(false);
-		string sceneName = SceneManager.GetActiveScene().name;
+        string sceneName = SceneManager.GetActiveScene().name;
         Debug.Log(sceneName);
-		audioManager.PlayMap2Audio();
-		switch (sceneName)
+        audioManager.PlayMap2Audio();
+        switch (sceneName)
         {
             case "MenuScene":
                 audioManager.PlayMainMenuAudio();
                 break;
             case "Map1":
                 Debug.Log("Hello");
-				audioManager.PlayMap1Audio();
-				break;
-			case "Map2":
-				audioManager.PlayMap2Audio();
-				break;
-			case "Map3":
-				audioManager.PlayMap3Audio();
-				break;
-			case "Map4":
-				audioManager.PlayMap4Audio();
-				break;
-			case "MapEnd":
-				audioManager.PlayMapEndAudio();
-				break;
+                audioManager.PlayMap1Audio();
+                break;
+            case "Map2":
+                audioManager.PlayMap2Audio();
+                break;
+            case "Map3":
+                audioManager.PlayMap3Audio();
+                break;
+            case "Map4":
+                audioManager.PlayMap4Audio();
+                break;
+            case "MapEnd":
+                audioManager.PlayMapEndAudio();
+                break;
         }
-	}
+    }
 
-	public void AddEnergy()
+    public void AddEnergy()
     {
         if (bossCalled)
             return;
@@ -75,7 +74,6 @@ public class GameManager : MonoBehaviour
         bossCalled = true;
         boss.SetActive(true);
         enemySpawner.SetActive(false);
-        gameUI.SetActive(false);
     }
 
     private void UpdateEnergyBar()

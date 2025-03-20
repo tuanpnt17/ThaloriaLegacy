@@ -16,6 +16,7 @@ public class Archery : MonoBehaviour
     private bool isShooting = false;
 
     private AudioManager audioManager;
+
     void Awake()
     {
         audioManager = FindAnyObjectByType<AudioManager>();

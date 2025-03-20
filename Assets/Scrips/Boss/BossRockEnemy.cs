@@ -28,6 +28,7 @@ public class BossRockEnemy : Enemy
     protected DialogueManager dialogueManager;
 
     private AudioManager audioManager;
+
     protected override void Start()
     {
         base.Start();
@@ -40,23 +41,23 @@ public class BossRockEnemy : Enemy
         }
         else
         {
-            Debug.LogError("Không tìm thấy DialogueManager trong scene.");
+            Debug.LogError("Could not found DialogueManager in scene.");
         }
     }
 
     protected override void Update()
     {
-        Debug.Log("BossEnemy.Update() called"); // Kiểm tra xem Update() có được gọi không
-        Debug.Log("isBattleStarted: " + isBattleStarted); // Kiểm tra giá trị của isBattleStarted
+        Debug.Log("BossEnemy.Update() called");
+        Debug.Log("isBattleStarted: " + isBattleStarted);
         Debug.Log(
             "dialogueManager.dialoguePanel.activeSelf: " + dialogueManager.dialoguePanel.activeSelf
-        ); // Kiểm tra trạng thái của dialoguePanel
+        );
 
         base.Update();
 
         if (!isBattleStarted || dialogueManager.dialoguePanel.activeSelf)
         {
-            Debug.Log("Boss không di chuyển vì điều kiện chưa được đáp ứng.");
+            Debug.Log("Boss does not move because the condition has not been met.");
             return;
         }
 
@@ -74,29 +75,37 @@ public class BossRockEnemy : Enemy
     protected virtual void StartBattleDialogue()
     {
         isBattleStarted = false;
-        string[] dialogues = { "Boss: You don't wanna wake the stones up.", "Player: The rocks might wake up and... do absolutely nothing!" };
+        string[] dialogues =
+        {
+            "Boss: You don't wanna wake the stones up.",
+            "Player: The rocks might wake up and... do absolutely nothing!",
+        };
         dialogueManager.StartDialogue(
             dialogues,
             () =>
             {
                 audioManager.PlayGolemBossAudio();
                 isBattleStarted = true;
-                Debug.Log("dialogueManager.dialoguePanel.SetActive(false) được gọi");
-                dialogueManager.dialoguePanel.SetActive(false); // Ẩn dialoguePanel sau khi kết thúc hội thoại
+                dialogueManager.dialoguePanel.SetActive(false);
             }
         );
     }
 
     protected virtual void StartDeathDialogue()
     {
-        string[] dialogues = { "Boss: Ta không thể thua...!", "Player: Mọi chuyện đã kết thúc!" };
+        string[] dialogues = { "Boss: I... I can't lose...!", "Player: It's all over!" };
         dialogueManager.StartDialogue(dialogues, OnDeathDialogueEnd);
     }
 
     private void OnDeathDialogueEnd()
     {
         Instantiate(usbPrefabs, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
     }
 
     private void NormalShootBullet()
@@ -144,26 +153,22 @@ public class BossRockEnemy : Enemy
             EnemyBullet enemyBullet = boulder.AddComponent<EnemyBullet>();
             enemyBullet.SetMovementDirection(Vector3.down * speedCircureBullet); // Falls downward
             boulder.transform.localScale = Vector3.one * 2f; // Larger size
-            //boulder.GetComponent<SpriteRenderer>().color = Color.gray; // Visual cue
+            boulder.GetComponent<SpriteRenderer>().color = Color.gray; // Visual cue
         }
     }
 
     protected virtual void UseSkillRandom()
     {
-        int randomSkill = Random.Range(0, 3);
+        int randomSkill = Random.Range(0, 2);
         switch (randomSkill)
         {
             case 0:
-                Debug.Log("Boss đang sử dụng skill: Bắn đạn thường");
+                Debug.Log("Boss is using skill: Normal Shoot");
                 NormalShootBullet();
                 break;
             case 1:
-                Debug.Log("Boss đang sử dụng skill: Bắn đạn hình tròn");
+                Debug.Log("Boss is using skill: Rock Smash");
                 RockSmash();
-                break;
-            case 2:
-                Debug.Log("Boss đang sử dụng skill: Hồi máu");
-                Heal();
                 break;
         }
     }

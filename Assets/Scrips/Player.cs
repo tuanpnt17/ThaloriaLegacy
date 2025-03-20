@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private float moveSpeed = 5f;
+    public float moveSpeed = 5f;
 
     [SerializeField]
     private float maxHp = 200f;
@@ -19,9 +19,15 @@ public class Player : MonoBehaviour
     private Image mpBar;
 
     [SerializeField]
+    private Transform barParent;
+
+    [SerializeField]
     private GameManagerUI gameManager;
 
-	private AudioManager audioManager;
+    //[SerializeField]
+    //private GameObject enemySpawner;
+
+    private AudioManager audioManager;
 
     public bool allowFlip = true;
 
@@ -86,21 +92,20 @@ public class Player : MonoBehaviour
         else if (allowFlip && playerInput.x > 0)
             //spriteRenderer.flipX = false;
             transform.localScale = new Vector3(1, 1, 1);
-		bool isMoving = playerInput != Vector2.zero;
-		animator.SetBool("isRun", isMoving);
+        bool isMoving = playerInput != Vector2.zero;
+        animator.SetBool("isRun", isMoving);
 
-		if (isMoving)
-		{
-			audioManager.PlayRunningAudio();
-		}
-		else
-		{
-			audioManager.StopRunningAudio();
-		}
+        if (isMoving)
+        {
+            audioManager.PlayRunningAudio();
+        }
+        else
+        {
+            audioManager.StopRunningAudio();
+        }
+    }
 
-	}
-
-	public void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         if (blockTakeDamage)
             return;
@@ -120,8 +125,8 @@ public class Player : MonoBehaviour
 
     public void Destroy()
     {
-        Destroy(gameObject);
-        Invoke("LoadGameOver", 1f);
+        //Destroy(gameObject);
+        //Invoke("LoadGameOver", 1f);
     }
 
     public void ChangeMp(float mp)
@@ -143,13 +148,18 @@ public class Player : MonoBehaviour
 
     protected virtual void Die()
     {
-        //Destroy(gameObject);
+        Destroy(gameObject);
         audioManager.PlayGameOverSound();
         audioManager.PlayPlayerDeathSound();
         isDead = true;
         rb.linearVelocity = Vector2.zero;
         GetComponent<Collider2D>().enabled = false;
-        animator.SetTrigger("Die");
+        //if (enemySpawner != null)
+        //    enemySpawner.SetActive(false);
+        //animator.SetTrigger("Die");
+        Debug.Log("Player is dead!");
+
+        gameManager.GameOverMenu();
     }
 
     // For checking collision

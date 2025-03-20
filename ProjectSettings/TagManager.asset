@@ -13,6 +13,7 @@ TagManager:
   - Shield
   - HPBonus
   - MPBonus
+  - FloatingParent
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - River
   - Bridge
   - Rock
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -104,14 +105,14 @@ TagManager:
   - name: Explosion
     uniqueID: 1348944239
     locked: 0
-  - name: GameUI
-    uniqueID: 1928293137
-    locked: 0
   - name: EnemyBullet
     uniqueID: 1355188849
     locked: 0
   - name: GunEnemy
     uniqueID: 3671969155
+    locked: 0
+  - name: GameUI
+    uniqueID: 1928293137
     locked: 0
   m_RenderingLayers:
   - Default

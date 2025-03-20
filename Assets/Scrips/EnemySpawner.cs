@@ -37,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
             Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
             GameObject enemyObject = Instantiate(enemy, spawnPoint.position, Quaternion.identity);
             Enemy enemyScript = enemyObject.GetComponent<Enemy>();
-            if (enemyScript != null)
+            if (enemyScript != null && enemyScript is not EnergyEnemy)
             {
                 enemyScript.SetSpawner(this);
             }

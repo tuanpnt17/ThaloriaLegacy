@@ -3748,6 +3748,10 @@ PrefabInstance:
       propertyPath: m_RenderMode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4483497255876967053, guid: b9824e127f21b244da03ae8b00d882e7, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1928293137
+      objectReference: {fileID: 0}
     - target: {fileID: 8970233986747181978, guid: b9824e127f21b244da03ae8b00d882e7, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -7
@@ -3761,9 +3765,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9824e127f21b244da03ae8b00d882e7, type: 3}
---- !u!1 &1225062487 stripped
+--- !u!1 &1217021265 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6782808068189609773, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7685027312678196550, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
   m_PrefabInstance: {fileID: 2110525878}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1276749125
@@ -63922,7 +63926,7 @@ Transform:
   m_GameObject: {fileID: 1427920843}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.843, y: 0.574, z: -10}
+  m_LocalPosition: {x: -14, y: 6.56, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -64145,7 +64149,7 @@ PrefabInstance:
     - target: {fileID: 1765919555882086701, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
       propertyPath: aboutUs
       value: 
-      objectReference: {fileID: 1225062487}
+      objectReference: {fileID: 0}
     - target: {fileID: 1765919555882086701, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
       propertyPath: mapMenu
       value: 
@@ -64263,7 +64267,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 2110525883}
   introduct: {fileID: 212585049}
   mapMenu: {fileID: 2110525880}
-  aboutUs: {fileID: 1225062487}
+  aboutUs: {fileID: 1217021265}
   leaderBoard: {fileID: 437952385}
 --- !u!114 &1760587430
 MonoBehaviour:
@@ -64277,7 +64281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 804ad840790944a449ba45583c72f182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyThreshold: 3
+  energyThreshold: 5
   boss: {fileID: 87730784}
   enemySpawner: {fileID: 262074392}
   energyBar: {fileID: 434158449}

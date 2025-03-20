@@ -6,6 +6,9 @@ public class BossPharaEnemy : Enemy
     private GameObject bulletPrefabs;
 
     [SerializeField]
+    private GameObject healPrefabs;
+
+    [SerializeField]
     private Transform firePoint;
 
     [SerializeField]
@@ -40,23 +43,23 @@ public class BossPharaEnemy : Enemy
         }
         else
         {
-            Debug.LogError("Không tìm thấy DialogueManager trong scene.");
+            Debug.LogError("Could not found DialogueManager in scene.");
         }
     }
 
     protected override void Update()
     {
-        Debug.Log("BossEnemy.Update() called"); // Kiểm tra xem Update() có được gọi không
-        Debug.Log("isBattleStarted: " + isBattleStarted); // Kiểm tra giá trị của isBattleStarted
+        Debug.Log("BossEnemy.Update() called");
+        Debug.Log("isBattleStarted: " + isBattleStarted);
         Debug.Log(
             "dialogueManager.dialoguePanel.activeSelf: " + dialogueManager.dialoguePanel.activeSelf
-        ); // Kiểm tra trạng thái của dialoguePanel
+        );
 
         base.Update();
 
         if (!isBattleStarted || dialogueManager.dialoguePanel.activeSelf)
         {
-            Debug.Log("Boss không di chuyển vì điều kiện chưa được đáp ứng.");
+            Debug.Log("Boss does not move because the condition has not been met.");
             return;
         }
 
@@ -74,29 +77,37 @@ public class BossPharaEnemy : Enemy
     protected virtual void StartBattleDialogue()
     {
         isBattleStarted = false;
-        string[] dialogues = { "Boss: You dare disturb my eternal slumber? Kneel before your king.", "Player: you’ve been sleeping for centuries - time to go to sleep again." };
+        string[] dialogues =
+        {
+            "Boss: You dare disturb my eternal slumber? Kneel before your king.",
+            "Player: you’ve been sleeping for centuries - time to go to sleep again.",
+        };
         dialogueManager.StartDialogue(
             dialogues,
             () =>
             {
                 audioManager.PlayPharaohBossAudio();
                 isBattleStarted = true;
-                Debug.Log("dialogueManager.dialoguePanel.SetActive(false) được gọi");
-                dialogueManager.dialoguePanel.SetActive(false); // Ẩn dialoguePanel sau khi kết thúc hội thoại
+                dialogueManager.dialoguePanel.SetActive(false);
             }
         );
     }
 
     protected virtual void StartDeathDialogue()
     {
-        string[] dialogues = { "Boss: Ta không thể thua...!", "Player: Mọi chuyện đã kết thúc!" };
+        string[] dialogues = { "Boss: I... I can't lose...!", "Player: It's all over!" };
         dialogueManager.StartDialogue(dialogues, OnDeathDialogueEnd);
     }
 
     private void OnDeathDialogueEnd()
     {
         Instantiate(usbPrefabs, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
     }
 
     private void NormalShootBullet()
@@ -129,9 +140,37 @@ public class BossPharaEnemy : Enemy
         }
     }
 
+    private void Curse()
+    {
+        if (player != null)
+        {
+            Vector3 directionToPlayer = (player.transform.position - firePoint.position).normalized;
+            float spreadAngle = 30f; // Cone width
+            int bulletCount = 5;
+            float angleStep = spreadAngle / (bulletCount - 1);
+
+            for (int i = 0; i < bulletCount; i++)
+            {
+                float angle = -spreadAngle / 2 + i * angleStep;
+                Vector3 bulletDir = Quaternion.Euler(0, 0, angle) * directionToPlayer;
+                GameObject bullet = Instantiate(
+                    bulletPrefabs,
+                    firePoint.position,
+                    Quaternion.identity
+                );
+                EnemyBullet enemyBullet = bullet.AddComponent<EnemyBullet>();
+                enemyBullet.SetMovementDirection(bulletDir * speedCircureBullet);
+            }
+        }
+    }
+
     private void Heal()
     {
         currentHp = Mathf.Min(currentHp + hpValue, maxHp);
+        GameObject heal = Instantiate(healPrefabs, transform.position, Quaternion.identity);
+        heal.transform.SetParent(transform);
+        heal.transform.localScale = new Vector3(2, 2, 1);
+        Destroy(heal, 1f);
         UpdateHpBar();
     }
 
@@ -141,17 +180,17 @@ public class BossPharaEnemy : Enemy
         switch (randomSkill)
         {
             case 0:
-				audioManager.PlayPharaohBossAttackSound();
-				Debug.Log("Boss đang sử dụng skill: Bắn đạn thường");
+                audioManager.PlayPharaohBossAttackSound();
+                Debug.Log("Boss đang sử dụng skill: Bắn đạn thường");
                 NormalShootBullet();
                 break;
             case 1:
                 audioManager.PlayPharaohBossAttackSound();
-                Debug.Log("Boss đang sử dụng skill: Bắn đạn hình tròn");
-                CircureBullet();
+                Debug.Log("Boss is using skill: Curse");
+                Curse();
                 break;
             case 2:
-                Debug.Log("Boss đang sử dụng skill: Hồi máu");
+                Debug.Log("Boss is using skill: Healing");
                 Heal();
                 break;
         }
