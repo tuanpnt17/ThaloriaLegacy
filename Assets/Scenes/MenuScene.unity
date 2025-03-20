@@ -394,6 +394,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &706573823 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7857867433820679806, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+  m_PrefabInstance: {fileID: 2435237470824005009}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &706573824 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4491293421242265954, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+  m_PrefabInstance: {fileID: 2435237470824005009}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &817308173 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 936064063832733351, guid: da963d17fb462ad4ba0854d6993ec4e3, type: 3}
@@ -723,6 +745,8 @@ MonoBehaviour:
   aboutUs: {fileID: 2435237470824005014}
   leaderBoard: {fileID: 1695334377}
   audioManager: {fileID: 1796143340}
+  playerName: {fileID: 706573824}
+  playerScore: {fileID: 706573823}
 --- !u!1001 &2078850173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1018,6 +1042,10 @@ PrefabInstance:
     - target: {fileID: 5452183483704496622, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameManagerUI, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657477149893929957, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5711899870362940825, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_Type
