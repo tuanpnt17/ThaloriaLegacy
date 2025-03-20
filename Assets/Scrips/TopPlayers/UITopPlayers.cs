@@ -16,7 +16,7 @@ namespace Assets.Scrips.TopPlayers
 
             this.LoadTexts();
 
-            TopPlayersGet.instance.Get();
+            TopPlayersGet.instance.GetTopPlayers();
         }
 
         protected virtual void LoadTexts()
@@ -28,14 +28,11 @@ namespace Assets.Scrips.TopPlayers
             }
         }
 
-        public virtual void ShowTopPlayers(string jsonStringResponse)
+        public virtual void ShowTopPlayers()
         {
-            PlayerScoresRes playerScoresRes = PlayerScoresRes.FromJSON(jsonStringResponse);
-            TopPlayers.instance.playerScores = playerScoresRes.record;
-
             int i = 0;
             UIPlayer uIPlayer;
-            foreach (PlayerScore playerScore in TopPlayers.instance.playerScores.playerScores)
+            foreach (PlayerScore playerScore in TopPlayers.instance.playerScores.PlayerScoresList)
             {
                 uIPlayer = this.uIPlayers[i];
 

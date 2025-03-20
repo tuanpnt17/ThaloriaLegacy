@@ -1074,9 +1074,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8590728481534388064, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
-        m_TargetAssemblyTypeName: GameUI, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 7341387033562611352}
+        m_TargetAssemblyTypeName: GameAuthManager, Assembly-CSharp
+        m_MethodName: OpenRegister
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1230,8 +1230,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2836799589065379611}
-        m_TargetAssemblyTypeName: GameUI, Assembly-CSharp
+      - m_Target: {fileID: 7341387033562611352}
+        m_TargetAssemblyTypeName: GameAuthManager, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -1522,9 +1522,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameUI, Assembly-CSharp
-        m_MethodName: MainMenu
+      - m_Target: {fileID: 7341387033562611352}
+        m_TargetAssemblyTypeName: GameAuthManager, Assembly-CSharp
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1570,7 +1570,7 @@ GameObject:
   - component: {fileID: 3082650100695987094}
   - component: {fileID: 1303136856708054997}
   m_Layer: 5
-  m_Name: Login
+  m_Name: Register
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1678,9 +1678,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameUI, Assembly-CSharp
-        m_MethodName: MainMenu
+      - m_Target: {fileID: 7341387033562611352}
+        m_TargetAssemblyTypeName: GameAuthManager, Assembly-CSharp
+        m_MethodName: HandleRegister
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1917,7 +1917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3659948830842323642
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2133,7 +2133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4888152871168494285
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3034,7 +3034,7 @@ GameObject:
   - component: {fileID: 9126510064522335734}
   - component: {fileID: 4484336618148597420}
   - component: {fileID: 7738355003433442911}
-  - component: {fileID: 2836799589065379611}
+  - component: {fileID: 7341387033562611352}
   m_Layer: 5
   m_Name: GameAuth
   m_TagString: Untagged
@@ -3127,7 +3127,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2836799589065379611
+--- !u!114 &7341387033562611352
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3136,12 +3136,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5353756769973469406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0168a4cea1d8ab4399aab531dc322dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 3a66c08da6934ab49ac8da609027a64f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  mainMenu: {fileID: 2380039303293603123}
-  mapMenu: {fileID: 0}
+  login: {fileID: 3608283276241162658}
+  register: {fileID: 4368606009967855376}
+  authMenu: {fileID: 2380039303293603123}
 --- !u!1 &5357896339764313069
 GameObject:
   m_ObjectHideFlags: 0
@@ -4270,9 +4270,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2836799589065379611}
-        m_TargetAssemblyTypeName: GameUI, Assembly-CSharp
-        m_MethodName: StartGame
+      - m_Target: {fileID: 7341387033562611352}
+        m_TargetAssemblyTypeName: GameAuthManager, Assembly-CSharp
+        m_MethodName: OpenLogin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5221,9 +5221,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameUI, Assembly-CSharp
-        m_MethodName: MainMenu
+      - m_Target: {fileID: 7341387033562611352}
+        m_TargetAssemblyTypeName: GameAuthManager, Assembly-CSharp
+        m_MethodName: HandleLogin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5377,9 +5377,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameUI, Assembly-CSharp
-        m_MethodName: MainMenu
+      - m_Target: {fileID: 7341387033562611352}
+        m_TargetAssemblyTypeName: GameAuthManager, Assembly-CSharp
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

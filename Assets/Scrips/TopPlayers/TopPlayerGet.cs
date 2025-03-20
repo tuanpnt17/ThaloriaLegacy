@@ -10,11 +10,34 @@ public class TopPlayersGet : MonoBehaviour
     private void Awake()
     {
         if (TopPlayersGet.instance != null)
+        {
             Debug.LogError("TopPlayers Error");
+            return;
+        }
         TopPlayersGet.instance = this;
+
+        DontDestroyOnLoad(gameObject);
     }
 
     public virtual void Get()
+    {
+        StartCoroutine(this.apiCall.JsonGet(this.apiCall.Uri(), "{}", this.JustGet));
+    }
+
+    public virtual void JustGet(UnityWebRequest request, string jsonStringResponse)
+    {
+        UnityWebRequest.Result re = request.result;
+        if (re != UnityWebRequest.Result.Success)
+        {
+            //TODO: need more work here
+            Debug.LogWarning(jsonStringResponse);
+            return;
+        }
+        TopPlayers.instance.SetTopPlayers(jsonStringResponse);
+        Debug.Log(jsonStringResponse);
+    }
+
+    public virtual void GetTopPlayers()
     {
         StartCoroutine(this.apiCall.JsonGet(this.apiCall.Uri(), "{}", this.OnGetTopPlayersDone));
     }
@@ -30,7 +53,7 @@ public class TopPlayersGet : MonoBehaviour
         }
 
         Debug.Log(jsonStringResponse);
-
-        UITopPlayers.instance.ShowTopPlayers(jsonStringResponse);
+        TopPlayers.instance.SetTopPlayers(jsonStringResponse);
+        UITopPlayers.instance.ShowTopPlayers();
     }
 }
