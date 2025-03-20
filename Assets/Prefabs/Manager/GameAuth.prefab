@@ -1074,7 +1074,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7341387033562611352}
+      - m_Target: {fileID: 8740571365665392425}
         m_TargetAssemblyTypeName: GameAuthManager, Assembly-CSharp
         m_MethodName: OpenRegister
         m_Mode: 1
@@ -1230,7 +1230,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7341387033562611352}
+      - m_Target: {fileID: 8740571365665392425}
         m_TargetAssemblyTypeName: GameAuthManager, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -1658,7 +1658,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7341387033562611352}
+      - m_Target: {fileID: 8740571365665392425}
         m_TargetAssemblyTypeName: GameAuthManager, Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1
@@ -1814,7 +1814,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7341387033562611352}
+      - m_Target: {fileID: 8740571365665392425}
         m_TargetAssemblyTypeName: GameAuthManager, Assembly-CSharp
         m_MethodName: HandleRegister
         m_Mode: 1
@@ -3557,7 +3557,7 @@ GameObject:
   - component: {fileID: 9126510064522335734}
   - component: {fileID: 4484336618148597420}
   - component: {fileID: 7738355003433442911}
-  - component: {fileID: 7341387033562611352}
+  - component: {fileID: 8740571365665392425}
   m_Layer: 5
   m_Name: GameAuth
   m_TagString: Untagged
@@ -3651,7 +3651,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7341387033562611352
+--- !u!114 &8740571365665392425
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3660,18 +3660,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 5353756769973469406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a66c08da6934ab49ac8da609027a64f, type: 3}
+  m_Script: {fileID: 11500000, guid: d481d94af77b42e41a70061c31f7ad44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   login: {fileID: 3608283276241162658}
   register: {fileID: 4368606009967855376}
   authMenu: {fileID: 2380039303293603123}
   popUp: {fileID: 5289649474516850773}
-  loginPlayerName: {fileID: 0}
-  loginPlayerPass: {fileID: 0}
-  registerPlayerName: {fileID: 0}
-  registerPlayerPass: {fileID: 0}
-  registerPlayerPassConfirm: {fileID: 0}
+  loginPlayerName: {fileID: 2881767687735766898}
+  loginPlayerPass: {fileID: 6294134868426780956}
+  registerPlayerName: {fileID: 6794665585232843129}
+  registerPlayerPass: {fileID: 634725649330261752}
+  registerPlayerPassConfirm: {fileID: 7760202405021012898}
   popUpTitle: {fileID: 8868876022137976241}
   popUpMessage: {fileID: 128108437123866489}
 --- !u!1 &5357896339764313069
@@ -4297,7 +4297,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7341387033562611352}
+      - m_Target: {fileID: 8740571365665392425}
         m_TargetAssemblyTypeName: GameAuthManager, Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1
@@ -4935,7 +4935,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7341387033562611352}
+      - m_Target: {fileID: 8740571365665392425}
         m_TargetAssemblyTypeName: GameAuthManager, Assembly-CSharp
         m_MethodName: OpenLogin
         m_Mode: 1
@@ -5961,7 +5961,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7341387033562611352}
+      - m_Target: {fileID: 8740571365665392425}
         m_TargetAssemblyTypeName: GameAuthManager, Assembly-CSharp
         m_MethodName: HandleLogin
         m_Mode: 1
@@ -6117,7 +6117,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7341387033562611352}
+      - m_Target: {fileID: 8740571365665392425}
         m_TargetAssemblyTypeName: GameAuthManager, Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1

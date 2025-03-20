@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour
         bossCalled = true;
         boss.SetActive(true);
         enemySpawner.SetActive(false);
-        //gameUI.SetActive(false);
         if (audioManager != null)
         {
             audioManager.PlayBossAudio();

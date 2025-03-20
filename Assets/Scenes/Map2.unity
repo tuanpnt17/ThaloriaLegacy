@@ -3741,11 +3741,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9824e127f21b244da03ae8b00d882e7, type: 3}
---- !u!1 &1225062487 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6782808068189609773, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
-  m_PrefabInstance: {fileID: 2110525878}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1276749125
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64121,7 +64116,7 @@ PrefabInstance:
     - target: {fileID: 1765919555882086701, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
       propertyPath: aboutUs
       value: 
-      objectReference: {fileID: 1225062487}
+      objectReference: {fileID: 0}
     - target: {fileID: 1765919555882086701, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
       propertyPath: mapMenu
       value: 
@@ -64239,7 +64234,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 2110525883}
   introduct: {fileID: 212585049}
   mapMenu: {fileID: 2110525880}
-  aboutUs: {fileID: 1225062487}
+  aboutUs: {fileID: 0}
   leaderBoard: {fileID: 437952385}
   audioManager: {fileID: 1426884812}
 --- !u!114 &1760587430

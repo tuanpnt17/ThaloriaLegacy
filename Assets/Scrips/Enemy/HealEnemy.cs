@@ -2,7 +2,11 @@ using UnityEngine;
 
 public class HealEnemy : Enemy
 {
-    [SerializeField] private float healValue = 20f;
+    [SerializeField]
+    private float healValue = 20f;
+
+    private float lastStayDmgTime;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -18,9 +22,10 @@ public class HealEnemy : Enemy
     {
         if (collision.CompareTag("Player"))
         {
-            if (player != null)
+            if (player != null && Time.time - lastStayDmgTime > damageInterval)
             {
                 player.TakeDamage(stayDamage);
+                lastStayDmgTime = Time.time;
             }
         }
     }
@@ -30,8 +35,9 @@ public class HealEnemy : Enemy
         base.Die();
     }
 
-    private void HealPlayer() {
-        if(player != null)
+    private void HealPlayer()
+    {
+        if (player != null)
         {
             player.Heal(healValue);
         }

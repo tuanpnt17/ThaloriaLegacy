@@ -37,23 +37,23 @@ public class BossFireEnemy : Enemy
         }
         else
         {
-            Debug.LogError("Không tìm thấy DialogueManager trong scene.");
+            Debug.LogError("Could not found DialogueManager in scene.");
         }
     }
 
     protected override void Update()
     {
-        Debug.Log("BossEnemy.Update() called"); // Kiểm tra xem Update() có được gọi không
-        Debug.Log("isBattleStarted: " + isBattleStarted); // Kiểm tra giá trị của isBattleStarted
+        Debug.Log("BossEnemy.Update() called");
+        Debug.Log("isBattleStarted: " + isBattleStarted);
         Debug.Log(
             "dialogueManager.dialoguePanel.activeSelf: " + dialogueManager.dialoguePanel.activeSelf
-        ); // Kiểm tra trạng thái của dialoguePanel
+        );
 
         base.Update();
 
         if (!isBattleStarted || dialogueManager.dialoguePanel.activeSelf)
         {
-            Debug.Log("Boss không di chuyển vì điều kiện chưa được đáp ứng.");
+            Debug.Log("Boss does not move because the condition has not been met.");
             return;
         }
 
@@ -71,21 +71,20 @@ public class BossFireEnemy : Enemy
     protected virtual void StartBattleDialogue()
     {
         isBattleStarted = false;
-        string[] dialogues = { "Boss: Ta sẽ tiêu diệt ngươi!", "Player: Hãy thử xem nào!" };
+        string[] dialogues = { "Boss: I will destroy you!", "Player: Let's see you try!" };
         dialogueManager.StartDialogue(
             dialogues,
             () =>
             {
                 isBattleStarted = true;
-                Debug.Log("dialogueManager.dialoguePanel.SetActive(false) được gọi");
-                dialogueManager.dialoguePanel.SetActive(false); // Ẩn dialoguePanel sau khi kết thúc hội thoại
+                dialogueManager.dialoguePanel.SetActive(false);
             }
         );
     }
 
     protected virtual void StartDeathDialogue()
     {
-        string[] dialogues = { "Boss: Ta không thể thua...!", "Player: Mọi chuyện đã kết thúc!" };
+        string[] dialogues = { "Boss: I... I can't lose...!", "Player: It's all over!" };
         dialogueManager.StartDialogue(dialogues, OnDeathDialogueEnd);
     }
 

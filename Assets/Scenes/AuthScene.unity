@@ -176,17 +176,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47bd3deae094676488db371c334b2b6a, type: 3}
---- !u!114 &261669040 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6794665585232843129, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
-  m_PrefabInstance: {fileID: 9026672103752486543}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &337742498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -248,28 +237,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 343249439a5170a45943fa34af67a5ba, type: 3}
---- !u!114 &1032738326 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7760202405021012898, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
-  m_PrefabInstance: {fileID: 9026672103752486543}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1330036215 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2881767687735766898, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
-  m_PrefabInstance: {fileID: 9026672103752486543}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1582050233
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,28 +374,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!114 &1927977457 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 634725649330261752, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
-  m_PrefabInstance: {fileID: 9026672103752486543}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1954206519 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6294134868426780956, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
-  m_PrefabInstance: {fileID: 9026672103752486543}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &9026672103752486543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -437,34 +382,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4950431408782521653, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
-      propertyPath: m_text
-      value: Register
-      objectReference: {fileID: 0}
     - target: {fileID: 5353756769973469406, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
       propertyPath: m_Name
       value: GameAuth
       objectReference: {fileID: 0}
-    - target: {fileID: 7341387033562611352, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
-      propertyPath: loginPlayerName
-      value: 
-      objectReference: {fileID: 1330036215}
-    - target: {fileID: 7341387033562611352, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
-      propertyPath: loginPlayerPass
-      value: 
-      objectReference: {fileID: 1954206519}
-    - target: {fileID: 7341387033562611352, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
-      propertyPath: registerPlayerName
-      value: 
-      objectReference: {fileID: 261669040}
-    - target: {fileID: 7341387033562611352, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
-      propertyPath: registerPlayerPass
-      value: 
-      objectReference: {fileID: 1927977457}
-    - target: {fileID: 7341387033562611352, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
-      propertyPath: registerPlayerPassConfirm
-      value: 
-      objectReference: {fileID: 1032738326}
     - target: {fileID: 7817711398601379886, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
       propertyPath: m_Pivot.x
       value: 0

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -32,6 +33,9 @@ public class ScoreManager : MonoBehaviour
     {
         ChangeScore(score);
         CreateFloatingScore(score, pos);
+
+        var x = SceneManager.GetActiveScene().buildIndex;
+        Debug.LogWarning("Scene index - Update Kill score: " + x);
     }
 
     private void ChangeScore(int scoreChange)

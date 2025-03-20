@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
@@ -21,11 +22,14 @@ public class Enemy : MonoBehaviour
     protected float stayDamage = 1f;
 
     [SerializeField]
+    protected float damageInterval = 2f;
+
+    [SerializeField]
     protected int killScore = 10;
 
     private Rigidbody2D rb;
     private EnemySpawner spawnerInstance;
-    private float lastTime;
+    private float lastStayDamageTime;
 
     protected virtual void Start()
     {
@@ -124,20 +128,19 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Player playerScript = collision.gameObject.GetComponent<Player>();
-            if (playerScript != null)
+            if (playerScript != null && Time.time - lastStayDamageTime > damageInterval)
             {
-                if (Time.time - lastTime < 2f)
-                {
-                    return;
-                }
                 playerScript.TakeDamage(stayDamage * Time.deltaTime); // Player mất máu liên tục
-                lastTime = Time.time;
+                lastStayDamageTime = Time.time;
             }
         }
     }
 
     private void OnDestroy()
     {
+        var x = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("Scene index: " + x);
+
         ScoreManager.Instance.UpdateKillScore(transform.position, killScore);
         if (spawnerInstance != null)
             spawnerInstance.EnemyDie(transform.position);

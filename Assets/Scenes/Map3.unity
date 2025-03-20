@@ -42244,11 +42244,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
---- !u!1 &407622521 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6782808068189609773, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
-  m_PrefabInstance: {fileID: 1803333923}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &615999868
 GameObject:
   m_ObjectHideFlags: 0
@@ -52293,7 +52288,7 @@ PrefabInstance:
     - target: {fileID: 1765919555882086701, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
       propertyPath: aboutUs
       value: 
-      objectReference: {fileID: 407622521}
+      objectReference: {fileID: 0}
     - target: {fileID: 1765919555882086701, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
       propertyPath: mapMenu
       value: 
@@ -52411,7 +52406,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 1803333928}
   introduct: {fileID: 259960049}
   mapMenu: {fileID: 1803333925}
-  aboutUs: {fileID: 407622521}
+  aboutUs: {fileID: 0}
   leaderBoard: {fileID: 1610104919}
   audioManager: {fileID: 1890538001}
 --- !u!114 &1509946987

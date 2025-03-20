@@ -67,6 +67,7 @@ namespace Assets.Scrips.TopPlayers
 
             Debug.Log("Get top players after update:: " + jsonStringResponse);
             TopPlayers.instance.SetTopPlayers(jsonStringResponse);
+            UITopPlayers.instance.ShowTopPlayers();
         }
 
         public virtual void SetCurrentPlayer(string playerName, string playerPass, int playerScore)

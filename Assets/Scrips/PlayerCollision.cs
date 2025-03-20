@@ -19,6 +19,13 @@ public class PlayerCollision : MonoBehaviour
         else if (collision.CompareTag("Usb")) // collect USB -> next level
         {
             Debug.Log("Win Game");
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("FloatingParent");
+
+            foreach (GameObject enemy in enemies)
+            {
+                Debug.Log("Found enemy: " + enemy.name);
+                Destroy(enemy);
+            }
             Destroy(collision.gameObject);
             LoadNextScene();
         }
@@ -45,6 +52,7 @@ public class PlayerCollision : MonoBehaviour
 
         if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
+            Debug.Log("Load next scene: " + nextSceneIndex);
             SceneManager.LoadScene(nextSceneIndex);
         }
         else
