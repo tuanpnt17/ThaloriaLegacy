@@ -1091,7 +1091,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 52f9ee3cab99c9d4880d683a80ecf095, type: 3}
     - target: {fileID: 260724068541697313, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_Color.a
-      value: 0.9411765
+      value: 0.9843137
       objectReference: {fileID: 0}
     - target: {fileID: 260724068541697313, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_Color.b
@@ -1246,13 +1246,25 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameManagerUI, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 5711899870362940825, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711899870362940825, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 52f9ee3cab99c9d4880d683a80ecf095, type: 3}
+    - target: {fileID: 5711899870362940825, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_Color.a
+      value: 0.9764706
+      objectReference: {fileID: 0}
     - target: {fileID: 6324821575868298959, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6782808068189609773, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6839972387231821724, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1277,6 +1289,10 @@ PrefabInstance:
     - target: {fileID: 6890906034566271578, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LeaderBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7340829621408534002, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7878061565844216381, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_Pivot.x
