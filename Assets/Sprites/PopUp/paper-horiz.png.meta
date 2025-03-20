@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d24428ae99b414142b7e0d6af77bf3f8
+guid: 58cc8b314fd0dba448bd452de195d7d0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5546797215090650393
-    second: LoadingBackground_0
+      213: -2223000598819859876
+    second: paper-horiz_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LoadingBackground_0
+      name: paper-horiz_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 0
-        width: 1792
-        height: 1024
+        width: 506
+        height: 247
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e255613251d503b0800000000000000
-      internalID: -5546797215090650393
+      spriteID: c529cdbbbb05621e0800000000000000
+      internalID: -2223000598819859876
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LoadingBackground_0: -5546797215090650393
+      paper-horiz_0: -2223000598819859876
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

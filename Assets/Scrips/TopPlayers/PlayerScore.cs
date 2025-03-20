@@ -8,6 +8,7 @@ namespace Assets.Scrips.TopPlayers
         public string name;
         public string pass;
         public int score;
+        public int lastScoreInGame;
 
         static int SortByScore(PlayerScore p1, PlayerScore p2)
         {

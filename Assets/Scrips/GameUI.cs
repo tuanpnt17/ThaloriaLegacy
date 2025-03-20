@@ -1,3 +1,5 @@
+using Assets.Scrips.TopPlayers;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +13,20 @@ public class GameUI : MonoBehaviour
 
     [SerializeField]
     private GameObject mapMenu;
+
+    public TextMeshProUGUI welcome;
+    public TextMeshProUGUI score;
+
+    private void Awake()
+    {
+        var currentPlayer = TopPlayersUpdate.instance.currentPlayer;
+        if (currentPlayer != null)
+        {
+            welcome.text = $"Welcome {currentPlayer.name}";
+            score.text =
+                $"Last score: {currentPlayer.lastScoreInGame} - Best score: {currentPlayer.score}";
+        }
+    }
 
     public void StartGame()
     {

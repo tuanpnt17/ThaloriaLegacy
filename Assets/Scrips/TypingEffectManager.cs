@@ -1,7 +1,6 @@
-
 using System.Collections;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class TypingEffectManager : MonoBehaviour
@@ -18,7 +17,7 @@ public class TypingEffectManager : MonoBehaviour
         "[Prologue] – The Awakening of Drakthor\nThe once-glorious kingdom of Thaloria now lies in ruins.",
         "Drakthor the Eternal Dragon, an immortal beast, has awakened from Infernal Hollow, a cavern buried deep within a colossal volcano.",
         "With a burning desire to reduce the world to ashes and create a new empire for dragons.",
-        "He has summoned The Four Harbingers of Doom, ancient entities wielding catastrophic power."
+        "He has summoned The Four Harbingers of Doom, ancient entities wielding catastrophic power.",
     };
 
     private int currentTextIndex = 0;

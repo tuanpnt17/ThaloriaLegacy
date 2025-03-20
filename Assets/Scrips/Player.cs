@@ -21,6 +21,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameManagerUI gameManager;
 
+    [SerializeField]
+    private GameObject enemySpawner;
+
     public bool allowFlip = true;
 
     private Rigidbody2D rb;
@@ -107,8 +110,8 @@ public class Player : MonoBehaviour
 
     public void Destroy()
     {
-        Destroy(gameObject);
-        Invoke("LoadGameOver", 1f);
+        //Destroy(gameObject);
+        //Invoke("LoadGameOver", 1f);
     }
 
     public void ChangeMp(float mp)
@@ -134,7 +137,10 @@ public class Player : MonoBehaviour
         isDead = true;
         rb.linearVelocity = Vector2.zero;
         GetComponent<Collider2D>().enabled = false;
+        if (enemySpawner != null)
+            enemySpawner.SetActive(false);
         animator.SetTrigger("Die");
+        gameManager.GameOverMenu();
     }
 
     // For checking collision
