@@ -1,6 +1,6 @@
 using System.Collections;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.SceneManagement; // ?? chuy?n scene sang Menu chính
 
 public class TypingEffectManager : MonoBehaviour
@@ -9,16 +9,15 @@ public class TypingEffectManager : MonoBehaviour
     public float typingSpeed = 0.001f; // T?c ?? gõ ch?
     public float waitTimeAfterText = 5.0f; // Th?i gian ch? sau khi hi?n th? xong m?i ?o?n
     public CanvasGroup textCanvasGroup; // ?? t?o hi?u ?ng fade out
-    public AudioSource typingSound; 
+    public AudioSource typingSound;
 
     // Danh sách các ?o?n v?n b?n s? hi?n th?
     private string[] storyTexts = new string[]
     {
         "[Prologue] – The Awakening of Drakthor\r\nThe once-glorious kingdom of Thaloria now lies in ruins. ",
         "Drakthor the Eternal Dragon, an immortal beast, has awakened from Infernal Hollow, a cavern buried deep within a colossal volcano.",
-        "With a burning desire to reduce the world to ashes and create a new empire for dragons" ,
+        "With a burning desire to reduce the world to ashes and create a new empire for dragons",
         "He has summoned The Four Harbingers of Doom, ancient entities wielding catastrophic power.",
-
     };
 
     private int currentTextIndex = 0; // ??m s? th? t? ?o?n hi?n t?i
@@ -48,7 +47,7 @@ public class TypingEffectManager : MonoBehaviour
         textCanvasGroup.alpha = 1; // ??m b?o ch? hi?n th?
         if (typingSound != null)
         {
-            typingSound.loop = false;  // Không cho l?p vô h?n
+            typingSound.loop = false; // Không cho l?p vô h?n
             typingSound.Play();
         }
         for (int i = 0; i < fullText.Length; i++)
@@ -56,7 +55,7 @@ public class TypingEffectManager : MonoBehaviour
             dialogueText.text += fullText[i]; // Hi?n th? t?ng ký t?
             //if (typingSound != null && !typingSound.isPlaying) // Phát âm thanh n?u không b? trùng
             //{
-                
+
             //}
             if (typingSound != null && !typingSound.isPlaying)
             {

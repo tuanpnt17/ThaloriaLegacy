@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d24428ae99b414142b7e0d6af77bf3f8
+guid: 1a602d9a25b19104c8d8655073f1785b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5546797215090650393
-    second: LoadingBackground_0
+      213: 8240008366754927548
+    second: paper-with-sidebar-plain_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LoadingBackground_0
+      name: paper-with-sidebar-plain_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1792
-        height: 1024
+        y: 6
+        width: 761
+        height: 762
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e255613251d503b0800000000000000
-      internalID: -5546797215090650393
+      spriteID: cb39caeb3f36a5270800000000000000
+      internalID: 8240008366754927548
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LoadingBackground_0: -5546797215090650393
+      paper-with-sidebar-plain_0: 8240008366754927548
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

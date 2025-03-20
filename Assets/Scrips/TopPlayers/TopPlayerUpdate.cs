@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -8,23 +7,22 @@ namespace Assets.Scrips.TopPlayers
     public class TopPlayersUpdate : MonoBehaviour
     {
         public static TopPlayersUpdate instance;
-        protected TopPlayerApiCall apiCall = new TopPlayerApiCall();
-        public GameObject apple;
-        public string playerName = null;
-        public TMP_InputField playerNameInput;
-        public GameObject inputPlayer;
+        protected TopPlayerApiCall ApiCall = new TopPlayerApiCall();
+        public PlayerScore currentPlayer;
 
         private void Awake()
         {
             if (TopPlayersUpdate.instance != null)
                 Debug.LogError("TopPlayers Error");
             TopPlayersUpdate.instance = this;
+
+            DontDestroyOnLoad(gameObject);
         }
 
         public virtual void GetAndUpdateTopPlayers()
         {
             //this.apiCall.isDebug = true;
-            StartCoroutine(this.apiCall.JsonGet(this.apiCall.Uri(), "{}", this.OnGet2UpdateDone));
+            StartCoroutine(this.ApiCall.JsonGet(this.ApiCall.Uri(), "{}", this.OnGet2UpdateDone));
         }
 
         public virtual void OnGet2UpdateDone(UnityWebRequest request, string jsonStringResponse)
@@ -37,21 +35,25 @@ namespace Assets.Scrips.TopPlayers
                 return;
             }
 
-            UITopPlayers.instance.ShowTopPlayers(jsonStringResponse);
+            TopPlayers.instance.SetTopPlayers(jsonStringResponse);
+            Debug.Log("Get top players:: " + jsonStringResponse);
             this.UpdateTopPlayers();
         }
 
         public virtual void UpdateTopPlayers()
         {
-            TopPlayers.instance.playerScores.AddPlayer(this.CurrentPlayer());
-            TopPlayers.instance.playerScores.TopUpdate();
+            if (currentPlayer == null)
+                return;
+
+            TopPlayers.instance.playerScores.AddPlayer(currentPlayer);
+            TopPlayers.instance.playerScores.UpdatePlayers();
 
             if (!TopPlayers.instance.playerScores.HasUpdate())
                 return;
 
-            TopPlayers.instance.playerScores.oldMd5 = TopPlayers.instance.playerScores.newMd5;
+            TopPlayers.instance.playerScores.OldMd5 = TopPlayers.instance.playerScores.NewMd5;
             string json = JsonConvert.SerializeObject(TopPlayers.instance.playerScores);
-            StartCoroutine(this.apiCall.JsonPut(this.apiCall.Uri(), json, this.OnUpdateDone));
+            StartCoroutine(this.ApiCall.JsonPut(this.ApiCall.Uri(), json, this.OnUpdateDone));
         }
 
         public virtual void OnUpdateDone(UnityWebRequest request, string jsonStringResponse)
@@ -64,32 +66,23 @@ namespace Assets.Scrips.TopPlayers
                 return;
             }
 
-            UITopPlayers.instance.ShowTopPlayers(jsonStringResponse);
+            Debug.Log("Get top players after update:: " + jsonStringResponse);
+            TopPlayers.instance.SetTopPlayers(jsonStringResponse);
         }
 
-        protected virtual PlayerScore CurrentPlayer()
+        public virtual void SetCurrentPlayer(string playerName, string playerPass, int playerScore)
         {
-            PlayerScore playerScore = new PlayerScore
+            this.currentPlayer = new PlayerScore
             {
-                name = this.playerName,
-                //score = ClickMe.instance.score,
+                name = playerName,
+                pass = playerPass,
+                score = playerScore,
             };
-            return playerScore;
         }
 
-        /// <summary>
-        /// Call from Button UI
-        /// </summary>
-        public virtual void GetName()
+        public virtual void SetCurrentPlayer(PlayerScore playerScore)
         {
-            this.playerName = this.playerNameInput.text;
-            if (this.playerName == null)
-                return;
-            if (this.playerName == "")
-                return;
-
-            this.inputPlayer.SetActive(false);
-            this.apple.SetActive(true);
+            this.currentPlayer = playerScore;
         }
     }
 }
