@@ -431,12 +431,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  maxHp: 10000
-  maxMp: 10000
+  maxHp: 200
+  maxMp: 100
   hpBar: {fileID: 8208878036064903137}
   mpBar: {fileID: 6857989408362648675}
   barParent: {fileID: 6362215397365247716}
   gameManager: {fileID: 0}
+  enemySpawner: {fileID: 0}
   allowFlip: 1
 --- !u!114 &2228040635517338236
 MonoBehaviour:

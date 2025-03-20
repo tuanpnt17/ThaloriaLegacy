@@ -202,12 +202,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMoveSpeed: 1
-  maxHp: 100
+  maxHp: 250
   hpBar: {fileID: 6209608189667036298}
   enterDamage: 10
   stayDamage: 1
   damageInterval: 2
-  killScore: 10
+  killScore: 125
   bulletPrefabs: {fileID: 6504528524721687172, guid: 20ca07caa91bec1438858b9f78c11472, type: 3}
   firePoint: {fileID: 8700809153269372468}
   speedNormalBullet: 20

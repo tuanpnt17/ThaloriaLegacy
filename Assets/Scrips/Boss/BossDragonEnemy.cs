@@ -30,8 +30,15 @@ public class BossDragonEnemy : Enemy
     [SerializeField]
     private GameObject usbPrefabs;
 
+    [SerializeField]
+    float breathDuration = 3f; // How long the dragon breathes (adjustable)
+
+    [SerializeField]
+    float fireRate = 0.5f; // Time between each bullet (adjustable)
+
     protected bool isBattleStarted = false;
     protected DialogueManager dialogueManager;
+    private bool isBreathing = false;
 
     protected override void Start()
     {
@@ -63,7 +70,7 @@ public class BossDragonEnemy : Enemy
             return;
         }
 
-        if (Time.time >= nextSkillTime)
+        if (Time.time >= nextSkillTime && !isBreathing)
         {
             UseSkill();
         }
@@ -152,10 +159,8 @@ public class BossDragonEnemy : Enemy
 
     private System.Collections.IEnumerator DragonBreathCoroutine()
     {
-        float breathDuration = 2f; // How long the dragon breathes (adjustable)
-        float fireRate = 0.2f; // Time between each bullet (adjustable)
         float elapsed = 0f;
-
+        isBreathing = true;
         while (elapsed < breathDuration)
         {
             if (player != null) // Ensure player exists
@@ -172,13 +177,14 @@ public class BossDragonEnemy : Enemy
                     Quaternion.identity
                 );
                 EnemyBullet enemyBullet = bullet.AddComponent<EnemyBullet>();
-                enemyBullet.SetMovementDirection(directionToPlayer * speedNormalBullet);
+                enemyBullet.SetMovementDirection(directionToPlayer * speedCircureBullet);
                 //bullet.GetComponent<SpriteRenderer>().color = Color.green; // Visual cue for dragon breath
             }
 
             elapsed += fireRate; // Increment elapsed time by fire rate
             yield return new WaitForSeconds(fireRate); // Wait before firing next bullet
         }
+        isBreathing = false;
     }
 
     protected virtual void UseSkillRandom()

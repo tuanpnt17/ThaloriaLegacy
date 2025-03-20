@@ -12,6 +12,14 @@ namespace Assets.Scrips.TopPlayers
             if (TopPlayers.instance != null)
                 Debug.LogError("UITopPlayers Error");
             TopPlayers.instance = this;
+
+            DontDestroyOnLoad(gameObject);
+        }
+
+        public virtual void SetTopPlayers(string jsonStringResponse)
+        {
+            PlayerScoresRes playerScoresRes = PlayerScoresRes.FromJSON(jsonStringResponse);
+            playerScores = playerScoresRes.record;
         }
     }
 }

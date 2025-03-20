@@ -320,21 +320,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyMoveSpeed: 1
-  maxHp: 50
+  maxHp: 400
   hpBar: {fileID: 8865962279935671372}
   enterDamage: 10
-  stayDamage: 1
+  stayDamage: 3
   damageInterval: 2
-  killScore: 10
+  killScore: 500
   bulletPrefabs: {fileID: 4720121087887858207, guid: f7c6d0cc9be82f24c81f5deb964a2371, type: 3}
   healPrefabs: {fileID: 5799199943483710230, guid: a238eceb7f105d04ba9c3efffde7756f, type: 3}
   firePoint: {fileID: 1024569882384575098}
-  speedNormalBullet: 20
-  speedCircureBullet: 10
+  speedNormalBullet: 5
+  speedCircureBullet: 5
   hpValue: 100
   miniEnemies: {fileID: 9131478844317214399, guid: cc40f39f8fc891147a6f95a62838635a, type: 3}
   skillCooldown: 2
   usbPrefabs: {fileID: 937046371771716959, guid: 51ed855fe748e21428fa04781156e9e8, type: 3}
+  breathDuration: 3
+  fireRate: 0.2
 --- !u!1001 &960953273751883150
 PrefabInstance:
   m_ObjectHideFlags: 0

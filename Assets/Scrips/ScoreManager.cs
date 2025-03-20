@@ -23,6 +23,11 @@ public class ScoreManager : MonoBehaviour
         return _currentScore;
     }
 
+    public void ClearCurrentScore()
+    {
+        _currentScore = 0;
+    }
+
     public void UpdateKillScore(Vector3 pos, int score)
     {
         ChangeScore(score);

@@ -138,7 +138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7577894610576031801
 Transform:
   m_ObjectHideFlags: 0
@@ -329,7 +329,7 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 5671634746354381783, guid: 64d8a294b360694449ff6b6e54670225, type: 3}
   firePoint: {fileID: 4817181891632006758}
   speedNormalBullet: 20
-  speedCircureBullet: 15
+  speedCircureBullet: 10
   hpValue: 100
   miniEnemies: {fileID: 762535728295142407, guid: 31d850bd26ffad247bceb05047cadc27, type: 3}
   skillCooldown: 2
