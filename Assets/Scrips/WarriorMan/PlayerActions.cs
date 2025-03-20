@@ -21,6 +21,9 @@ public class PlayerActions : MonoBehaviour
     private Transform firePos;
 
     [SerializeField]
+    private Transform fireMagicPos;
+
+    [SerializeField]
     private GameObject slashEffect;
 
 	private AudioManager audioManager;
@@ -31,6 +34,7 @@ public class PlayerActions : MonoBehaviour
     private int currentAttackCounter = 1;
     private Animator animator;
     private Player playerScript;
+    private bool isAttacking = false;
 
     void Start()
     {
@@ -42,12 +46,12 @@ public class PlayerActions : MonoBehaviour
     void Update()
     {
         UpdateCursorPositionAndRotation();
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !isAttacking)
         {
             audioManager.PlaySwordSound();
             MeleeAttack(mousePosition);
         }
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && !isAttacking)
         {
             audioManager.PlayPowerBallSound();
             RangeAttack(mousePosition);
@@ -63,6 +67,8 @@ public class PlayerActions : MonoBehaviour
     public void AttackDone()
     {
         playerScript.allowFlip = true;
+        isAttacking = false;
+        //Debug.Log("Attack done");
     }
 
     public void LaunchMagic()
@@ -104,7 +110,9 @@ public class PlayerActions : MonoBehaviour
         {
             currentAttackCounter = 1;
         }
+
         playerScript.allowFlip = false;
+        isAttacking = true;
         Flip(position);
         animator.SetInteger("AttackType", currentAttackCounter);
         animator.SetTrigger("Attack");
@@ -115,6 +123,7 @@ public class PlayerActions : MonoBehaviour
         if (playerScript.GetMp() < mpCost)
             return;
         playerScript.allowFlip = false;
+        isAttacking = true;
         Flip(position);
         animator.SetInteger("AttackType", 0);
         animator.SetTrigger("Attack");

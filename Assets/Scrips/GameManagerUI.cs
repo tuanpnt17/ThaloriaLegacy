@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scrips.TopPlayers;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameManagerUI : MonoBehaviour
@@ -26,7 +27,7 @@ public class GameManagerUI : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 3)
         {
             MainMenu();
         }
@@ -43,8 +44,15 @@ public class GameManagerUI : MonoBehaviour
         pauseMenu.SetActive(false);
         mapMenu.SetActive(false);
         leaderBoard.SetActive(false);
+        introduct.SetActive(false);
         aboutUs.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    public void Logout()
+    {
+        TopPlayersUpdate.instance.SetCurrentPlayer(null);
+        SceneManager.LoadScene("AuthScene");
     }
 
     public void PauseGameMenu()
@@ -102,6 +110,7 @@ public class GameManagerUI : MonoBehaviour
         aboutUs.SetActive(false);
         leaderBoard.SetActive(true);
         Time.timeScale = 0f;
+        TopPlayersGet.instance.GetTopPlayers();
     }
 
     public void AboutUs()

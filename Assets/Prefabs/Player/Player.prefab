@@ -180,9 +180,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  maxHp: 500
+  maxHp: 20
+  maxMp: 30
   hpBar: {fileID: 334879210407678556}
+  mpBar: {fileID: 0}
   gameManager: {fileID: 0}
+  allowFlip: 1
 --- !u!95 &8774794232738110723
 Animator:
   serializedVersion: 7
@@ -747,3 +750,4 @@ MonoBehaviour:
   maxAmmo: 25
   currentAmmo: 0
   ammoText: {fileID: 1880872795807127124}
+  audioManager: {fileID: 0}

@@ -66,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -131,10 +131,10 @@ TextureImporter:
       name: Effect HP MP-Sheet_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 3
-        width: 50
-        height: 51
+        x: 0
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: Effect HP MP-Sheet_1
       rect:
         serializedVersion: 2
-        x: 37
-        y: 10
-        width: 14
-        height: 12
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -175,10 +175,10 @@ TextureImporter:
       name: Effect HP MP-Sheet_2
       rect:
         serializedVersion: 2
-        x: 68
-        y: 7
-        width: 22
-        height: 50
+        x: 64
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,10 +197,10 @@ TextureImporter:
       name: Effect HP MP-Sheet_3
       rect:
         serializedVersion: 2
-        x: 79
-        y: 1
-        width: 9
-        height: 7
+        x: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,10 +219,10 @@ TextureImporter:
       name: Effect HP MP-Sheet_4
       rect:
         serializedVersion: 2
-        x: 110
-        y: 0
-        width: 47
-        height: 59
+        x: 128
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -241,10 +241,10 @@ TextureImporter:
       name: Effect HP MP-Sheet_5
       rect:
         serializedVersion: 2
-        x: 115
-        y: 19
-        width: 9
-        height: 7
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -259,11 +259,99 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Effect HP MP-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a7e17ba2f3b9d4196611b256abe2dd
+      internalID: -799693243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect HP MP-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f909e4ab5040ee4f878f080b37da530
+      internalID: -1300490474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect HP MP-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd3f9b2d18a41ba4dba212907d8f00b1
+      internalID: 1966790568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Effect HP MP-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b45b5fae450834c9feb6011e013bea
+      internalID: 1202166922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2f293f4fa650a664d9c367507a44a7d9
     internalID: 0
     vertices: []
     indices: 
@@ -279,6 +367,10 @@ TextureImporter:
       Effect HP MP-Sheet_3: -6534043466042496046
       Effect HP MP-Sheet_4: 2501835991383110528
       Effect HP MP-Sheet_5: 3784284922301139822
+      Effect HP MP-Sheet_6: -799693243
+      Effect HP MP-Sheet_7: -1300490474
+      Effect HP MP-Sheet_8: 1966790568
+      Effect HP MP-Sheet_9: 1202166922
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

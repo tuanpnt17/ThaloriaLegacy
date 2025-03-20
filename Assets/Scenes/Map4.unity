@@ -3776,6 +3776,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossIceEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5779885337414828696, guid: 633e42ad7a224424b91eefe271cb7daa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8053635390115918461, guid: 633e42ad7a224424b91eefe271cb7daa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.74
@@ -3889,7 +3893,7 @@ PrefabInstance:
     - target: {fileID: 1765919555882086701, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
       propertyPath: aboutUs
       value: 
-      objectReference: {fileID: 1570889530}
+      objectReference: {fileID: 0}
     - target: {fileID: 1765919555882086701, guid: e8170fea38cadcb46b975e6af529f193, type: 3}
       propertyPath: mapMenu
       value: 
@@ -5243,7 +5247,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
 --- !u!1 &1570889530 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6782808068189609773, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7685027312678196550, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
   m_PrefabInstance: {fileID: 1570889529}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1570889531 stripped

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
@@ -21,18 +22,21 @@ public class Enemy : MonoBehaviour
     protected float stayDamage = 1f;
 
     [SerializeField]
+    protected float damageInterval = 2f;
+
+    [SerializeField]
     protected int killScore = 10;
 
     private Rigidbody2D rb;
     private EnemySpawner spawnerInstance;
-    private float lastTime;
+    private float lastStayDamageTime;
 
-	private AudioManager audioManager;
+    private AudioManager audioManager;
 
-	protected virtual void Start()
-	{
-		audioManager = FindAnyObjectByType<AudioManager>();
-		player = FindAnyObjectByType<Player>();
+    protected virtual void Start()
+    {
+        audioManager = FindAnyObjectByType<AudioManager>();
+        player = FindAnyObjectByType<Player>();
         if (player == null)
         {
             Debug.LogError("Không tìm thấy Player trong scene.");
@@ -128,21 +132,20 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Player playerScript = collision.gameObject.GetComponent<Player>();
-            if (playerScript != null)
+            if (playerScript != null && Time.time - lastStayDamageTime > damageInterval)
             {
-                if (Time.time - lastTime < 2f)
-                {
-                    return;
-                }
-				playerScript.TakeDamage(stayDamage * Time.deltaTime); // Player mất máu liên tục
-                lastTime = Time.time;
+                playerScript.TakeDamage(stayDamage * Time.deltaTime); // Player mất máu liên tục
+                lastStayDamageTime = Time.time;
             }
         }
     }
 
     private void OnDestroy()
     {
-        //ScoreManager.Instance.UpdateKillScore(transform.position, killScore);
+        var x = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("Scene index: " + x);
+
+        ScoreManager.Instance.UpdateKillScore(transform.position, killScore);
         if (spawnerInstance != null)
             spawnerInstance.EnemyDie(transform.position);
     }

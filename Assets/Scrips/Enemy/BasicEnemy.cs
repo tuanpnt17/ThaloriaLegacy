@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BasicEnemy : Enemy
 {
-    private float lastTime;
+    private float lastStayDmgTime;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -19,14 +19,10 @@ public class BasicEnemy : Enemy
     {
         if (collision.CompareTag("Player"))
         {
-            if (player != null)
+            if (player != null && Time.time - lastStayDmgTime > damageInterval)
             {
-                if (Time.time - lastTime < 2f)
-                {
-                    return;
-                }
-                lastTime = Time.time;
                 player.TakeDamage(stayDamage);
+                lastStayDmgTime = Time.time;
             }
         }
     }
