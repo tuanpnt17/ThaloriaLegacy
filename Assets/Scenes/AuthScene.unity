@@ -481,7 +481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3608283276241162658, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4368606009967855376, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
       propertyPath: m_IsActive
@@ -526,6 +526,18 @@ PrefabInstance:
     - target: {fileID: 4950034746434627841, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.000030518
+      objectReference: {fileID: 0}
+    - target: {fileID: 5100420053274881072, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 625711155}
+    - target: {fileID: 5100420053274881072, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: HandleLogin
+      objectReference: {fileID: 0}
+    - target: {fileID: 5100420053274881072, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameAuthManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5239389473239182180, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
       propertyPath: m_text

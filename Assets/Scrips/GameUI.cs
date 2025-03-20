@@ -15,7 +15,7 @@ public class GameUI : MonoBehaviour
     public void StartGame()
     {
         gameManager.StartGame();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Map1");
     }
 
     public void QuitGame()
@@ -30,7 +30,7 @@ public class GameUI : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("MenuScene");
         mainMenu.SetActive(true);
         mapMenu.SetActive(false);
     }

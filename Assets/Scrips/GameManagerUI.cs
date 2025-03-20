@@ -29,7 +29,7 @@ public class GameManagerUI : MonoBehaviour
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneManager.GetActiveScene().buildIndex == 3)
         {
             MainMenu();
         }

@@ -1081,6 +1081,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 260724068541697313, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 260724068541697313, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 52f9ee3cab99c9d4880d683a80ecf095, type: 3}
+    - target: {fileID: 260724068541697313, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_Color.a
+      value: 0.9411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 260724068541697313, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 260724068541697313, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 260724068541697313, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 484328543168896037, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1095,12 +1119,61 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 757081805246082343, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_text
+      value: "About Us \u2013 Thaloria Legacy\nThe Trials are far from over\u2026
+        but our journey has just begun.\n\nWe are Group 5, the developers behind
+        Thaloria Legacy, a passion-driven project crafted with dedication and creativity.
+        Our goal is to create an immersive fantasy adventure, blending epic storytelling
+        with engaging gameplay.\n\nMeet the Team\nSE173039 Ph\u1EA1m Nguy\u1EC5n
+        Tr\u1ECDng Tu\u1EA5n\nSE183124 Ph\u1EA1m Xu\xE2n Ho\xE0ng\nSE183870 Ng\xF4
+        L\xEA Th\u1EA3o Nguy\xEAn\nSE183122 L\xEA \u0110\u1EB7ng Minh Tr\xED\nSE170585
+        Ph\u1EA1m B\xEDch Ng\u1ECDc\nThank You for Playing!\nYour journey in Thaloria
+        Legacy is just the beginning. We appreciate your support and hope you had
+        an unforgettable experience.\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 757081805246082343, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_fontAsset
       value: 
+      objectReference: {fileID: 11400000, guid: f3ec84e6543356a4f8f40afe2e5aaa1f, type: 2}
+    - target: {fileID: 757081805246082343, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8068571302997907312, guid: f3ec84e6543356a4f8f40afe2e5aaa1f, type: 2}
+    - target: {fileID: 757081805246082343, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 757081805246082343, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1309643536502023880, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 2020511748}
+    - target: {fileID: 1336375427792670932, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.23770808
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336375427792670932, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.7484276
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336375427792670932, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.7338469
+      objectReference: {fileID: 0}
+    - target: {fileID: 1336375427792670932, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4282236859
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397628807204059936, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0000019073
+      objectReference: {fileID: 0}
+    - target: {fileID: 1397628807204059936, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -445
+      objectReference: {fileID: 0}
     - target: {fileID: 2079328400059501087, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1109,6 +1182,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1309643536502023880, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+    - target: {fileID: 2820940654582711374, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 56.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820940654582711374, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 25.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820940654582711374, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820940654582711374, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4047619111060077599, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
@@ -1160,6 +1249,26 @@ PrefabInstance:
     - target: {fileID: 6324821575868298959, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6782808068189609773, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6839972387231821724, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 454.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 6839972387231821724, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 215.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 6839972387231821724, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6839972387231821724, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -29
       objectReference: {fileID: 0}
     - target: {fileID: 6890906034566271578, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

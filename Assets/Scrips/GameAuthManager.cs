@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameAuthManager : MonoBehaviour
 {
@@ -42,5 +43,9 @@ public class GameAuthManager : MonoBehaviour
         login.SetActive(false);
         authMenu.SetActive(true);
         register.SetActive(false);
+    }
+    public void HandleLogin()
+    {
+        SceneManager.LoadScene("Introduction");
     }
 }

@@ -15,6 +15,6 @@ public class LoadingScreenController : MonoBehaviour
     IEnumerator LoadMenuAfterDelay()
     {
         yield return new WaitForSeconds(delayTime); // Đợi 3 giây
-        SceneManager.LoadScene("Introduction"); // Chuyển sang Menu Scene
+        SceneManager.LoadScene("AuthScene"); // Chuyển sang Menu Scene
     }
 }
