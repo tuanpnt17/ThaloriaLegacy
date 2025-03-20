@@ -8,7 +8,7 @@ namespace Assets.Scrips.TopPlayers
     {
         public static TopPlayersUpdate instance;
         protected TopPlayerApiCall ApiCall = new TopPlayerApiCall();
-        private PlayerScore currentPlayer;
+        public PlayerScore currentPlayer;
 
         private void Awake()
         {

@@ -148,6 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7ad19be1cdd7c4ca5e67eb8771bb5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPlayer:
+    name: 
+    pass: 
+    score: 0
+    lastScoreInGame: 0
 --- !u!4 &25831466
 Transform:
   m_ObjectHideFlags: 0
@@ -231,11 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &302817814 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2380039303293603123, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
-  m_PrefabInstance: {fileID: 9026672103752486543}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &337742498
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -345,58 +345,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &625711153
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 625711154}
-  - component: {fileID: 625711155}
-  m_Layer: 0
-  m_Name: GameAuthManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &625711154
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625711153}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1007.47974, y: 518.54425, z: -15.995456}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &625711155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625711153}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a66c08da6934ab49ac8da609027a64f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  login: {fileID: 7340829621757120380}
-  register: {fileID: 9026672103752486544}
-  authMenu: {fileID: 302817814}
-  loginPlayerName: {fileID: 0}
-  loginPlayerPass: {fileID: 0}
-  registerPlayerName: {fileID: 0}
-  registerPlayerPass: {fileID: 0}
-  registerPlayerPassConfirm: {fileID: 0}
 --- !u!114 &1032738326 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7760202405021012898, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
@@ -622,11 +570,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &7340829621757120380 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3608283276241162658, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
-  m_PrefabInstance: {fileID: 9026672103752486543}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9026672103752486543
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -748,18 +691,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
---- !u!1 &9026672103752486544 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4368606009967855376, guid: 20be07a11e5ee854ebb2e7141cf9dc57, type: 3}
-  m_PrefabInstance: {fileID: 9026672103752486543}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1582050236}
   - {fileID: 191229462}
-  - {fileID: 625711154}
   - {fileID: 9026672103752486543}
   - {fileID: 337742498}
   - {fileID: 607895340}

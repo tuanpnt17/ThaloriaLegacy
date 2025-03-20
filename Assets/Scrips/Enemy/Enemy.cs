@@ -138,7 +138,7 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        ScoreManager.Instance.UpdateKillScore(transform.position, killScore);
+        //ScoreManager.Instance.UpdateKillScore(transform.position, killScore);
         if (spawnerInstance != null)
             spawnerInstance.EnemyDie(transform.position);
     }

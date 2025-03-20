@@ -21,6 +21,7 @@ public class TopPlayersGet : MonoBehaviour
 
     public virtual void Get()
     {
+        Debug.Log("Get top players");
         StartCoroutine(this.apiCall.JsonGet(this.apiCall.Uri(), "{}", this.JustGet));
     }
 

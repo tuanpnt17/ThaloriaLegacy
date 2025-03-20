@@ -15,11 +15,17 @@ public class GameAuthManager : MonoBehaviour
     [SerializeField]
     protected GameObject authMenu;
 
+    [SerializeField]
+    protected GameObject popUp;
+
     public TMP_InputField loginPlayerName;
     public TMP_InputField loginPlayerPass;
     public TMP_InputField registerPlayerName;
     public TMP_InputField registerPlayerPass;
     public TMP_InputField registerPlayerPassConfirm;
+
+    public TextMeshProUGUI popUpTitle;
+    public TextMeshProUGUI popUpMessage;
 
     public void QuitGame()
     {
@@ -31,7 +37,7 @@ public class GameAuthManager : MonoBehaviour
         login.SetActive(false);
         register.SetActive(false);
         authMenu.SetActive(true);
-        TopPlayersGet.instance.Get();
+        popUp.SetActive(false);
     }
 
     public void OpenLogin()
@@ -39,6 +45,8 @@ public class GameAuthManager : MonoBehaviour
         login.SetActive(true);
         authMenu.SetActive(false);
         register.SetActive(false);
+        popUp.SetActive(false);
+        TopPlayersGet.instance.Get();
     }
 
     public void HandleLogin()
@@ -48,6 +56,10 @@ public class GameAuthManager : MonoBehaviour
         if (string.IsNullOrEmpty(playerName) || string.IsNullOrEmpty(playerPass))
         {
             Debug.LogWarning("Player name or password is empty");
+            popUpTitle.text = "Error";
+            popUpMessage.text = "Player name or password is empty";
+            popUp.SetActive(true);
+            ClearLoginTextField();
             return;
         }
 
@@ -56,15 +68,43 @@ public class GameAuthManager : MonoBehaviour
         if (player == null)
         {
             Debug.LogWarning("Player not found");
+            popUpTitle.text = "Login failed";
+            popUpMessage.text = "Player not found";
+            ClearLoginTextField();
+            popUp.SetActive(true);
             return;
         }
         if (player.pass != playerPass)
         {
             Debug.LogWarning("Password is incorrect");
+            popUpTitle.text = "Login failed";
+            popUpMessage.text = "Password is incorrect";
+            ClearLoginTextField();
+            popUp.SetActive(true);
             return;
         }
         Debug.Log("Login success");
+        TopPlayersUpdate.instance.SetCurrentPlayer(player);
         SceneManager.LoadScene("MenuScene");
+    }
+
+    private void ClearLoginTextField()
+    {
+        loginPlayerName.text = "";
+        loginPlayerPass.text = "";
+    }
+
+    private void ClearRegisterTextField()
+    {
+        registerPlayerName.text = "";
+        registerPlayerPass.text = "";
+        registerPlayerPassConfirm.text = "";
+    }
+
+    private void ClearRegisterPassword()
+    {
+        registerPlayerPass.text = "";
+        registerPlayerPassConfirm.text = "";
     }
 
     public void OpenRegister()
@@ -72,6 +112,7 @@ public class GameAuthManager : MonoBehaviour
         login.SetActive(false);
         authMenu.SetActive(false);
         register.SetActive(true);
+        popUp.SetActive(false);
     }
 
     public void HandleRegister()
@@ -87,11 +128,18 @@ public class GameAuthManager : MonoBehaviour
         )
         {
             Debug.LogWarning("Player name or password is empty");
+            popUpTitle.text = "Register failed";
+            popUpMessage.text = "Player name or password is empty";
+            popUp.SetActive(true);
             return;
         }
         if (playerPass != playerPassConfirm)
         {
             Debug.LogWarning("Passwords do not match");
+            popUpTitle.text = "Register failed";
+            popUpMessage.text = "Passwords do not match";
+            ClearRegisterPassword();
+            popUp.SetActive(true);
             return;
         }
         var playerScore = new PlayerScore
@@ -107,6 +155,10 @@ public class GameAuthManager : MonoBehaviour
         if (existed != null)
         {
             Debug.LogWarning("Player already exists");
+            popUpTitle.text = "Register failed";
+            popUpMessage.text = "Player already exists";
+            popUp.SetActive(true);
+            ClearRegisterTextField();
             return;
         }
         TopPlayersUpdate.instance.SetCurrentPlayer(playerScore);
@@ -120,5 +172,6 @@ public class GameAuthManager : MonoBehaviour
         login.SetActive(false);
         authMenu.SetActive(true);
         register.SetActive(false);
+        popUp.SetActive(false);
     }
 }
