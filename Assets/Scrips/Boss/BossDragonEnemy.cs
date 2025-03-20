@@ -104,7 +104,12 @@ public class BossDragonEnemy : Enemy
     private void OnDeathDialogueEnd()
     {
         Instantiate(usbPrefabs, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in enemies)
+        {
+            Destroy(enemy);
+        }
     }
 
     private void NormalShootBullet()
