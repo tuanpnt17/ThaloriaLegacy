@@ -978,6 +978,89 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameManagerUI, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 2585017338182187298, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_text
+      value: Introduction
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110108190994208241, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_text
+      value: '
+
+        Movement:
+
+        A (left arrow): Move left
+
+        D (right
+        arrow): Move right
+
+        S (up arrow): Move down
+
+        W (down arrow):
+        Move up
+
+
+        Combat:
+
+        Left Mouse Click: Slash
+
+        Right
+        Mouse Click: Shoot
+
+
+        Game Controls:
+
+        ESC: Pause the game
+
+
+        Objective:
+
+        Shoot
+        or slash the enemies to collect the essence. There are 5 maps to complete
+        the game.
+
+
+        Good luck and have fun! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110108190994208241, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_fontSize
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110108190994208241, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_margin.x
+      value: -52.532753
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110108190994208241, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f3ec84e6543356a4f8f40afe2e5aaa1f, type: 2}
+    - target: {fileID: 3110108190994208241, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110108190994208241, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8068571302997907312, guid: f3ec84e6543356a4f8f40afe2e5aaa1f, type: 2}
+    - target: {fileID: 3110108190994208241, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3487140289841513982, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -373.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3487140289841513982, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 426.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4276317504695958653, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 576.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4276317504695958653, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 421.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4748858693651722049, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_fontColor.b
       value: 0
@@ -1030,6 +1113,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6513163097835966448, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 153.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513163097835966448, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 689
+      objectReference: {fileID: 0}
+    - target: {fileID: 6513163097835966448, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 116
+      objectReference: {fileID: 0}
     - target: {fileID: 6782808068189609773, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1061,6 +1156,51 @@ PrefabInstance:
     - target: {fileID: 7340829621408534002, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459480909831729738, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_text
+      value: "[Prologue] \u2013 The Awakening of Drakthor\\nThe once-glorious kingdom
+        of Thaloria now lies in ruins. Drakthor the Eternal Dragon, an immortal beast,
+        has awakened from Infernal Hollow, a cavern buried deep within a colossal
+        volcano. With a burning desire to reduce the world to ashes and create a
+        new empire for dragons. He has summoned The Four Harbingers of Doom, ancient
+        entities wielding catastrophic power."
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459480909831729738, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459480909831729738, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: f3ec84e6543356a4f8f40afe2e5aaa1f, type: 2}
+    - target: {fileID: 7459480909831729738, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_lineSpacing
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459480909831729738, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459480909831729738, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8068571302997907312, guid: f3ec84e6543356a4f8f40afe2e5aaa1f, type: 2}
+    - target: {fileID: 7459480909831729738, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606974596457999937, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 287.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606974596457999937, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -376
+      objectReference: {fileID: 0}
+    - target: {fileID: 7606974596457999937, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7685027312678196550, guid: 1284bc679d3bf8641be2e2d07d75531f, type: 3}
       propertyPath: m_IsActive
