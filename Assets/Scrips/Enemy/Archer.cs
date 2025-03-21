@@ -30,6 +30,8 @@ public class Archer : Enemy
         {
             FlipEnemy();
         }
+        else
+            return;
 
         if (Vector2.Distance(transform.position, player1.position) < attackRange)
         {

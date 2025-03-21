@@ -63,6 +63,7 @@ public class GameUI : MonoBehaviour
         }
         mainMenu.SetActive(true);
         mapMenu.SetActive(false);
+        ScoreManager.Instance.ClearCurrentScore();
     }
 
     public void MapMenu()

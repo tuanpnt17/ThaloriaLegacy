@@ -2,7 +2,8 @@
 
 public class AlienEnemy : Enemy
 {
-    [SerializeField] private float attackRange = 5f;
+    [SerializeField]
+    private float attackRange = 5f;
     private AkmGun gun;
     private Transform player1;
     private Transform enemyTransform;
@@ -22,6 +23,8 @@ public class AlienEnemy : Enemy
         {
             FlipEnemy();
         }
+        else
+            return;
 
         if (Vector2.Distance(transform.position, player1.position) < attackRange)
         {
@@ -31,7 +34,8 @@ public class AlienEnemy : Enemy
 
     protected override void FlipEnemy()
     {
-        if (player == null) return;
+        if (player == null)
+            return;
 
         bool facingRight = player1.position.x > transform.position.x;
         enemyTransform.localScale = new Vector3(facingRight ? 1 : -1, 1, 1);

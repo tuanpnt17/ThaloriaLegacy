@@ -19,6 +19,7 @@ public class OrcRider : Enemy
     private float lastStayDmgTime;
 
     private AudioManager audioManager;
+
     protected override void Start()
     {
         base.Start();
@@ -35,6 +36,8 @@ public class OrcRider : Enemy
         {
             FlipEnemy();
         }
+        else
+            return;
 
         if (
             Mathf.Abs(player1.position.x - transform.position.x) <= attackRange

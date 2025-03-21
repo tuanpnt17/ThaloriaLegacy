@@ -145,7 +145,7 @@ public class BossPharaEnemy : Enemy
         if (player != null)
         {
             Vector3 directionToPlayer = (player.transform.position - firePoint.position).normalized;
-            float spreadAngle = 30f; // Cone width
+            float spreadAngle = 50f; // Cone width
             int bulletCount = 5;
             float angleStep = spreadAngle / (bulletCount - 1);
 

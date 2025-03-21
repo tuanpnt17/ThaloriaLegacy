@@ -50,6 +50,8 @@ public class GameManagerUI : MonoBehaviour
 
     private void Update()
     {
+        if (playerScore == null)
+            return;
         playerScore.text = ScoreManager.Instance.GetCurrentScore().ToString();
     }
 
@@ -63,6 +65,7 @@ public class GameManagerUI : MonoBehaviour
         introduct.SetActive(false);
         aboutUs.SetActive(false);
         Time.timeScale = 1f;
+        ScoreManager.Instance.ClearCurrentScore();
     }
 
     public void Logout()
