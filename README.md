@@ -11,11 +11,12 @@
 
 ---
 
-## 1. Game Overview  
+## 1. Game Overview [**Demo**](https://youtu.be/C1MhmLdajfc)   
 **Game:** Thaloria Legacy  
 **Genre:** 2D Top-Down Adventure  
 **Platform:** Windows  
 **Target Players:** Casual & Hardcore Adventure Fans  
+
 
 ### Features:  
 - Explore an open world with many mysterious lands.  
